@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary": "#545f73", "on-secondary-fixed": "#111c2d", "primary": "#ab2f00", "on-background": "#191c1f", "on-primary-fixed": "#3a0a00", "on-tertiary": "#ffffff", "primary-fixed-dim": "#ffb59f", "tertiary-fixed-dim": "#4edea3", "surface-bright": "#f7f9fd", "on-primary": "#ffffff", "tertiary": "#006947", "outline": "#8f7067", "inverse-primary": "#ffb59f", "surface": "#f7f9fd", "on-primary-fixed-variant": "#862300", "primary-container": "#d53e02", "on-surface-variant": "#5b4139", "secondary-fixed-dim": "#bcc7de", "surface-tint": "#af3100", "on-tertiary-fixed-variant": "#005236", "secondary-fixed": "#d8e3fb", "on-secondary": "#ffffff", "error": "#ba1a1a", "tertiary-fixed": "#6ffbbe", "secondary-container": "#d5e0f8", "surface-container-high": "#e6e8ec", "on-error": "#ffffff", "on-error-container": "#93000a", "on-secondary-container": "#586377", "inverse-surface": "#2d3134", "on-tertiary-container": "#f5fff6", "surface-variant": "#e0e3e6", "tertiary-container": "#00855b", "surface-container-low": "#f2f4f8", "primary-fixed": "#ffdbd1", "on-surface": "#191c1f", "outline-variant": "#e4beb4", "background": "#f7f9fd", "surface-container": "#eceef2", "surface-dim": "#d8dade", "inverse-on-surface": "#eff1f5", "on-tertiary-fixed": "#002113", "on-primary-container": "#fffbff", "on-secondary-fixed-variant": "#3c475a", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "surface-container-highest": "#e0e3e6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "card-padding-mobile": "0.875rem", "screen-margin-tablet": "1.5rem", "space-xl": "1.5rem", "screen-margin-mobile": "1rem", "space-2xs": "0.25rem", "space-2xl": "2rem", "space-lg": "1.25rem", "touch-target-min": "2.75rem", "space-xs": "0.5rem", "space-sm": "0.75rem" }, fontFamily: { "body-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "financial-counter": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "label-lg": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "financial-counter": ["22px", { "lineHeight": "26px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.3px", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.2px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.1px", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "30px", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary/20"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-space-md flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><img alt="Tiffin Manager Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VzbMoL1mwXaVT3Tlg8gh43JelIjaN2FrdCRjj5cOMnk73Y23HHCv4TcITNCtQ650Rxo2El1I-D8QGz0j0VKea1ZMunWSiSo9LNxF2r_o6RrmmnVhkcqbCouIcRqtuEtXUxa_Li6SCYjYFMW8B9WJTdBcTXZ96A6ow7-6hSNcXvn6zJZ6-kIBQQHiqmthsIcC7hcpJ7Gm1n2v-5Ue29vO_3nRrh3mQDjXIYsYEt_nRd4PJsSQJRlepP62U"/><div class="flex flex-col"><div class="flex items-center gap-1"><button class="flex items-center gap-0.5 text-on-surface font-headline-sm text-label-lg tracking-tight" type="button"><span class="truncate max-w-[110px]">Main Branch</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span></button></div><span class="font-label-sm text-label-sm text-on-surface-variant capitalize leading-none">Dashboard</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 relative flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span></button><button class="flex items-center gap-1.5 pl-1 py-1 pr-1.5 rounded-full hover:bg-surface-container transition-colors" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb3PEdZl4HV8u5LdrfDPisbMtFT-EcComJE7V673UgJBDPkhmyao6UCaOfUKT5M6AsL4UwzltuADBptqThr2LLheeE7sv35z7DXen3JYI0XsCpcLiLQVxgX8PkwDKgini6CWLeZe583BGLdprwtD2qOs-SJ4cPpXuMcT4zkAMicmbtVVzA3VDTjKhCaKOGGjEqiWRhQ-u4QBvzHa9z8YK9cZDjUiCoLQda-VqpU938oY4EosingaiV-w"/><div class="hidden sm:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight">Manpreet</span><span class="font-label-sm text-label-sm text-primary leading-none font-medium">Owner</span></div></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Content Canvas Container -->
+<div class="w-full max-w-lg mx-auto px-4 pb-10 space-y-4">
+<!-- 1. Top Sub-header Context Bar -->
+<section class="pt-2 flex items-center justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight truncate">
+          Owner Profile
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+          Owner account &amp; branch administration
+        </p>
+</div>
+<button aria-label="Edit Profile" class="flex-shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm active:scale-95 transition-transform" id="btn-edit-profile-quick" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit</span>
+</button>
+</section>
+<!-- 2. Profile Summary Card -->
+<section class="relative bg-surface-container-lowest rounded-xl shadow-sm p-5 flex flex-col items-center text-center overflow-hidden">
+<!-- Decorative Warm Culinary Ambient Glow -->
+<div class="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-primary-fixed/40 blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -left-10 w-28 h-28 rounded-full bg-tertiary-fixed/30 blur-xl pointer-events-none"></div>
+<!-- Avatar & Badges -->
+<div class="relative mb-3">
+<div class="w-24 h-24 rounded-full p-1 bg-surface-container-low shadow-sm">
+<img alt="Manpreet Singh" class="w-full h-full rounded-full object-cover shadow-inner" src="https://lh3.googleusercontent.com/aida/AEtjO1UzzMtRchgJGxJeoMXFA4JCNEADa6tG9Khb9hHmUEOLjVKjbF_teuUEcrI0euDunxXAqkVB-FiRaX-9pL7anpGuMw93Zv8o8jwERUTlafiJwWx38x-vcu2WGusgQASg7sA9eCztNswFVd7NXfBCuockehL46LdRQRvIo4wNDCA7TOfX86f40k_uzNZX3TKxkG7fu6Jh33PG22xGOqjsaroDgfpqqIhjFgSUDCwFL3dk8o2PMZd-MgyShAVG"/>
+</div>
+<!-- Owner / Admin Verified Badge -->
+<div class="absolute -bottom-1.5 inset-x-0 mx-auto w-max flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Owner / Admin</span>
+</div>
+</div>
+<!-- Name & Operational Role -->
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight mt-1">
+        Manpreet Singh
+      </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        Founder &amp; Master Administrator
+      </p>
+<!-- Active Business Tag with Live Pulse -->
+<div class="inline-flex items-center gap-2 px-3 py-1 mt-2.5 rounded-full bg-surface-container">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold tracking-tight">
+          Tiffin Manager • Main Branch
+        </span>
+</div>
+<!-- Quick Metrics Ribbon -->
+<div class="grid grid-cols-3 w-full mt-5 pt-4 bg-surface-container-low/70 rounded-xl p-3 gap-2">
+<div class="flex flex-col items-center justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Branches</span>
+<span class="font-financial-counter text-financial-counter text-on-surface font-bold tracking-tight">1</span>
+<span class="font-label-sm text-[10px] text-tertiary">Central Kitchen</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-surface-container-lowest/80 rounded-lg py-1 shadow-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Subscribers</span>
+<span class="font-financial-counter text-financial-counter text-primary font-bold tracking-tight">142</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Active daily</span>
+</div>
+<div class="flex flex-col items-center justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Operating</span>
+<span class="font-financial-counter text-financial-counter text-on-surface font-bold tracking-tight">2024</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Since Jan</span>
+</div>
+</div>
+</section>
+<!-- 3. Personal & Contact Information -->
+<section class="flex flex-col gap-2">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
+          Business Credentials &amp; Contact
+        </span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          KYC Verified
+        </span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-2 shadow-sm flex flex-col space-y-1">
+<!-- Phone Item -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Primary Mobile</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate font-semibold">+91 98765 43210</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-semibold flex-shrink-0">
+            Verified
+          </span>
+</div>
+<!-- Email Item -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Billing Email</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate font-semibold">manpreet@tiffinmanager.com</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-semibold flex-shrink-0">
+            Primary
+          </span>
+</div>
+<!-- Role Item -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">shield_person</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Role Permissions</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate font-semibold">Business Owner &amp; Superadmin</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]">lock_open</span>
+</div>
+<!-- GSTIN / Tax Item -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Business GSTIN</span>
+<span class="font-label-lg text-label-lg text-on-surface tracking-wide font-mono font-semibold truncate">
+                07AAAAA0000A1Z5
+              </span>
+</div>
+</div>
+<button aria-label="Copy GSTIN" class="text-on-surface-variant hover:text-primary transition-colors p-1" onclick="navigator.clipboard &amp;&amp; navigator.clipboard.writeText('07AAAAA0000A1Z5')" title="Copy GSTIN" type="button">
+<span class="material-symbols-outlined text-[19px]">content_copy</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4. Fast Navigation / Account Management Actions -->
+<section class="flex flex-col gap-2">
+<div class="px-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
+          Account Administration
+        </span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm divide-y-0 overflow-hidden flex flex-col">
+<!-- Action: Edit Profile Details -->
+<button class="w-full flex items-center justify-between p-3.5 hover:bg-surface-container-low transition-colors text-left group" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug truncate">
+                Edit Profile Details
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Update legal name, phone &amp; change login password
+              </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-0.5 transition-transform text-[20px]">
+            chevron_right
+          </span>
+</button>
+<div class="h-[1px] bg-surface-container mx-3"></div>
+<!-- Action: Branch Operations -->
+<button class="w-full flex items-center justify-between p-3.5 hover:bg-surface-container-low transition-colors text-left group" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug truncate">
+                Branch Profile &amp; Operations
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Kitchen timings, prep cut-offs, dispatch radii
+              </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-0.5 transition-transform text-[20px]">
+            chevron_right
+          </span>
+</button>
+<div class="h-[1px] bg-surface-container mx-3"></div>
+<!-- Action: Notification Preferences -->
+<button class="w-full flex items-center justify-between p-3.5 hover:bg-surface-container-low transition-colors text-left group" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug truncate">
+                Notification Preferences
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Morning route dispatch SMS, WhatsApp &amp; daily tallies
+              </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-0.5 transition-transform text-[20px]">
+            chevron_right
+          </span>
+</button>
+<div class="h-[1px] bg-surface-container mx-3"></div>
+<!-- Action: Security & Login Sessions -->
+<button class="w-full flex items-center justify-between p-3.5 hover:bg-surface-container-low transition-colors text-left group" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug truncate">
+                Security &amp; Active Logins
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                2 active devices (Kitchen Tablet &amp; iPhone 15)
+              </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-0.5 transition-transform text-[20px]">
+            chevron_right
+          </span>
+</button>
+<div class="h-[1px] bg-surface-container mx-3"></div>
+<!-- Action: Export Reports -->
+<button class="w-full flex items-center justify-between p-3.5 hover:bg-surface-container-low transition-colors text-left group" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug truncate">
+                Export Data &amp; Reports
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Monthly meal ledgers, GST report &amp; customer lists
+              </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-0.5 transition-transform text-[20px]">
+            chevron_right
+          </span>
+</button>
+</div>
+</section>
+<!-- 5. App Version & Danger / Session Actions -->
+<section class="pt-2 flex flex-col items-center gap-3">
+<!-- Sign Out Button -->
+<button class="w-full h-11 rounded-xl bg-error-container text-on-error-container font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 active:scale-98 transition-transform shadow-xs" id="btn-signout" type="button">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Sign Out from Main Branch</span>
+</button>
+<!-- App Meta / Version Badge -->
+<div class="flex flex-col items-center text-center space-y-0.5 py-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">soup_kitchen</span>
+<span class="font-semibold">Tiffin Manager Enterprise</span>
+</div>
+<p class="font-label-sm text-[11px] text-on-surface-variant/80">
+          v2.4.0 (Build 2026.09) • Made for Cloud Kitchens
+        </p>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Micro-interaction: Highlight the 'More' tab in bottom navigation shell
+  (function() {
+    try {
+      const moreNav = document.querySelector('nav a[data-path="more-hub"]');
+      if (moreNav) {
+        // Reset others
+        document.querySelectorAll('nav a').forEach(el => {
+          el.classList.remove('text-primary');
+          const dot = el.querySelector('.active-dot');
+          if (dot) dot.classList.remove('scale-100');
+        });
+        // Set active on More
+        moreNav.classList.add('text-primary');
+        const activeDot = moreNav.querySelector('.active-dot');
+        if (activeDot) activeDot.classList.add('scale-100');
+      }
+
+      // Micro toast effect for edit profile
+      const editBtn = document.getElementById('btn-edit-profile-quick');
+      if (editBtn) {
+        editBtn.addEventListener('click', () => {
+          editBtn.classList.add('scale-95');
+          setTimeout(() => editBtn.classList.remove('scale-95'), 150);
+        });
+      }
+
+      // Safe confirmation visual state for Sign Out
+      const signoutBtn = document.getElementById('btn-signout');
+      if (signoutBtn) {
+        signoutBtn.addEventListener('click', () => {
+          if (signoutBtn.getAttribute('data-confirm') === 'true') {
+            signoutBtn.textContent = 'Signing out...';
+            setTimeout(() => {
+              signoutBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">logout</span><span>Sign Out from Main Branch</span>';
+              signoutBtn.removeAttribute('data-confirm');
+            }, 1800);
+          } else {
+            signoutBtn.setAttribute('data-confirm', 'true');
+            signoutBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">warning</span><span>Tap again to Confirm Sign Out</span>';
+            setTimeout(() => {
+              if (signoutBtn.getAttribute('data-confirm') === 'true') {
+                signoutBtn.removeAttribute('data-confirm');
+                signoutBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">logout</span><span>Sign Out from Main Branch</span>';
+              }
+            }, 3500);
+          }
+        });
+      }
+    } catch (e) {
+      console.warn('Profile screen interactions initiated cleanly.');
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary [&amp;&gt;span.active-dot]:scale-100"><div class="flex items-center justify-around h-16 px-space-xs max-w-lg mx-auto"><a aria-current="page" class="flex flex-col items-center justify-center w-touch-target-min h-touch-target-min rounded-xl transition-all group relative text-primary [&amp;&gt;span.active-dot]:scale-100" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">dashboard</span><span class="font-label-sm text-label-sm mt-0.5">Dashboard</span><span class="active-dot absolute -top-1 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-200"></span></a><a class="flex flex-col items-center justify-center w-touch-target-min h-touch-target-min rounded-xl text-on-surface-variant hover:text-on-surface transition-all group relative" data-path="kitchen-console" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">soup_kitchen</span><span class="font-label-sm text-label-sm mt-0.5">Kitchen</span><span class="active-dot absolute -top-1 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-200"></span></a><a class="flex flex-col items-center justify-center w-touch-target-min h-touch-target-min rounded-xl text-on-surface-variant hover:text-on-surface transition-all group relative" data-path="subscriptions" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">event_repeat</span><span class="font-label-sm text-label-sm mt-0.5">Plans</span><span class="active-dot absolute -top-1 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-200"></span></a><a class="flex flex-col items-center justify-center w-touch-target-min h-touch-target-min rounded-xl text-on-surface-variant hover:text-on-surface transition-all group relative" data-path="customers" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">group</span><span class="font-label-sm text-label-sm mt-0.5">Customers</span><span class="active-dot absolute -top-1 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-200"></span></a><a class="flex flex-col items-center justify-center w-touch-target-min h-touch-target-min rounded-xl text-on-surface-variant hover:text-on-surface transition-all group relative" data-path="more-hub" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">menu</span><span class="font-label-sm text-label-sm mt-0.5">More</span><span class="active-dot absolute -top-1 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-200"></span></a></div></nav></body></html>

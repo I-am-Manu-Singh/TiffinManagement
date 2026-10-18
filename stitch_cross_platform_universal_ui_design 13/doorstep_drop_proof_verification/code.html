@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>Active Delivery Navigation</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#3a0a00", "inverse-surface": "#2d3134", "surface-dim": "#d8dade", "on-error-container": "#93000a", "secondary-container": "#d5e0f8", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#ffb59f", "on-background": "#191c1f", "on-error": "#ffffff", "surface": "#f7f9fd", "on-tertiary-fixed": "#002113", "outline": "#8f7067", "inverse-primary": "#ffb59f", "inverse-on-surface": "#eff1f5", "tertiary-fixed-dim": "#4edea3", "on-secondary-fixed-variant": "#3c475a", "primary-fixed": "#ffdbd1", "on-surface-variant": "#5b4139", "error": "#ba1a1a", "primary-container": "#d53e02", "on-secondary": "#ffffff", "on-tertiary": "#ffffff", "primary": "#ab2f00", "on-tertiary-fixed-variant": "#005236", "surface-container-high": "#e6e8ec", "tertiary": "#006947", "surface-container-highest": "#e0e3e6", "outline-variant": "#e4beb4", "tertiary-container": "#00855b", "tertiary-fixed": "#6ffbbe", "on-primary-fixed-variant": "#862300", "on-secondary-container": "#586377", "on-surface": "#191c1f", "secondary-fixed-dim": "#bcc7de", "surface-variant": "#e0e3e6", "secondary": "#545f73", "surface-bright": "#f7f9fd", "secondary-fixed": "#d8e3fb", "background": "#f7f9fd", "surface-container-low": "#f2f4f8", "error-container": "#ffdad6", "on-primary-container": "#fffbff", "surface-tint": "#af3100", "surface-container": "#eceef2", "on-tertiary-container": "#f5fff6", "on-secondary-fixed": "#111c2d" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-2xl": "2rem", "space-lg": "1.25rem", "screen-margin-mobile": "1rem", "space-xs": "0.5rem", "space-md": "1rem", "card-padding-mobile": "0.875rem", "touch-target-min": "2.75rem", "space-xl": "1.5rem", "space-sm": "0.75rem", "screen-margin-tablet": "1.5rem", "space-2xs": "0.25rem" }, "fontFamily": { "label-lg": ["Inter"], "financial-counter": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, "fontSize": { "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.1px", "fontWeight": "600" }], "financial-counter": ["22px", { "lineHeight": "26px", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.3px", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.2px", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "30px", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-sm flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="w-touch-target-min h-touch-target-min flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Active Delivery Navigation</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative w-touch-target-min h-touch-target-min flex items-center justify-center rounded-full text-secondary hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-10">
+<!-- Dynamic Stop Header & Route Progress -->
+<section class="px-space-md pt-space-xs pb-space-sm bg-surface-container-low flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center justify-center px-space-xs py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+          Stop #19 of 28
+        </span>
+<span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]">electric_moped</span>
+          On Schedule
+        </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Call Customer" class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">phone</span>
+</button>
+<button aria-label="Message Customer on WhatsApp" class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container hover:bg-tertiary transition-transform active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+<!-- Customer Identity Anchor -->
+<div class="flex items-center justify-between mt-1">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Aarav Sharma</h2>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shrink-0">#SUB-8842</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary truncate">Priority Daily Lunch • Mumbai Central Zone</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-sm text-headline-sm shadow-sm shrink-0">
+        AS
+      </div>
+</div>
+</section>
+<div class="px-space-md flex flex-col gap-space-md mt-space-sm">
+<!-- Customer & Drop Details Bento Card -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<!-- Address Row -->
+<div class="flex items-start gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Drop Address</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">4th Floor (Lift Operational)</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium">Flat 402, Sunshine Residency, Wing B</p>
+<p class="font-body-sm text-body-sm text-secondary">Hiranandani Gardens, Powai, Mumbai 400076</p>
+</div>
+</div>
+<!-- Meal Package Pill Matrix -->
+<div class="bg-surface-container-low rounded-lg p-space-xs flex flex-col gap-1.5">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-secondary">Items to Unload (2 Boxes)</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Bag Slot #B-08</span>
+</div>
+<div class="grid grid-cols-1 gap-1.5">
+<!-- Meal 1 -->
+<div class="flex items-center justify-between bg-surface-container-lowest px-2.5 py-1.5 rounded-lg shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container-lowest flex items-center justify-center shadow-xs shrink-0">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">Shahi Paneer Deluxe Meal</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface">1x Medium</span>
+</div>
+<!-- Meal 2 -->
+<div class="flex items-center justify-between bg-surface-container-lowest px-2.5 py-1.5 rounded-lg shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container-lowest flex items-center justify-center shadow-xs shrink-0">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">Jain Special Thali (No Onion/Garlic)</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface">1x Guest</span>
+</div>
+</div>
+</div>
+<!-- Instruction Note Callout -->
+<div class="flex items-start gap-2 bg-primary-fixed/30 rounded-lg p-2.5 text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">sticky_note_2</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-primary">Customer Gate &amp; Drop Note</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">"Ring bell twice, leave on handle of door 402 if not opened in 2 mins."</p>
+</div>
+</div>
+</article>
+<!-- Verification Step 1: OTP Confirmation -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">1</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Contactless Customer OTP</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-medium">Quick Verify</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Ask Aarav or door attendant for the 3-digit verification code sent via SMS.</p>
+<!-- Digit Boxes UI -->
+<div class="flex flex-col items-center justify-center gap-3 py-1">
+<div class="flex items-center justify-center gap-3 w-full max-w-xs">
+<!-- Digit 1 -->
+<div class="w-14 h-16 rounded-xl bg-surface-container-low shadow-sm flex items-center justify-center">
+<span class="font-financial-counter text-financial-counter text-primary">8</span>
+</div>
+<!-- Digit 2 -->
+<div class="w-14 h-16 rounded-xl bg-surface-container-low shadow-sm flex items-center justify-center">
+<span class="font-financial-counter text-financial-counter text-primary">8</span>
+</div>
+<!-- Digit 3 (Active Focus) -->
+<div class="w-14 h-16 rounded-xl bg-primary-fixed/40 shadow-sm flex items-center justify-center relative">
+<span class="w-0.5 h-7 bg-primary animate-pulse rounded-full"></span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-secondary">Awaiting 3rd digit from customer...</p>
+</div>
+<!-- Bypass Modal Trigger -->
+<div class="flex items-center justify-between pt-2">
+<button class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline active:opacity-80" type="button">
+<span class="material-symbols-outlined text-[16px]">no_meeting_room</span>
+          Customer not at door? Drop at Gate / Handle
+        </button>
+<button class="text-secondary font-label-md text-label-md hover:text-on-surface flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+          Resend SMS
+        </button>
+</div>
+</section>
+<!-- Verification Step 2: Geo-Tagged Proof Photo (Mandatory) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">2</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Geo-Tagged Delivery Photo</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-semibold">Captured</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Clear snap showing the packed tiffins securely placed at apartment entrance 402.</p>
+<!-- Camera Frame with Real-time Watermark Metadata -->
+<div class="relative w-full rounded-xl overflow-hidden bg-inverse-surface shadow-md">
+<img class="w-full h-56 object-cover opacity-90" data-alt="A clean top-angle documentary photograph of an insulated spice-orange tiffin carrier bag and two stainless steel traditional Indian dabba containers placed neatly on a polished marble floor next to modern wooden apartment door numbered 402 with brass doorbell, daylight hallway ambiance, warm natural culinary lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE5caz5BdwcWMfr6FhmJmceU8b6Ms4cATC3RYg_Vgfh2xG-HiuoiZN__6LBfYjo_pRft_qrIJ7RMT2XOUh2Xw2RigRpFOBOkpRkjIwj9nEoZOVz-WtUVMIhCKClrTo0-75AqCmWPJaxynvzVBwPVigemU25662hYm9igSLhExNiyLNaWGVEjBlwR1ERUVpefybjw9m8eafJxlTVfNXzKv1Jy32DNdUpZJ2e4VDhXWKvjUHbs6dswK2pQ"/>
+<!-- Live Camera Badges -->
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span>GPS Locked • High Accuracy (±2m)</span>
+</div>
+<div class="absolute top-2.5 right-2.5">
+<span class="px-2 py-1 rounded-md bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm">
+            AI Door Validated ✓
+          </span>
+</div>
+<!-- Telemetry Watermark Scrim -->
+<div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-inverse-surface/95 via-inverse-surface/80 to-transparent flex flex-col gap-0.5 text-inverse-on-surface">
+<div class="flex items-center gap-1.5 font-label-md text-label-md font-semibold text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Sunshine Residency, Wing B, Apt 402</span>
+</div>
+<div class="flex items-center justify-between text-surface-dim font-body-sm text-body-sm">
+<span>Lat: 19.2458° N, Long: 72.9734° E</span>
+<span>04 Sep 2026 • 12:48 PM</span>
+</div>
+</div>
+</div>
+<!-- Action Button Row -->
+<div class="flex items-center gap-space-xs pt-1">
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-surface-container flex items-center justify-center gap-1.5 text-on-surface hover:bg-surface-container-high transition-transform active:scale-98" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<span class="font-label-md text-label-md">Retake Photo</span>
+</button>
+<button class="py-2.5 px-3 rounded-lg bg-surface-container flex items-center justify-center gap-1 text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span class="font-label-md text-label-md">Preview</span>
+</button>
+</div>
+</section>
+<!-- Verification Step 3: Empty Tiffin Carrier Pickup -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">3</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Empty Steel Box Collection</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-secondary">Daily Eco-Cycle</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Retrieve yesterday's 3-tier stainless steel tiffin container to return to the central kitchen.</p>
+<!-- Checklist Selection Matrix -->
+<div class="flex flex-col gap-2">
+<!-- Selected Option: Box Found -->
+<label class="flex items-start gap-3 p-3 rounded-xl bg-tertiary-fixed/30 cursor-pointer transition-all">
+<input checked="" class="mt-1 w-4 h-4 text-tertiary accent-tertiary focus:ring-0" name="carrier_status" type="radio"/>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface">1 Steel Carrier Received from Customer</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Placed outside door in green return bag. Ready for scanning.</p>
+<!-- Embedded Quick Action for QR Scan -->
+<div class="mt-2 flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-xs hover:bg-surface-container-low active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">qr_code_scanner</span>
+                Scan Lid QR (#TIF-3091)
+              </button>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Scanned ✓</span>
+</div>
+</div>
+</label>
+<!-- Unselected Option: No Box -->
+<label class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input class="mt-1 w-4 h-4 text-primary accent-primary focus:ring-0" name="carrier_status" type="radio"/>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface">No Box Outside</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-secondary">Skip</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Sends an automated WhatsApp gentle reminder for tomorrow's pickup slot.</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Visual Confirmation Summary Card -->
+<div class="bg-surface-container rounded-xl p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Delivery Audit Complete</span>
+<span class="font-body-sm text-body-sm text-secondary">Photo, Geo &amp; Bag Logged</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-primary">Ready to Disembark</span>
+</div>
+<!-- Main Tactical Driver Action Button -->
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full h-14 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-between px-space-md shadow-md active:scale-[0.99] transition-transform" id="confirm-dropoff-btn" type="button">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+<span>Confirm Drop-off</span>
+</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm uppercase tracking-wider bg-on-primary/20 px-2.5 py-1 rounded-full">
+<span>Stop #20 Next</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</button>
+<!-- Direct Assistance Helper Links -->
+<div class="flex items-center justify-between px-2 pt-1 pb-2">
+<button class="font-label-md text-label-md text-error hover:underline flex items-center gap-1 active:opacity-75" type="button">
+<span class="material-symbols-outlined text-[16px]">report_problem</span>
+          Report Issue with Drop
+        </button>
+<button class="font-label-md text-label-md text-secondary hover:text-on-surface flex items-center gap-1 active:opacity-75" type="button">
+<span class="material-symbols-outlined text-[16px]">phone_disabled</span>
+          Customer Unreachable
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interaction: tactile feedback on drop confirmation
+  document.getElementById('confirm-dropoff-btn')?.addEventListener('click', function() {
+    this.classList.add('bg-tertiary');
+    this.innerHTML = `
+      <span class="flex items-center gap-2 w-full justify-center">
+        <span class="material-symbols-outlined text-[24px] animate-spin">refresh</span>
+        <span>Securing Stop & Syncing...</span>
+      </span>
+    `;
+    setTimeout(() => {
+      this.classList.remove('bg-tertiary');
+      this.classList.add('bg-tertiary-container', 'text-on-tertiary-container');
+      this.innerHTML = `
+        <span class="flex items-center gap-2 w-full justify-center">
+          <span class="material-symbols-outlined text-[24px]">check_circle</span>
+          <span>Drop Recorded! Heading to Stop #20</span>
+        </span>
+      `;
+    }, 850);
+  });
+</script></main></body></html>

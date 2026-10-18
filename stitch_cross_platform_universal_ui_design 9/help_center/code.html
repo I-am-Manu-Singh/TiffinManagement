@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>Tiffin Manager</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#f2f4f8", "inverse-on-surface": "#eff1f5", "on-primary-container": "#fffbff", "inverse-primary": "#ffb59f", "on-error-container": "#93000a", "surface-container-high": "#e6e8ec", "primary-container": "#d53e02", "tertiary-fixed": "#6ffbbe", "outline-variant": "#e4beb4", "tertiary-container": "#00855b", "tertiary": "#006947", "surface-container": "#eceef2", "primary": "#ab2f00", "on-error": "#ffffff", "on-secondary-container": "#586377", "on-primary": "#ffffff", "on-background": "#191c1f", "surface-bright": "#f7f9fd", "on-primary-fixed": "#3a0a00", "on-surface": "#191c1f", "on-surface-variant": "#5b4139", "on-tertiary-container": "#f5fff6", "on-secondary": "#ffffff", "error-container": "#ffdad6", "surface-tint": "#af3100", "secondary": "#545f73", "surface": "#f7f9fd", "primary-fixed": "#ffdbd1", "on-tertiary": "#ffffff", "outline": "#8f7067", "background": "#f7f9fd", "error": "#ba1a1a", "secondary-container": "#d5e0f8", "secondary-fixed-dim": "#bcc7de", "on-primary-fixed-variant": "#862300", "inverse-surface": "#2d3134", "surface-container-highest": "#e0e3e6", "on-tertiary-fixed": "#002113", "on-secondary-fixed": "#111c2d", "surface-dim": "#d8dade", "on-tertiary-fixed-variant": "#005236", "surface-container-lowest": "#ffffff", "secondary-fixed": "#d8e3fb", "on-secondary-fixed-variant": "#3c475a", "surface-variant": "#e0e3e6", "tertiary-fixed-dim": "#4edea3", "primary-fixed-dim": "#ffb59f" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.75rem", "space-xl": "1.5rem", "touch-target-min": "2.75rem", "screen-margin-mobile": "1rem", "space-md": "1rem", "space-lg": "1.25rem", "space-2xs": "0.25rem", "card-padding-mobile": "0.875rem", "space-2xl": "2rem", "screen-margin-tablet": "1.5rem", "space-xs": "0.5rem" }, fontFamily: { "label-sm": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "financial-counter": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, fontSize: { "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.3px", fontWeight: "500" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.2px", fontWeight: "600" }], "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "headline-lg": ["28px", { lineHeight: "34px", fontWeight: "700" }], "headline-md": ["20px", { lineHeight: "26px", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "financial-counter": ["22px", { lineHeight: "26px", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "18px", letterSpacing: "0.1px", fontWeight: "600" }], "headline-lg-mobile": ["24px", { lineHeight: "30px", fontWeight: "700" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-screen-margin-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-2xs min-w-0 flex-1"><button aria-label="Go back" class="w-touch-target-min h-touch-target-min -ml-2 flex items-center justify-center text-on-surface hover:text-primary rounded-full transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined">arrow_back_ios_new</span></button><img alt="Brand logo. - Primary color: #f95721
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-7 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VzbMoL1mwXaVT3Tlg8gh43JelIjaN2FrdCRjj5cOMnk73Y23HHCv4TcITNCtQ650Rxo2El1I-D8QGz0j0VKea1ZMunWSiSo9LNxF2r_o6RrmmnVhkcqbCouIcRqtuEtXUxa_Li6SCYjYFMW8B9WJTdBcTXZ96A6ow7-6hSNcXvn6zJZ6-kIBQQHiqmthsIcC7hcpJ7Gm1n2v-5Ue29vO_3nRrh3mQDjXIYsYEt_nRd4PJsSQJRlepP62U"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Help &amp; Support</h1></div><div class="flex items-center gap-space-2xs flex-shrink-0"><button aria-label="Notifications" class="w-touch-target-min h-touch-target-min flex items-center justify-center text-secondary hover:text-primary relative rounded-full transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary ring-2 ring-surface"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover ml-space-2xs" src="https://lh3.googleusercontent.com/aida/AEtjO1UzzMtRchgJGxJeoMXFA4JCNEADa6tG9Khb9hHmUEOLjVKjbF_teuUEcrI0euDunxXAqkVB-FiRaX-9pL7anpGuMw93Zv8o8jwERUTlafiJwWx38x-vcu2WGusgQASg7sA9eCztNswFVd7NXfBCuockehL46LdRQRvIo4wNDCA7TOfX86f40k_uzNZX3TKxkG7fu6Jh33PG22xGOqjsaroDgfpqqIhjFgSUDCwFL3dk8o2PMZd-MgyShAVG"/></div></div></header><main class="flex flex-col relative w-full pt-14 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Search & Hero Prompt Container -->
+<div class="px-screen-margin-mobile pt-space-xs pb-space-sm">
+<!-- Subtitle & Language Chip Row -->
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<p class="font-body-sm text-body-sm text-secondary truncate">
+        Guides, setup tutorials &amp; live support
+      </p>
+<!-- Language Selector Capsule -->
+<button aria-label="Switch Language" class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-full transition-colors flex-shrink-0" id="lang-btn" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">translate</span>
+<span class="font-label-sm text-label-sm font-semibold">English (IN)</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">expand_more</span>
+</button>
+</div>
+<!-- Search Box -->
+<div class="relative flex items-center bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all focus-within:shadow-md">
+<div class="pl-3.5 pr-2 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full py-3 bg-transparent font-body-md text-body-md text-on-surface placeholder:text-secondary/70 focus:outline-none" id="faq-search" placeholder="Search articles, features, questions..." type="text"/>
+<button aria-label="Clear search" class="hidden pr-2.5 text-secondary hover:text-on-surface" id="search-clear-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-4 py-2.5 m-1 rounded-lg flex items-center justify-center transition-transform active:scale-95" type="button">
+        Search
+      </button>
+</div>
+</div>
+<!-- Real-time Quick Assistance Pills / Horizontal Scroll -->
+<div class="px-screen-margin-mobile mb-space-md">
+<div class="flex gap-space-xs overflow-x-auto pb-1 no-scrollbar">
+<!-- Live Chat Card -->
+<div class="flex-shrink-0 w-64 bg-surface-container-lowest rounded-xl p-3 shadow-sm flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">forum</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<h4 class="font-label-md text-label-md text-on-surface truncate">Live Operator Chat</h4>
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse flex-shrink-0"></span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary truncate">Avg reply &lt; 5 mins</p>
+<button class="mt-1.5 inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold hover:underline" type="button">
+            Start chat
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- WhatsApp Card -->
+<div class="flex-shrink-0 w-64 bg-surface-container-lowest rounded-xl p-3 shadow-sm flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<h4 class="font-label-md text-label-md text-on-surface truncate">WhatsApp Direct</h4>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[10px] px-1.5 py-0.5 rounded-full font-bold uppercase">Fast</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary truncate">+91 76548 43346</p>
+<a class="mt-1.5 inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm font-semibold hover:underline" href="https://wa.me/917654843346">
+            Open WhatsApp
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Quick Setup Video -->
+<div class="flex-shrink-0 w-64 bg-surface-container-lowest rounded-xl p-3 shadow-sm flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+</div>
+<div class="min-w-0 flex-1">
+<h4 class="font-label-md text-label-md text-on-surface truncate">5-Min Video Setup</h4>
+<p class="font-body-sm text-body-sm text-secondary truncate">Kitchen onboarding walkthru</p>
+<button class="mt-1.5 inline-flex items-center gap-1 text-on-surface font-label-sm text-label-sm font-semibold hover:text-primary" type="button">
+            Watch tutorial
+            <span class="material-symbols-outlined text-[14px]">smart_display</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Explore Topics Section -->
+<div class="px-screen-margin-mobile">
+<div class="flex items-center justify-between mb-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Explore Help Topics</h2>
+<p class="font-body-sm text-body-sm text-secondary">Browse guides by kitchen functional area</p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded-full">10 Modules</span>
+</div>
+<!-- Topics Grid (Compact 2-col cards) -->
+<div class="grid grid-cols-2 gap-2.5 mb-space-lg" id="topics-grid">
+<!-- Card 1: Getting Started -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col justify-between hover:bg-surface-bright transition-all active:scale-[0.98] cursor-pointer" role="button" tabindex="0">
+<div class="flex items-start justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">5 Articles</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-md text-on-surface font-semibold line-clamp-1">Getting Started</h3>
+<p class="font-body-sm text-[11px] text-secondary line-clamp-2 mt-0.5">Account setup, chef profile &amp; KYC</p>
+</div>
+</div>
+<!-- Card 2: Menu & Meal Plan -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col justify-between hover:bg-surface-bright transition-all active:scale-[0.98] cursor-pointer" role="button" tabindex="0">
+<div class="flex items-start justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[18px]">restaurant_menu</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">4 Articles</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-md text-on-surface font-semibold line-clamp-1">Menu &amp; Meal Plans</h3>
+<p class="font-body-sm text-[11px] text-secondary line-clamp-2 mt-0.5">Cutoff times, dietary chips &amp; items</p>
+</div>
+</div>
+<!-- Card 3: Customer & Subscriptions -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col justify-between hover:bg-surface-bright transition-all active:scale-[0.98] cursor-pointer" role="button" tabindex="0">
+<div class="flex items-start justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[18px]">group</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">5 Articles</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-md text-on-surface font-semibold line-clamp-1">Subscriptions</h3>
+<p class="font-body-sm text-[11px] text-secondary line-clamp-2 mt-0.5">Multi-plan enrollments, route allocation</p>
+</div>
+</div>
+<!-- Card 4: Wallet & Billing -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col justify-between hover:bg-surface-bright transition-all active:scale-[0.98] cursor-pointer" role="button" tabindex="0">
+<div class="flex items-start justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">4 Articles</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-md text-on-surface font-semibold line-clamp-1">Wallet &amp; Billing</h3>
+<p class="font-body-sm text-[11px] text-secondary line-clamp-2 mt-0.5">Prepaid ledger engine &amp; top-ups</p>
+</div>
+</div>
+<!-- Card 5: Hold Rules & Pausing -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col justify-between hover:bg-surface-bright transition-all active:scale-[0.98] cursor-pointer" role="button" tabindex="0">
+<div class="flex items-start justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">4 Articles</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-md text-on-surface font-semibold line-clamp-1">Hold &amp; Pauses</h3>
+<p class="font-body-sm text-[11px] text-secondary line-clamp-2 mt-0.5">Cutoff deadlines &amp; vacation limits</p>
+</div>
+</div>
+<!-- Card 6: Kitchen Operations & KDS -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col justify-between hover:bg-surface-bright transition-all active:scale-[0.98] cursor-pointer" role="button" tabindex="0">
+<div class="flex items-start justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">soup_kitchen</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">4 Articles</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-md text-on-surface font-semibold line-clamp-1">Kitchen Console</h3>
+<p class="font-body-sm text-[11px] text-secondary line-clamp-2 mt-0.5">Daily cooking matrix &amp; thermal labels</p>
+</div>
+</div>
+<!-- Card 7: Delivery & Driver App -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col justify-between hover:bg-surface-bright transition-all active:scale-[0.98] cursor-pointer" role="button" tabindex="0">
+<div class="flex items-start justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">3 Articles</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-md text-on-surface font-semibold line-clamp-1">Delivery Routes</h3>
+<p class="font-body-sm text-[11px] text-secondary line-clamp-2 mt-0.5">Driver sequencing &amp; handoff proof</p>
+</div>
+</div>
+<!-- Card 8: Expenses & Analytics -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col justify-between hover:bg-surface-bright transition-all active:scale-[0.98] cursor-pointer" role="button" tabindex="0">
+<div class="flex items-start justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">4 Articles</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-md text-on-surface font-semibold line-clamp-1">Profit Analytics</h3>
+<p class="font-body-sm text-[11px] text-secondary line-clamp-2 mt-0.5">Ingredient raw costs vs daily gross</p>
+</div>
+</div>
+<!-- Card 9: Vendor Portal Customizer -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col justify-between hover:bg-surface-bright transition-all active:scale-[0.98] cursor-pointer" role="button" tabindex="0">
+<div class="flex items-start justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">palette</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">7 Articles</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-md text-on-surface font-semibold line-clamp-1">Portal Branding</h3>
+<p class="font-body-sm text-[11px] text-secondary line-clamp-2 mt-0.5">Custom subdomains &amp; storefront</p>
+</div>
+</div>
+<!-- Card 10: Customer Portal Guide -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col justify-between hover:bg-surface-bright transition-all active:scale-[0.98] cursor-pointer" role="button" tabindex="0">
+<div class="flex items-start justify-between mb-2">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[18px]">person_check</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">7 Articles</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-md text-on-surface font-semibold line-clamp-1">Customer Guide</h3>
+<p class="font-body-sm text-[11px] text-secondary line-clamp-2 mt-0.5">What your subscribers see &amp; do</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Frequently Asked Questions Accordion -->
+<div class="px-screen-margin-mobile mb-space-lg">
+<div class="flex items-center justify-between mb-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Frequently Asked Questions</h2>
+<p class="font-body-sm text-body-sm text-secondary">Step-by-step solutions to common operational tasks</p>
+</div>
+</div>
+<div class="space-y-2.5">
+<!-- FAQ 1 -->
+<article class="faq-item bg-surface-container-lowest rounded-xl p-3.5 shadow-sm transition-all">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="font-label-sm text-[11px] text-primary font-semibold uppercase tracking-wider">Getting Started &amp; Account</span>
+<span class="material-symbols-outlined text-[18px] text-secondary faq-icon transition-transform">expand_more</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold cursor-pointer select-none faq-trigger">
+          How to register and activate your Tiffin Center vendor account?
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1 line-clamp-2">
+          Step-by-step registration flow to create a vendor owner account, upload FSSAI compliance documents, and access your daily operational console.
+        </p>
+<div class="faq-content hidden mt-3 pt-2 text-on-surface">
+<p class="font-body-sm text-body-sm mb-2 text-secondary">
+            1. Enter your mobile number to trigger instant SMS OTP verification.<br/>
+            2. Fill kitchen trade name and kitchen dispatch hub pincode.<br/>
+            3. Upload your 14-digit FSSAI food license number for auto-validation.<br/>
+            4. Add bank account details for direct prepaid subscription settlements.
+          </p>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline" href="#">
+            Read full walkthrough
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FAQ 2 -->
+<article class="faq-item bg-surface-container-lowest rounded-xl p-3.5 shadow-sm transition-all">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="font-label-sm text-[11px] text-primary font-semibold uppercase tracking-wider">Menu &amp; Meal Plan Setup</span>
+<span class="material-symbols-outlined text-[18px] text-secondary faq-icon transition-transform">expand_more</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold cursor-pointer select-none faq-trigger">
+          Creating meal categories with delivery time windows and cutoff times
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1 line-clamp-2">
+          Configure categories (Breakfast, Lunch, Dinner) with precise delivery start/end slots and morning preparation cutoffs.
+        </p>
+<div class="faq-content hidden mt-3 pt-2 text-on-surface">
+<p class="font-body-sm text-body-sm mb-2 text-secondary">
+            Navigate to <strong>Menu Settings &gt; Delivery Slots</strong>. Specify your dispatch windows (e.g., Lunch: 12:00 PM - 1:30 PM). Set the customer change cutoff time (e.g., 9:00 AM) so orders lock automatically before ingredient prep begins.
+          </p>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline" href="#">
+            Read full walkthrough
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FAQ 3 -->
+<article class="faq-item bg-surface-container-lowest rounded-xl p-3.5 shadow-sm transition-all">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="font-label-sm text-[11px] text-primary font-semibold uppercase tracking-wider">Customer &amp; Subscriptions</span>
+<span class="material-symbols-outlined text-[18px] text-secondary faq-icon transition-transform">expand_more</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold cursor-pointer select-none faq-trigger">
+          Adding a new customer and creating their first active subscription
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1 line-clamp-2">
+          Create customer subscriptions with inline contact onboarding, dietary tags, recurring weekly schedules, and initial wallet deposits.
+        </p>
+<div class="faq-content hidden mt-3 pt-2 text-on-surface">
+<p class="font-body-sm text-body-sm mb-2 text-secondary">
+            Use the <strong>+ New Customer</strong> quick button from Subscriptions screen. Select veg/non-veg dietary tags, pick Mon-Fri or Mon-Sat cycle, and enter their starting prepaid balance to automatically issue daily meal tokens.
+          </p>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline" href="#">
+            Read full walkthrough
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FAQ 4 -->
+<article class="faq-item bg-surface-container-lowest rounded-xl p-3.5 shadow-sm transition-all">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="font-label-sm text-[11px] text-primary font-semibold uppercase tracking-wider">Wallet &amp; Billing</span>
+<span class="material-symbols-outlined text-[18px] text-secondary faq-icon transition-transform">expand_more</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold cursor-pointer select-none faq-trigger">
+          How the prepaid customer wallet billing engine works
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1 line-clamp-2">
+          Automated wallet deductions at category cutoff times with tamper-proof audit ledgers and negative balance alerts.
+        </p>
+<div class="faq-content hidden mt-3 pt-2 text-on-surface">
+<p class="font-body-sm text-body-sm mb-2 text-secondary">
+            The billing engine processes locks daily at the cutoff hour. Meals are deducted from the subscriber's balance. If a wallet drops below threshold, automated WhatsApp balance reminders are triggered.
+          </p>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline" href="#">
+            Read full walkthrough
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FAQ 5 -->
+<article class="faq-item bg-surface-container-lowest rounded-xl p-3.5 shadow-sm transition-all">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="font-label-sm text-[11px] text-primary font-semibold uppercase tracking-wider">Hold Rules &amp; Pausing</span>
+<span class="material-symbols-outlined text-[18px] text-secondary faq-icon transition-transform">expand_more</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold cursor-pointer select-none faq-trigger">
+          How customers pause tiffin deliveries from their own portal
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1 line-clamp-2">
+          Subscribers can self-service vacation holds without calling the kitchen, preserving meal credits automatically.
+        </p>
+<div class="faq-content hidden mt-3 pt-2 text-on-surface">
+<p class="font-body-sm text-body-sm mb-2 text-secondary">
+            Subscribers log in with OTP, select <em>Pause Meals</em>, pick a date range, and confirm before cutoff. The Kitchen console immediately reduces portion prep counts for those dates.
+          </p>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline" href="#">
+            Read full walkthrough
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- FAQ 6 -->
+<article class="faq-item bg-surface-container-lowest rounded-xl p-3.5 shadow-sm transition-all">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="font-label-sm text-[11px] text-primary font-semibold uppercase tracking-wider">Kitchen Operations</span>
+<span class="material-symbols-outlined text-[18px] text-secondary faq-icon transition-transform">expand_more</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold cursor-pointer select-none faq-trigger">
+          Understanding the Daily Cooking Plan: total dish quantity matrix
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1 line-clamp-2">
+          View aggregated preparation quantities for rotis, sabzis, dal liters, and dietary adjustments in one consolidated view.
+        </p>
+<div class="faq-content hidden mt-3 pt-2 text-on-surface">
+<p class="font-body-sm text-body-sm mb-2 text-secondary">
+            Open <strong>Kitchen Console</strong> and tap the target meal slot. The aggregator computes exact roti counts, rice portions, and special requests (e.g. Jain / Low-spice) ready for the head chef.
+          </p>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline" href="#">
+            Read full walkthrough
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+<!-- Bottom Operator Assistance Banner -->
+<div class="px-screen-margin-mobile pb-space-xl">
+<div class="bg-gradient-to-br from-surface-container-high via-surface-container-lowest to-surface-container-low rounded-xl p-4 shadow-sm flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[24px]">support_agent</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Still stuck with an order or route?</h3>
+<p class="font-body-sm text-body-sm text-secondary max-w-xs mt-1 mb-3.5">
+        Our kitchen ops engineering team is available 6:00 AM – 10:00 PM IST daily to assist dispatchers and chefs.
+      </p>
+<div class="flex items-center gap-2 w-full max-w-xs">
+<button class="flex-1 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-2.5 px-4 rounded-lg flex items-center justify-center gap-1.5 transition-transform active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+          Call Support
+        </button>
+<button aria-label="Send email inquiry" class="bg-surface-container-lowest hover:bg-surface-bright text-on-surface font-label-md text-label-md py-2.5 px-3.5 rounded-lg flex items-center justify-center transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive accordion and search filter for seamless UX
+  (function() {
+    // Accordion functionality
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+
+      const toggle = () => {
+        const isHidden = content.classList.contains('hidden');
+        if (isHidden) {
+          content.classList.remove('hidden');
+          icon.textContent = 'expand_less';
+          item.classList.add('shadow-md');
+        } else {
+          content.classList.add('hidden');
+          icon.textContent = 'expand_more';
+          item.classList.remove('shadow-md');
+        }
+      };
+
+      trigger.addEventListener('click', toggle);
+      icon.addEventListener('click', toggle);
+    });
+
+    // Simple search filter for FAQs & topics
+    const searchInput = document.getElementById('faq-search');
+    const clearBtn = document.getElementById('search-clear-btn');
+
+    if (searchInput && clearBtn) {
+      searchInput.addEventListener('input', (e) => {
+        const val = e.target.value.toLowerCase().trim();
+        if (val.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+
+        // Live filter FAQ items
+        items.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          if (text.includes(val)) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearBtn.classList.add('hidden');
+        items.forEach(item => item.classList.remove('hidden'));
+        searchInput.focus();
+      });
+    }
+
+    // Language switcher toggle micro-toast
+    const langBtn = document.getElementById('lang-btn');
+    if (langBtn) {
+      const langs = ['English (IN)', 'हिंदी (Hindi)', 'मराठी (Marathi)', 'ગુજરાતી (Gujarati)'];
+      let idx = 0;
+      langBtn.addEventListener('click', () => {
+        idx = (idx + 1) % langs.length;
+        const label = langBtn.querySelector('span:nth-child(2)');
+        if (label) label.textContent = langs[idx];
+      });
+    }
+  })();
+</script></main></body></html>

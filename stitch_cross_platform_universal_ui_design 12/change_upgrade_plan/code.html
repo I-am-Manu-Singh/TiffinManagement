@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'on-background': '#191c1f', 'on-primary': '#ffffff', 'on-error': '#ffffff', 'on-tertiary-fixed-variant': '#005236', 'surface-dim': '#d8dade', 'tertiary-fixed-dim': '#4edea3', 'on-primary-fixed-variant': '#862300', 'on-secondary-fixed-variant': '#3c475a', 'surface': '#f7f9fd', 'secondary-fixed-dim': '#bcc7de', 'primary-fixed-dim': '#ffb59f', 'primary': '#ab2f00', 'outline-variant': '#e4beb4', 'on-secondary-container': '#586377', 'surface-container-lowest': '#ffffff', 'surface-container-low': '#f2f4f8', 'on-tertiary-fixed': '#002113', 'tertiary': '#006947', 'primary-container': '#d53e02', 'surface-container': '#eceef2', 'surface-container-high': '#e6e8ec', 'on-surface': '#191c1f', 'on-secondary': '#ffffff', 'outline': '#8f7067', 'background': '#f7f9fd', 'tertiary-fixed': '#6ffbbe', 'surface-bright': '#f7f9fd', 'primary-fixed': '#ffdbd1', 'inverse-surface': '#2d3134', 'on-tertiary-container': '#f5fff6', 'on-primary-container': '#fffbff', 'secondary-container': '#d5e0f8', 'surface-container-highest': '#e0e3e6', 'surface-tint': '#af3100', 'tertiary-container': '#00855b', 'on-primary-fixed': '#3a0a00', 'on-error-container': '#93000a', 'error-container': '#ffdad6', 'on-tertiary': '#ffffff', 'inverse-on-surface': '#eff1f5', 'secondary-fixed': '#d8e3fb', 'inverse-primary': '#ffb59f', 'on-secondary-fixed': '#111c2d', 'on-surface-variant': '#5b4139', 'error': '#ba1a1a', 'surface-variant': '#e0e3e6', 'secondary': '#545f73' }, borderRadius: { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, spacing: { 'space-xl': '1.5rem', 'space-2xs': '0.25rem', 'card-padding-mobile': '0.875rem', 'screen-margin-tablet': '1.5rem', 'space-md': '1rem', 'screen-margin-mobile': '1rem', 'space-lg': '1.25rem', 'space-xs': '0.5rem', 'touch-target-min': '2.75rem', 'space-sm': '0.75rem', 'space-2xl': '2rem' }, fontFamily: { 'body-lg': ['Inter'], 'headline-lg-mobile': ['Plus Jakarta Sans'], 'label-lg': ['Inter'], 'label-sm': ['Inter'], 'headline-md': ['Plus Jakarta Sans'], 'headline-lg': ['Plus Jakarta Sans'], 'label-md': ['Inter'], 'financial-counter': ['Plus Jakarta Sans'], 'body-md': ['Inter'], 'headline-sm': ['Plus Jakarta Sans'], 'body-sm': ['Inter'] }, fontSize: { 'body-lg': ['16px', { lineHeight: '24px', fontWeight: '400' }], 'headline-lg-mobile': ['24px', { lineHeight: '30px', fontWeight: '700' }], 'label-lg': ['14px', { lineHeight: '18px', letterSpacing: '0.1px', fontWeight: '600' }], 'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.3px', fontWeight: '500' }], 'headline-md': ['20px', { lineHeight: '26px', fontWeight: '600' }], 'headline-lg': ['28px', { lineHeight: '34px', fontWeight: '700' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }], 'financial-counter': ['22px', { lineHeight: '26px', fontWeight: '700' }], 'body-md': ['14px', { lineHeight: '20px', fontWeight: '400' }], 'headline-sm': ['18px', { lineHeight: '24px', fontWeight: '600' }], 'body-sm': ['13px', { lineHeight: '18px', fontWeight: '400' }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-screen-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Brand logo. - Primary color: #f95721
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VzbMoL1mwXaVT3Tlg8gh43JelIjaN2FrdCRjj5cOMnk73Y23HHCv4TcITNCtQ650Rxo2El1I-D8QGz0j0VKea1ZMunWSiSo9LNxF2r_o6RrmmnVhkcqbCouIcRqtuEtXUxa_Li6SCYjYFMW8B9WJTdBcTXZ96A6ow7-6hSNcXvn6zJZ6-kIBQQHiqmthsIcC7hcpJ7Gm1n2v-5Ue29vO_3nRrh3mQDjXIYsYEt_nRd4PJsSQJRlepP62U"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-2xs"><span class="font-headline-sm text-headline-sm text-on-surface truncate">Profile</span><span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-tertiary mr-1"></span>Active</span></div><span class="font-label-sm text-label-sm text-secondary truncate">Tiffin Manager • Daily Mess</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Notifications" class="w-touch-target-min h-touch-target-min flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Context Navigation Row (Screen Level sub-header) -->
+<section class="px-screen-margin-mobile pt-space-xs pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Go back" class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Change / Upgrade Plan</span>
+<span class="font-label-sm text-label-sm text-secondary">Tiffin Subscription #TF-8942</span>
+</div>
+</div>
+<button class="inline-flex items-center gap-1 px-space-xs py-1 rounded-full bg-surface-container text-secondary hover:text-primary font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">help_outline</span>
+<span>Plan Help</span>
+</button>
+</section>
+<div class="px-screen-margin-mobile flex flex-col gap-space-lg pb-6">
+<!-- Current Plan Summary Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs mb-0.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Current Plan</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mr-1.5 animate-pulse"></span>
+              Active
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface truncate">Standard 2-Meal Pack</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lunch + Dinner • Mon – Sat (Sunday Optional)</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[26px]">bento</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low rounded-xl px-space-sm py-2">
+<div class="flex items-baseline gap-1">
+<span class="font-financial-counter text-financial-counter text-on-surface">₹3,900</span>
+<span class="font-label-sm text-label-sm text-secondary">/ month</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">autorenew</span>
+<span>Renews 01 Oct 2026</span>
+</div>
+</div>
+</div>
+<!-- Upgrade & Change Options Section -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Available Meal Plans</h3>
+<p class="font-body-sm text-body-sm text-secondary">Select a plan that best fits your daily hunger and routine</p>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-1 rounded-md bg-surface-container-high text-on-secondary-container">4 Options</span>
+</div>
+<!-- Plan Cards Stack -->
+<div class="flex flex-col gap-space-sm" id="plan-selector-container">
+<!-- Option 1: Executive 3-Meal Thali (SELECTED BY DEFAULT) -->
+<label class="cursor-pointer plan-card relative flex flex-col p-space-md rounded-2xl bg-surface-container-lowest shadow-sm transition-all duration-200" for="plan-executive">
+<div class="absolute -top-3 left-4 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[13px]">local_fire_department</span>
+<span>Most Popular Upgrade</span>
+</div>
+<div class="flex items-start justify-between gap-space-sm pt-1">
+<div class="flex items-start gap-space-xs min-w-0">
+<input checked="" class="mt-1 h-5 w-5 accent-primary text-primary focus:ring-primary" id="plan-executive" name="meal_plan" type="radio" value="executive"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Executive 3-Meal Thali</span>
+<div class="w-3.5 h-3.5 rounded-[3px] bg-surface-container flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold">Breakfast + Lunch + Dinner</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-financial-counter text-financial-counter text-on-surface">₹5,200</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">+₹1,300 difference</span>
+</div>
+</div>
+<!-- Feature tags -->
+<div class="mt-space-sm flex flex-col gap-1.5 bg-surface-container-low/70 p-space-xs rounded-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[17px]">bakery_dining</span>
+<span class="font-body-sm text-body-sm text-on-surface">Added hot breakfast (Poha, Idli-Vada, stuffed Parathas)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[17px]">rocket_launch</span>
+<span class="font-body-sm text-body-sm text-on-surface">Priority express route packing &amp; dispatch</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[17px]">confirmation_number</span>
+<span class="font-body-sm text-body-sm text-on-surface">2 complimentary guest meal vouchers every month</span>
+</div>
+</div>
+<!-- Visual preview banner -->
+<div class="mt-space-xs flex items-center gap-2 pt-1">
+<div class="w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Traditional Indian stainless steel tiffin set with steaming poha, yellow dal, fresh rotis and mint chutney on clean slate background with warm light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEdwQO7ky-WrDoISlkggymhaXZYaUMP6IeI2s9BRXVdW6R_8a9DT38YciTYqN3UF9j6ByT3xtd0ufUPU6JswxLRe69xHGZNtw7Hf7ABkd0ub89t7Ed_74bzHgapL3z26dYWjB3lPfepe8009Y2xcLBXVZ3DFYemP8CCCX3I-Aeap3C7Au6p9Fpr-l_A2E7RPvzeC0IqBrBG2At042SmLhzsai3vTI5eMbehvbraC9lu7tDK9YcZkLnXw"/>
+</div>
+<span class="font-label-sm text-label-sm text-secondary truncate">Includes 4-tier steel carriers &amp; thermal insulated jacket</span>
+</div>
+</label>
+<!-- Option 2: Healthy Diet / High-Protein Plan -->
+<label class="cursor-pointer plan-card relative flex flex-col p-space-md rounded-2xl bg-surface-container-lowest shadow-sm transition-all duration-200" for="plan-protein">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-xs min-w-0">
+<input class="mt-1 h-5 w-5 accent-primary text-primary focus:ring-primary" id="plan-protein" name="meal_plan" type="radio" value="protein"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Healthy Diet &amp; Protein</span>
+<div class="w-3.5 h-3.5 rounded-[3px] bg-surface-container flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+</div>
+<span class="font-label-md text-label-md text-tertiary font-semibold">Macro-Tracked Fitness Plan</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-financial-counter text-financial-counter text-on-surface">₹4,800</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">+₹900 difference</span>
+</div>
+</div>
+<div class="mt-space-sm flex flex-col gap-1.5 bg-surface-container-low/70 p-space-xs rounded-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[17px]">nutrition</span>
+<span class="font-body-sm text-body-sm text-on-surface">Paneer / organic tofu, sprouts bowl &amp; roasted seed salads daily</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[17px]">grain</span>
+<span class="font-body-sm text-body-sm text-on-surface">Low GI multigrain rotis (Ragi &amp; Jowar blend), zero refined oil</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[17px]">monitoring</span>
+<span class="font-body-sm text-body-sm text-on-surface">QR code on lid for instant MyFitnessPal calorie logging</span>
+</div>
+</div>
+<div class="mt-space-xs flex items-center gap-2 pt-1">
+<div class="w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Vibrant healthy high protein meal bowl with grilled cottage cheese, seasoned sprouts, cucumber ribbons and roasted seeds in a modern eco bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR9-q2KZ72ubxOolucltyEmu4O0TdWYvYDouSqmTJVUujOLknb7W9sE_YHIqmTiiAgcXMqa2YEUhQY1sLGBqzSRT6bPwHZ70vTu08JesfwV-EeaolS5u2jKSLsvN4diLNwy5g2rEsPmDU5UqlOqcS3zU8S6_LHXrjKN-7oIVQhpZsym2x-NaXNZsbumbVS25S4yadn85PXFELBKPQxwzbbPEGXLy4VRtbvMHo6eKklTBHUiFWtPL990A"/>
+</div>
+<span class="font-label-sm text-label-sm text-secondary truncate">Avg. 38g protein and &lt;550 kcal per serving</span>
+</div>
+</label>
+<!-- Option 3: Lunch-Only Office Box -->
+<label class="cursor-pointer plan-card relative flex flex-col p-space-md rounded-2xl bg-surface-container-lowest shadow-sm transition-all duration-200" for="plan-lunch">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-xs min-w-0">
+<input class="mt-1 h-5 w-5 accent-primary text-primary focus:ring-primary" id="plan-lunch" name="meal_plan" type="radio" value="lunch_only"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Lunch-Only Office Box</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Single Midday Delivery</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-financial-counter text-financial-counter text-on-surface">₹2,200</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">-₹1,700 savings</span>
+</div>
+</div>
+<p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">Single dispatch to your work desk between 12:30 PM - 01:15 PM in leakproof cutlery-ready bento packaging. Remaining balance credited to wallet.</p>
+</label>
+<!-- Option 4: Dinner-Only Light Pack -->
+<label class="cursor-pointer plan-card relative flex flex-col p-space-md rounded-2xl bg-surface-container-lowest shadow-sm transition-all duration-200" for="plan-dinner">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-xs min-w-0">
+<input class="mt-1 h-5 w-5 accent-primary text-primary focus:ring-primary" id="plan-dinner" name="meal_plan" type="radio" value="dinner_only"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Dinner-Only Light Pack</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">Homely Evening Meal</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-financial-counter text-financial-counter text-on-surface">₹2,100</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">-₹1,800 savings</span>
+</div>
+</div>
+<p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">Light, easy-to-digest dinner delivered right to your apartment doorstep between 07:30 PM - 08:30 PM.</p>
+</label>
+</div>
+</div>
+<!-- Transition Configuration -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Transition Configuration</h3>
+</div>
+<!-- Effective Timing Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">When should this plan start?</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="transition-toggle px-3 py-2.5 rounded-xl bg-surface-container text-left flex flex-col transition-colors" id="toggle-next-cycle" type="button">
+<span class="font-label-md text-label-md text-on-surface">Next Billing Cycle</span>
+<span class="font-label-sm text-label-sm text-secondary">01 Oct 2026</span>
+</button>
+<button class="transition-toggle px-3 py-2.5 rounded-xl bg-primary-container text-left flex flex-col transition-colors shadow-sm" id="toggle-immediate" type="button">
+<span class="font-label-md text-label-md text-on-primary-container font-semibold">Immediate Switch</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">Prorated today</span>
+</button>
+</div>
+</div>
+<!-- Prorated Calculation Box -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Remaining cycle duration</span>
+<span class="font-label-md text-label-md text-on-surface">10 Days remaining</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Prorated upgrade cost</span>
+<span class="font-financial-counter text-[16px] leading-tight text-on-surface">₹433.00</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+            Available Wallet balance: ₹1,240.00
+          </span>
+<span class="font-label-sm text-label-sm text-secondary">No card needed</span>
+</div>
+</div>
+<!-- Delivery Address Confirmation -->
+<div class="flex items-start justify-between p-space-xs rounded-xl bg-surface-container-low gap-space-xs">
+<div class="flex items-start gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">pin_drop</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary">Delivery Location</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Sunshine Gate 2, Door 402</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bell ringing instructions active</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold shrink-0 hover:bg-primary-fixed" type="button">
+          Change
+        </button>
+</div>
+</div>
+<!-- Assurance Note & Help link -->
+<div class="flex items-center gap-space-xs px-1 text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-body-sm text-body-sm">You can pause individual meals or switch back anytime with zero cancellation fee.</span>
+</div>
+</div>
+<!-- Sticky Bottom Confirmation CTA Deck -->
+<div class="sticky bottom-0 inset-x-0 bg-surface/95 backdrop-blur-md px-screen-margin-mobile pt-space-xs pb-space-sm shadow-[0_-4px_16px_rgba(0,0,0,0.06)] flex flex-col gap-1.5 z-40">
+<div class="flex items-center justify-between px-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Pay Prorated Difference</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface font-bold" id="cta-amount-display">₹433.00</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">(deducted from wallet)</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+        Next cutoff: 8:00 PM
+      </span>
+</div>
+<button class="w-full h-touch-target-min bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-[16px] rounded-xl font-bold flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-all" id="confirm-plan-btn" type="button">
+<span>Confirm Plan Upgrade (₹433)</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<p class="font-label-sm text-label-sm text-center text-secondary">
+      Changes take effect from tomorrow's morning kitchen batch.
+    </p>
+</div>
+</div>
+<script>
+  (function() {
+    const radios = document.querySelectorAll('input[name="meal_plan"]');
+    const ctaBtn = document.getElementById('confirm-plan-btn');
+    const ctaAmount = document.getElementById('cta-amount-display');
+    const toggleNext = document.getElementById('toggle-next-cycle');
+    const toggleImmediate = document.getElementById('toggle-immediate');
+    let isImmediate = true;
+
+    const planPrices = {
+      executive: { diff: 433, fullDiff: 1300, label: 'Upgrade' },
+      protein: { diff: 300, fullDiff: 900, label: 'Upgrade' },
+      lunch_only: { diff: -566, fullDiff: -1700, label: 'Downgrade' },
+      dinner_only: { diff: -600, fullDiff: -1800, label: 'Downgrade' }
+    };
+
+    function updateCTA() {
+      const selected = document.querySelector('input[name="meal_plan"]:checked')?.value || 'executive';
+      const plan = planPrices[selected];
+      const amount = isImmediate ? plan.diff : 0;
+
+      if (amount > 0) {
+        ctaAmount.textContent = '₹' + amount + '.00';
+        ctaBtn.innerHTML = '<span>Confirm Plan Upgrade (₹' + amount + ')</span><span class="material-symbols-outlined text-[20px]">arrow_forward</span>';
+      } else if (amount < 0) {
+        const positiveVal = Math.abs(amount);
+        ctaAmount.textContent = '₹0.00 (+₹' + positiveVal + ' to wallet)';
+        ctaBtn.innerHTML = '<span>Switch Plan & Credit ₹' + positiveVal + '</span><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>';
+      } else {
+        ctaAmount.textContent = '₹0.00 (Due 01 Oct)';
+        ctaBtn.innerHTML = '<span>Schedule Plan Change</span><span class="material-symbols-outlined text-[20px]">calendar_today</span>';
+      }
+    }
+
+    radios.forEach(radio => {
+      radio.addEventListener('change', updateCTA);
+    });
+
+    toggleNext?.addEventListener('click', function() {
+      isImmediate = false;
+      toggleNext.className = 'transition-toggle px-3 py-2.5 rounded-xl bg-primary-container text-on-primary-container text-left flex flex-col transition-colors shadow-sm';
+      toggleImmediate.className = 'transition-toggle px-3 py-2.5 rounded-xl bg-surface-container text-on-surface text-left flex flex-col transition-colors';
+      updateCTA();
+    });
+
+    toggleImmediate?.addEventListener('click', function() {
+      isImmediate = true;
+      toggleImmediate.className = 'transition-toggle px-3 py-2.5 rounded-xl bg-primary-container text-on-primary-container text-left flex flex-col transition-colors shadow-sm';
+      toggleNext.className = 'transition-toggle px-3 py-2.5 rounded-xl bg-surface-container text-on-surface text-left flex flex-col transition-colors';
+      updateCTA();
+    });
+
+    ctaBtn?.addEventListener('click', function() {
+      ctaBtn.disabled = true;
+      ctaBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>Updating Subscription...</span>';
+      setTimeout(() => {
+        ctaBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Subscription Updated!</span>';
+        ctaBtn.classList.remove('bg-primary');
+        ctaBtn.classList.add('bg-tertiary');
+      }, 900);
+    });
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_10px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="grid grid-cols-4 items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 h-full text-secondary hover:text-on-surface transition-colors" data-path="today" href="#"><span class="material-symbols-outlined text-[24px]">lunch_dining</span><span class="font-label-sm text-label-sm">Today</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-full text-secondary hover:text-on-surface transition-colors" data-path="schedule" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm">Schedule</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-full text-secondary hover:text-on-surface transition-colors" data-path="wallet" href="#"><span class="material-symbols-outlined text-[24px]">account_balance_wallet</span><span class="font-label-sm text-label-sm">Wallet</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 h-full transition-colors text-primary font-semibold" data-path="profile" href="#"><span class="material-symbols-outlined text-[24px]">manage_accounts</span><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

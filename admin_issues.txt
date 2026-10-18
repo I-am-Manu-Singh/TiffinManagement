@@ -1,0 +1,113 @@
+Comprehensive Audit Report: Admin Screens & Modules
+Following a deep systematic code review of all 23 Admin Screen implementations (composeApp/.../ui/screens/admin/*), the underlying TiffinRepository, and the data layer, here is the granular audit of 100 concrete logical issues, fake/stub implementations, missing features, hardcoded values, and state mismatches.
+
+Category 1: Hardcoded Mock Data & Fakeness (Items 1 – 20)
+[DashboardScreen.kt:L380-412] Hardcoded SVG Profit Dip Chart: The financial canvas graph draws static cubic bezier curves with a hardcoded Oct Dip Bar (₹377 Expense) and static X-axis labels (listOf("Oct", "Dec", "Feb", "Apr", "Jun", "Sep")), ignoring the real month/expense ledger.
+[DashboardScreen.kt:L446] Hardcoded Oct '25 Label: The dip alert pill explicitly hardcodes the string "Oct '25 Dip: -₹...", ignoring current year/month dynamics.
+[KitchenConsoleScreen.kt:L89] Fallback Dispatched Driver: Rider fallback hardcodes "Amit Kumar" if riderProfile.fullName is blank, even when the logged-in rider or assigned courier is completely different.
+[KitchenConsoleScreen.kt:L470-476] Static KDS Station Info: The KDS dark console hardcodes "STATION 01", "Main Prep & Roti", and "Shift: 07:00 - 09:30". Station details are not bound to any branch station model or database shift table.
+[KitchenConsoleScreen.kt:L524-531] Fake KDS Controls: "Auto-Refresh (30s)" and "Chime ON" have no toggle state, background timer, or audio synthesis; they are static non-interactive text tags with icons.
+[KitchenConsoleScreen.kt:L501] Hardcoded Status Strip: The text "Connected directly to chef prep tablet & kitchen wall display" is a static fake message that never reflects real WebSocket/Supabase Realtime connectivity.
+[StaffDirectoryScreen.kt:L350] "Sample Staff Profiles" Header: The screen explicitly labels the staff directory preview as "Sample Staff Profiles", betraying a static preview mindset.
+[StaffDirectoryScreen.kt:L384] Hardcoded "Head Cook" Color Logic: Avatar and badge color branching checks specifically for the string "Head Cook"; any other cooking roles or localized strings fail this styling.
+[StaffDirectoryScreen.kt:L848] Hardcoded Branch Assignment: Saving a new staff member hardcodes if (formBranch.contains("North")) "North Sector" else "Main Branch", ignoring the actual branch ID and branch selected from TiffinRepository.branches.
+[ExpensesScreen.kt:L90] Static Date Filter Chips: filterChips = listOf("Today", "Last 7 Days", "Last 30 Days", "This Month", "This Year") changes a UI state string selectedFilterChip but does not actually filter the underlying expenses list by timestamp.
+[ExpensesScreen.kt:L751] Hardcoded Payment Mode: Every newly saved expense hardcodes paymentMode = "Paid Cash", even if UPI, Net Banking, or Vendor Credit was used.
+[ExpensesScreen.kt:L754] Hardcoded Receipt File Size: Newly attached receipts hardcode receiptSizeFormatted = "248 KB".
+[RecurringExpensesScreen.kt:L92] Hardcoded Day of Month: Default recurring day is hardcoded to "4", rather than defaulting to the 1st or current date.
+[NotificationSettingsScreen.kt:L365] Static Compliance Stamp: "All message templates follow TRAI & DLT compliance" is purely decorative hardcoded text.
+[SubscriptionDetailsScreen.kt:L524] Hardcoded Type Pill: The subscription type pill displays "Regular Sub" statically regardless of package duration or custom frequency.
+[SubscriptionDetailsScreen.kt:L656] Hardcoded Consolidated Delivery Days: The days list listOf("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT") colors all 7 days with active orange Color(0xFFF95721) regardless of whether the subscription is Monday–Friday or Alternate Days.
+[SubscriptionDetailsScreen.kt:L995] Hardcoded Meal Plan Option: Dropdown menu item in pause form hardcodes "${subscription.packageName} (Veg)", appending (Veg) even if the subscription is Non-Veg or Jain.
+[OnboardingKitchenSetupScreen.kt:L77] Pre-filled Fake CSV: Prepopulates raw fake customers (Rohit Mehra, Ananya Sen) directly in the user input state.
+[OnboardingKitchenSetupScreen.kt:L124] Hardcoded Progress: Displays static text "95% complete" and colors all 3 progress segments completely filled on Step 3 before the user fills or submits anything.
+[TiffinRepository.kt:L20-26] Hardcoded Initial Branches: Hardcodes Navi Mumbai, Pune, and Kota mock branches with fake IDs (b-1, b-2, b-3) which conflict with Supabase UUID foreign keys.
+Category 2: Incomplete & Stubbed Feature Implementations (Items 21 – 40)
+[KitchenConsoleScreen.kt:L70] Print Stickers Click: onPrintStickersClick is passed as a callback but default-assigned to a no-op {}; there is no native Bluetooth/thermal ESC/POS printer driver integration.
+[KitchenConsoleScreen.kt:L218-226] Fake Live Sync Delay: The Sync button in Kitchen Console runs a mock delay(600) with isSyncing = true rather than awaiting an asynchronous network sync result from Supabase.
+[NotificationSettingsScreen.kt:L373-392] No-Op "Save Settings" Button: The sticky primary CTA Button(onClick = { }) has an empty lambda. Toggling or editing notification settings in this screen never persists to local storage or backend database.
+[NotificationSettingsScreen.kt:L117-140] Stubbed "Push Devices" Sub-Tab: Clicking "Push Devices" tab switches state, but the screen renders nothing for device tokens, FCM IDs, or registered POS terminals.
+[CategoryBranchHoldsScreen.kt:L73-74] Fake Date Pickers: startDate and endDate are initialized to "Today". Clicking the date rows has no Material3 DatePicker dialog attached; dates cannot actually be changed.
+[ExpensesScreen.kt:L82] Non-Functional Expense Date Field: Form date defaults to "Today" with no calendar datepicker picker hooked up to modify it.
+[RecurringExpensesScreen.kt:L93] Non-Functional Recurring Dates: formStartDate and formEndDate are plain strings with no DatePicker dialog, allowing users to enter invalid date formats.
+[SubscriptionDetailsScreen.kt:L909-943] Unvalidated Date TextFields: holdStartDate and holdEndDate rely on manual typing with placeholder "YYYY-MM-DD". Typing "abc" is accepted and saved as a valid vacation hold.
+[OnboardingKitchenSetupScreen.kt:L76] CSV Import Without Real Parser: The CSV import dialog only splits lines by comma and blindly inserts names without validating phone formats, email syntax, or address structures.
+[UpdateMealPlanScreen.kt:L909-911] Fallback Pricing Logic: If daily, weekly, or monthly rates fail to parse, they silently fallback to 100.0, 700.0, and 3000.0 respectively without alerting the admin to invalid numeric inputs.
+[CreateSubscriptionScreen.kt:L771] Silent Pricing Fallback: If monthly rate is invalid, it silently forces 3000.0 into the subscription contract.
+[CustomerDetailsLedgerScreen.kt:L616] Unchecked Wallet Payment Entry: paymentAmount.toDoubleOrNull() can be null or negative; entering negative payments is not blocked, which can artificially corrupt ledger records.
+[CustomersScreen.kt:L596] Wallet Balance Top-up Lack of Transaction Locks: Wallet balance updates locally in state flow without an atomic Postgres RPC transaction lock, making it susceptible to double-topup race conditions.
+[SubscriptionsScreen.kt:L566] Wallet Adjustment Missing Audit Trail: Adjusting customer wallet directly from Subscriptions screen bypasses recording the admin's user ID into adjusted_by_user_id.
+[UpdateDeliveryRouteScreen.kt:L285-286] Hardcoded Fallback Lat/Lng Coordinates: Origin branch coordinates silently fallback to Mumbai coordinates (19.1663, 72.9986) if branch lookup fails, misrouting drivers in other cities.
+[AddCustomerScreen.kt:L513] Trust Limit Defaults: Trust limit defaults to 0.0 silently if input is unparsable, giving customers unexpected zero credit limits.
+[SettingsScreen.kt:L101] Fake Cache Clear Message: Clearing app cache updates a temporary UI message string without purging actual HTTP cache, image bitmaps, or SQLite/Room caches.
+[MealCategoriesScreen.kt] Missing Category Image Upload: Creating or updating meal categories lacks support for picking or uploading real category hero images to Supabase Storage.
+[MealPlansScreen.kt:L63-65] Fake Page Size Pagination: Changing page size to 15, 25, or 50 does not calculate page indices or provide Next/Previous pagination controls; it merely limits take(limit).
+[StaffDirectoryScreen.kt:L79-80] Stubbed Pagination: Same as above: selecting page size only does .take(limit) without paging navigation.
+Category 3: Logical Flaws & Business Rule Violations (Items 41 – 60)
+[KitchenConsoleScreen.kt:L87-88] Broken Slot Meal Count Logic: Lunch and dinner meal counts check if instructions or packageName contains "Lunch" or "Dinner". If a plan is named "Executive 3-Course Thali", its count is calculated as 0!
+[KitchenConsoleScreen.kt:L375-377] Fake Kitchen Unit Scaling: Rotis, Sabzi (kg), and Dal (liters) come directly from a single KitchenBatchModel record without multiplying by active portion sizes or serving count from daily deliveries.
+[CategoryBranchHoldsScreen.kt:L358] Inconsistent Enum Case: Holds category is stored as selectedCategory.lowercase() (e.g. "breakfast"), whereas elsewhere in the system, categories are PascalCase or snake_case, breaking join queries.
+[CategoryBranchHoldsScreen.kt:L114-116] Misleading Promise of Automatic Wallet Credit: The screen promises "Scheduled holds will automatically credit customer wallets", but saving the hold in addKitchenHold does NOT credit any customer wallet.
+[SubscriptionDetailsScreen.kt:L1048-1055] No Collision Check on Overlapping Holds: Admins can create multiple overlapping vacation holds for the exact same customer and date range.
+[SubscriptionDetailsScreen.kt:L1044] Missing Date Sanity Validation: There is no check verifying that holdEndDate >= holdStartDate, allowing negative duration holds.
+[SubscriptionDetailsScreen.kt:L615] Unsynchronized Skip Counter: Allowed skips vs skips used is purely informational and does not block drivers or customers from pausing deliveries when skipsUsed >= allowedSkips.
+[StaffDirectoryScreen.kt:L835] Phone Validation Omission: Validates only formPhone.isNotBlank(). Entering "123" or letters passes validation and creates an invalid phone record.
+[StaffDirectoryScreen.kt:L838] Client-Generated IDs: Staff IDs are generated as "staff-${System.currentTimeMillis()}" on the client instead of using database-generated UUIDs, breaking foreign keys in Postgres.
+[ExpensesScreen.kt:L746] Timestamp-Based Primary Keys: Expenses are saved with exp-${System.currentTimeMillis()}, violating UUID schema requirements on Supabase expenses table.
+[RecurringExpensesScreen.kt:L849] Client-Generated Rule IDs: Recurring rules also use rec-${System.currentTimeMillis()}.
+[RecurringExpensesScreen.kt:L855] Unchecked Day of Month: formDayOfMonth accepts any integer; entering 31 for February or April creates an impossible recurrence schedule.
+[RecurringExpensesScreen.kt:L857] Date Incoherence: Sets nextDueDate = formStartDate, meaning if generateTodayImmediate is unchecked, the first due date is still today!
+[DashboardScreen.kt:L85-89] Flawed Progress Calculation: Business setup progress increments simply if branches.isNotEmpty(). Having 1 test branch with 0 valid addresses marks that task 100% completed.
+[DashboardScreen.kt:L74] Disconnected Financial Overview State: Financial overview counts (activeSubscribersCount, monthlyRevenue) do not derive dynamically from customers and subscriptions flows; they rely on a separate disconnected StateFlow.
+[CustomerDetailsLedgerScreen.kt:L135] Non-Working Edit Customer Click: Clicking the "Edit" button triggers onEditCustomer(it.id), but onEditCustomer has no destination route in several parent navigation hosts.
+[NotificationsScreen.kt:L77-88] Role Filter Leaking: Admin sees all notifications, but if an admin impersonates or switches view to customer, unread count does not recalculate based on the filtered list.
+[NotificationsScreen.kt:L236] Default Route Fallback: Clicking dispatch notification opens route item.routeCode ?: "route-1". If route code is null, it blindly routes to "route-1" which may not exist.
+[KitchenConsoleScreen.kt:L563-565] Simplistic Dietary Classification: Checks !packageName.contains("Non") to classify as pure veg. If a package is named "North Indian Feast", it is mistakenly treated as Veg even if it has non-veg sides.
+[SettingsScreen.kt:L85-89] Unpersisted State Changes: System setting toggles (autoLock, dietaryMode, kdsAutoRefresh) update local remember state but never push updates to Supabase system_settings or trigger a repository update.
+Category 4: UI/UX Mismatches, Dead Links & Broken Navigation (Items 61 – 80)
+[DashboardScreen.kt] Missing Pull-to-Refresh: Admin dashboard lacks swipe refresh; admins must exit and re-enter to fetch new online orders.
+[KitchenConsoleScreen.kt:L76-77] Unattached Dialog Modals: showStationDialog and showManifestDialog booleans are toggled, but the composable modal definitions are missing or incomplete.
+[StaffDirectoryScreen.kt:L93] Branch Options Out of Sync: If branches is initially empty, branchOptions falls back to listOf("Main Branch") and never re-synchronizes when branches load.
+[ExpensesScreen.kt:L88] Stubbed File Attachment Picker: selectedReceiptFile has no file picker intent or platform document picker hooked up on Android/iOS.
+[RecurringExpensesScreen.kt:L94] No Clear Button for End Date: formEndDate has no date picker and no quick button to set "Never Ends" / Indefinite.
+[SubscriptionDetailsScreen.kt:L140] View Customer Profile Dead Click: If customer is null (e.g. while loading), the click handler fails silently without a feedback toast.
+[UpdateMealPlanScreen.kt:L89] Missing Dirty-State Guard: Editing a meal plan has no confirmation dialog if user navigates back with unsaved changes.
+[CreateSubscriptionScreen.kt:L120] Lack of Duplicate Subscription Prevention: Submitting the form twice in quick succession creates duplicate subscription records with duplicate billing.
+[CustomerDetailsLedgerScreen.kt:L450] Negative Due Warning Missing: If customer exceeds max_due_limit, the ledger screen shows balance in red but does not prevent further tiffin dispatches.
+[MealCategoriesScreen.kt:L180] Delete Category Cascade Warning Missing: Deleting a meal category deletes or orphans all plans under it without warning the admin about affected active subscribers.
+[MealPlansScreen.kt:L69] Category Distinct Filtering Case Sensitivity: categories.distinct() does not normalize lowercase/uppercase strings, leading to duplicate filter tabs like "Lunch" and "lunch".
+[CategoryBranchHoldsScreen.kt:L78] Branch Dropdown Missing Real IDs: branchOptions uses raw names (listOf("Main Branch", ...)) instead of BranchModel objects, losing the foreign key association.
+[AddCustomerScreen.kt:L210] Missing GPS Geocoder: Delivery address input lacks an auto-complete geocoding lookup or map pin picker to automatically populate latitude and longitude.
+[UpdateDeliveryRouteScreen.kt:L190] Static Stop Ordering: Delivery stops cannot be dragged and reordered via drag-and-drop gesture; stops are strictly static lists.
+[NotificationsScreen.kt:L234] Hold Notification Approval Without Feedback: Calling approveNotificationHold does not display a confirmation snackbar or undo toast.
+[StaffDirectoryScreen.kt:L879] Hardcoded Filter Roles: Filter sheet hardcodes listOf("all", "Head Cook", "Packing Staff", "Delivery Lead", "Branch Manager"). If a staff member has role "Sous Chef", they cannot be filtered.
+[OnboardingKitchenSetupScreen.kt:L71-73] Slots Not Validated: Admin can uncheck all 3 slots (Breakfast, Lunch, Dinner) and still proceed, creating a kitchen that serves zero meals.
+[OnboardingKitchenSetupScreen.kt:L146] Misleading Screen Title: Claims "Configure Your Kitchen in Under 2 Minutes", but wizard contains multi-step schema setups requiring complex route and tax entries.
+[OnboardingDeliveryLedgerScreen.kt] Orphaned Onboarding Flow: Screens in the onboarding wizard can be accessed directly or skipped entirely via URL/Nav deep links without verifying prior steps.
+[OnboardingKitchenPlansScreen.kt] Inflexible Tier Pricing: Plan creator assumes fixed weekly/monthly multiples rather than supporting custom 15-day or corporate trial durations.
+Category 5: Database, Schema & Multi-Tenant Flaws (Items 81 – 100)
+[TiffinRepository.kt:L34-38] In-Memory Branch Selection: selectBranch only mutates a local Kotlin MutableStateFlow; it never sets current_branch_id in Supabase session or Postgres config settings, breaking row-level tenant isolation.
+[supabase_schema.sql vs Branches] Missing Default Branch Association: When a new admin signs up, there is no Postgres trigger automatically provisioning their primary central kitchen branch.
+[StaffDirectoryScreen.kt:L849] Inconsistent Role Title Mapping: Maps "Cook" to "Head Cook", but Supabase schema check constraints expect role in ('owner', 'manager', 'driver', 'kitchen_staff', 'customer'). Inserting "Head Cook" causes an SQL check constraint violation!
+[StaffDirectoryScreen.kt:L845] Inconsistent Driver Role Mapping: Form role "Driver" maps to "Delivery Lead", whereas schema and auth rules expect role "driver".
+[ExpensesScreen.kt:L83] Incompatible Category Names: Form uses "Fresh Produce & Groceries", but database reports and recurring rules expect normalized keys (produce, groceries, utilities), making aggregation queries fail.
+[CustomerDetailsLedgerScreen.kt:L650] Missing Currency Parameterization: All currency symbols are hardcoded as "₹"; multi-region deployments ($ / AED) cannot be configured.
+[SubscriptionDetailsScreen.kt:L480] Number Formatter Locale Crash Risk: "%,.2f".format(...) uses default platform locale which may use commas instead of dots, causing parsing issues on some Android/iOS configurations.
+[DashboardScreen.kt:L83] Hardcoded Setup Task Count: setupTasksTotal = 5 is a static constant. If business requirements add "Configure Tax" or "Connect Payment Gateway", progress will calculate incorrectly.
+[NotificationSettingsScreen.kt:L70-71] Hardcoded Category Filter: Filters settings by it.category == "customer" and it.category == "vendor". Settings for "driver" or "kitchen_staff" are completely swallowed and never shown.
+[CategoryBranchHoldsScreen.kt:L356] Date Format Inconsistency: startDate and endDate are saved as raw strings; some screens format as "04 Sep, 2026", while Supabase expects ISO-8601 "2026-09-04", causing date range parsing errors in SQL.
+[CustomerDetailsLedgerScreen.kt:L175] Single-Character Avatar Fallback: customerName.firstOrNull()?.toString()?.lowercase() ?: "m" hardcodes "m" as the default fallback initial instead of "U" (Unknown) or "C" (Customer).
+[SubscriptionDetailsScreen.kt:L175] Avatar Hardcoded Fallback: Same issue: falls back to hardcoded "m".
+[KitchenConsoleScreen.kt:L309] Hardcoded Status Dots: Realtime connection indicator is a static green dot with no WebSocket ping listener attached.
+[RecurringExpensesScreen.kt:L858] Nullable End Date String Handling: Converts empty string to null (if (formEndDate.isNotBlank()) formEndDate else null), but when read back, null-handling displays blank instead of "Continuous / Indefinite".
+[StaffDirectoryScreen.kt:L841] Nullable Email Not Normalized: Stores email as raw string without .trim().lowercase(), causing case-sensitive login mismatches in Supabase Auth.
+[AddCustomerScreen.kt:L450] Missing Pincode Validation: Indian pincodes are not validated for 6 digits; invalid zip codes cause courier routing and distance calculation failures.
+[UpdateDeliveryRouteScreen.kt:L200] Route Distance Recalculation Omission: Adding or editing stops does not trigger distance/duration matrix recalculation (e.g. via OSRM or Google Maps Distance Matrix API).
+[NotificationsScreen.kt:L74] In-Memory Unread Count Only: unreadCount is calculated from local list; marking an item read in one screen does not update the badge in TiffinTopHeader without an active global StateFlow observer.
+[CategoryBranchHoldsScreen.kt:L359] Category "All Meal Categories" Unhandled in DB: Selecting "All Meal Categories" sends string "all meal categories" to database instead of NULL or a wildcard pattern, failing to pause all meals.
+[SettingsScreen.kt:L73-74] Unimplemented Legal Navigation: onNavigateToTerms and onNavigateToPrivacy are connected to blank or unhandled routes in the top-level navigation graph.
+Key Takeaways & Recommended Roadmap
+Replace Synthetic IDs: Eliminate System.currentTimeMillis() for entity creation across Admin modules; use Supabase UUID generation.
+Normalize Roles & Categories: Reconcile UI role strings ("Head Cook", "Delivery Lead") with Postgres enum definitions ("kitchen_staff", "driver").
+Connect Real Date Pickers: Replace hardcoded "Today" string states with Material3 DatePickers.
+Implement Actual Database Transactions: Wrap wallet adjustments, holds, and order overrides into Supabase RPCs with ledger verification.

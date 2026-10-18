@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Customer Details &amp; Wallet Ledger</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              DEFAULT: '#f95721',
+              50: '#fff4f0',
+              100: '#ffe6dc',
+              500: '#f95721',
+              600: '#e54512',
+              700: '#c53408',
+            },
+            surface: {
+              subtle: '#f4f6fb',
+              card: '#ffffff',
+            }
+          },
+          boxShadow: {
+            card: '0 2px 10px -2px rgba(15, 23, 42, 0.05), 0 1px 3px -1px rgba(15, 23, 42, 0.04)',
+            glow: '0 4px 14px 0 rgba(249, 87, 33, 0.28)',
+          }
+        }
+      }
+    };
+  </script>
+<!-- Base Custom Styles -->
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* iOS safe-area support */
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 16px);
+    }
+    .pt-safe {
+      padding-top: env(safe-area-inset-top, 0px);
+    }
+  </style>
+</head>
+<body class="bg-[#eef2f9] text-slate-800 antialiased min-h-screen flex justify-center selection:bg-brand selection:text-white">
+<!-- Mobile Screen Shell Container -->
+<div class="w-full max-w-md bg-white min-h-screen flex flex-col shadow-2xl relative border-x border-slate-200/80">
+<!-- BEGIN: TopBar -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 pt-safe" data-purpose="header-navigation"><!-- Tier 1: Brand & User Bar -->
+<div class="px-4 py-2.5 border-b border-slate-100 flex items-center justify-between bg-white">
+  <div class="flex items-center gap-2.5">
+    <div class="w-9 h-9 rounded-xl overflow-hidden shadow-sm flex items-center justify-center flex-shrink-0 bg-brand-50 border border-orange-100">
+      <img src="https://lh3.googleusercontent.com/aida/AEtjO1VzbMoL1mwXaVT3Tlg8gh43JelIjaN2FrdCRjj5cOMnk73Y23HHCv4TcITNCtQ650Rxo2El1I-D8QGz0j0VKea1ZMunWSiSo9LNxF2r_o6RrmmnVhkcqbCouIcRqtuEtXUxa_Li6SCYjYFMW8B9WJTdBcTXZ96A6ow7-6hSNcXvn6zJZ6-kIBQQHiqmthsIcC7hcpJ7Gm1n2v-5Ue29vO_3nRrh3mQDjXIYsYEt_nRd4PJsSQJRlepP62U" alt="Logo" class="w-full h-full object-cover">
+    </div>
+    <div class="flex flex-col">
+      <div class="flex items-center gap-1 cursor-pointer">
+        <span class="text-xs font-bold text-slate-900 tracking-tight">Main Branch</span>
+        <svg class="w-3.5 h-3.5 text-slate-500 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <span class="text-[10px] font-medium text-slate-400 leading-none mt-0.5">Customer Ledger</span>
+    </div>
+  </div>
+  <div class="flex items-center gap-2">
+    <button aria-label="Notifications" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 transition-colors relative" type="button">
+      <svg class="w-4 h-4 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand ring-2 ring-white"></span>
+    </button>
+    <div class="w-8 h-8 rounded-full overflow-hidden border border-orange-200/80 shadow-sm flex-shrink-0">
+      <img src="https://lh3.googleusercontent.com/aida/AEtjO1UzzMtRchgJGxJeoMXFA4JCNEADa6tG9Khb9hHmUEOLjVKjbF_teuUEcrI0euDunxXAqkVB-FiRaX-9pL7anpGuMw93Zv8o8jwERUTlafiJwWx38x-vcu2WGusgQASg7sA9eCztNswFVd7NXfBCuockehL46LdRQRvIo4wNDCA7TOfX86f40k_uzNZX3TKxkG7fu6Jh33PG22xGOqjsaroDgfpqqIhjFgSUDCwFL3dk8o2PMZd-MgyShAVG" alt="Owner Avatar" class="w-full h-full object-cover">
+    </div>
+  </div>
+</div>
+<!-- Tier 2: Screen Sub-header -->
+<div class="px-4 py-3 flex items-center justify-between bg-white/95 backdrop-blur-md">
+  <div class="flex items-center gap-3">
+    <button aria-label="Go Back" class="w-9 h-9 rounded-full flex items-center justify-center text-slate-700 bg-slate-50 border border-slate-200/60 hover:bg-slate-100 active:scale-95 transition-all shadow-sm" type="button">
+      <svg class="w-5 h-5 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <h1 class="text-lg font-bold text-slate-900 tracking-tight">Customer Details</h1>
+  </div>
+  <button class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-brand bg-orange-50 hover:bg-orange-100 border border-orange-200/60 rounded-full transition-all active:scale-95 shadow-sm" type="button">
+    <svg class="w-3.5 h-3.5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span class="">Edit Customer</span>
+  </button>
+</div></header>
+<!-- END: TopBar -->
+<!-- Scrollable Screen Content Body -->
+<main class="flex-1 overflow-y-auto px-4 py-4 space-y-4 bg-slate-50/70" data-purpose="content-scroll-container">
+<!-- BEGIN: CustomerProfileCard -->
+<section class="bg-white rounded-2xl p-4 shadow-card border border-slate-100" data-purpose="customer-profile">
+<div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3.5">
+<h2 class="text-xs font-bold uppercase tracking-wider text-slate-500">Customer Profile</h2>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Active
+          </span>
+</div>
+<div class="flex items-start gap-3.5 mb-4">
+<!-- Profile Avatar Icon -->
+<div class="w-13 h-13 rounded-2xl bg-orange-50 border border-orange-100 p-2.5 flex items-center justify-center flex-shrink-0 text-brand">
+<svg class="w-7 h-7 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0 pt-0.5">
+<h3 class="text-lg font-bold text-slate-900 capitalize truncate">manu</h3>
+<p class="text-xs text-slate-400 font-medium">Customer ID: #CUST-9281</p>
+</div>
+</div>
+<!-- Detail Attributes List -->
+<div class="space-y-2.5 pt-1 text-xs text-slate-600">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 flex-shrink-0">
+<svg class="w-4 h-4 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<a class="font-medium text-slate-700 hover:text-brand transition-colors" href="tel:+91245235345">+91245235345</a>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 flex-shrink-0">
+<svg class="w-4 h-4 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<a class="font-medium text-slate-700 truncate hover:text-brand transition-colors" href="mailto:45454@gmail.com">45454@gmail.com</a>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 flex-shrink-0">
+<svg class="w-4 h-4 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<span class="text-slate-400">Serving Branch:</span>
+<span class="font-semibold text-slate-800 ml-1">Main Branch</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 flex-shrink-0">
+<svg class="w-4 h-4 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="font-medium text-slate-700">ddd</span>
+</div>
+</div>
+</section>
+<!-- END: CustomerProfileCard -->
+<!-- BEGIN: WalletBalanceCard -->
+<section class="bg-white rounded-2xl p-4 shadow-card border border-slate-100 relative overflow-hidden" data-purpose="wallet-balance-card">
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-xs font-bold uppercase tracking-wider text-slate-500">Wallet Balance</h2>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-orange-100/70 text-brand">
+            LEDGER SCOPED
+          </span>
+</div>
+<div class="py-3 text-center">
+<div class="text-4xl font-extrabold text-brand tracking-tight">₹0.00</div>
+<p class="text-[11.5px] font-medium text-slate-500 mt-1.5 flex items-center justify-center gap-1">
+<span class="">Max Allowed Due (Trust Limit):</span>
+<span class="font-semibold text-slate-700">₹330.00</span>
+</p>
+</div>
+</section>
+<!-- END: WalletBalanceCard -->
+<!-- BEGIN: ManualWalletAdjustmentCard -->
+<section class="bg-white rounded-2xl p-4 shadow-card border border-slate-100" data-purpose="manual-wallet-form">
+<div class="pb-3 border-b border-slate-100 mb-3.5">
+<h2 class="text-xs font-bold uppercase tracking-wider text-slate-500">Manual Wallet Adjustment</h2>
+</div>
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<!-- Adjustment Type Radio Group -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-2">
+              Adjustment Type <span class="text-rose-500">*</span>
+</label>
+<div class="grid grid-cols-2 gap-2">
+<!-- Credit Option -->
+<label class="flex items-center gap-2 p-2.5 rounded-xl border border-orange-200 bg-orange-50/50 cursor-pointer transition-all">
+<input checked="" class="w-4 h-4 text-brand focus:ring-brand border-slate-300" name="adjustment_type" type="radio" value="credit">
+<span class="text-xs font-semibold text-slate-800">Credit (Add)</span>
+</label>
+<!-- Debit Option -->
+<label class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white cursor-pointer transition-all">
+<input class="w-4 h-4 text-brand focus:ring-brand border-slate-300" name="adjustment_type" type="radio" value="debit">
+<span class="text-xs font-medium text-slate-700">Debit (Deduct)</span>
+</label>
+</div>
+</div>
+<!-- Payment Amount Input -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5" for="payment-amount">
+              Payment Amount <span class="text-rose-500">*</span>
+</label>
+<div class="relative rounded-xl shadow-sm">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5">
+<span class="text-slate-400 font-semibold text-sm">₹</span>
+</div>
+<input class="block w-full rounded-xl border-slate-200 pl-8 pr-3 py-2.5 text-sm font-semibold text-slate-800 placeholder-slate-400 focus:border-brand focus:ring-1 focus:ring-brand" id="payment-amount" placeholder="0.00" step="0.01" type="number">
+</div>
+</div>
+<!-- Description / Remarks Input -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5" for="remarks">
+              Description / Remarks <span class="text-rose-500">*</span>
+</label>
+<input class="block w-full rounded-xl border-slate-200 px-3 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:border-brand focus:ring-1 focus:ring-brand" id="remarks" placeholder="e.g. Cash payment received, Offline discount" type="text">
+</div>
+<!-- Submit CTA -->
+<button class="w-full mt-2 py-3 px-4 bg-brand hover:bg-brand-600 active:scale-[0.99] text-white font-bold text-sm rounded-xl shadow-glow transition-all" type="submit">
+            Apply Adjustment
+          </button>
+</form>
+</section>
+<!-- END: ManualWalletAdjustmentCard -->
+<!-- BEGIN: WalletTransactionsLedgerSection -->
+<section class="bg-white rounded-2xl p-4 shadow-card border border-slate-100" data-purpose="transactions-ledger">
+<div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+<h2 class="text-xs font-bold uppercase tracking-wider text-slate-500">Wallet Transactions Ledger</h2>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-600 border border-slate-200/70">
+            Total: 0 records
+          </span>
+</div>
+<!-- Empty State View -->
+<div class="py-8 text-center flex flex-col items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-300 mb-2">
+<svg class="w-6 h-6 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<p class="text-xs font-medium text-slate-400">No transaction records found.</p>
+</div>
+</section>
+<!-- END: WalletTransactionsLedgerSection -->
+<!-- BEGIN: SubscriptionsSection -->
+<section class="bg-white rounded-2xl p-4 shadow-card border border-slate-100" data-purpose="customer-subscriptions">
+<div class="pb-3 border-b border-slate-100 mb-3">
+<h2 class="text-xs font-bold uppercase tracking-wider text-slate-500">Active &amp; Past Subscriptions</h2>
+</div>
+<!-- Empty State View -->
+<div class="py-8 text-center flex flex-col items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-300 mb-2">
+<svg class="w-6 h-6 stroke-[1.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<p class="text-xs font-medium text-slate-400">No subscriptions found for this customer.</p>
+</div>
+</section>
+<!-- END: SubscriptionsSection -->
+<!-- BEGIN: FooterNote -->
+<footer class="pt-2 pb-6 text-center" data-purpose="copyright-info">
+<p class="text-[11px] font-medium text-slate-400">© 2026 Tiffin Manager All rights reserved</p>
+</footer>
+<!-- END: FooterNote -->
+</main>
+<!-- BEGIN: BottomNavigation -->
+<nav class="bg-white border-t border-slate-200/90 px-3 pt-2 pb-safe sticky bottom-0 z-40" data-purpose="app-bottom-navigation"><div class="grid grid-cols-5 items-center">
+  <!-- Dashboard Item -->
+  <a class="flex flex-col items-center gap-1 py-1 text-slate-400 hover:text-slate-600 transition-colors" href="#dashboard">
+    <svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span class="text-[10px] font-medium">Dashboard</span>
+  </a>
+  <!-- Kitchen Item -->
+  <a class="flex flex-col items-center gap-1 py-1 text-slate-400 hover:text-slate-600 transition-colors" href="#kitchen">
+    <svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span class="text-[10px] font-medium">Kitchen</span>
+  </a>
+  <!-- Plans Item -->
+  <a class="flex flex-col items-center gap-1 py-1 text-slate-400 hover:text-slate-600 transition-colors" href="#plans">
+    <svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span class="text-[10px] font-medium">Plans</span>
+  </a>
+  <!-- Customers Item (Active) -->
+  <a class="flex flex-col items-center gap-0.5 py-1 text-brand relative" href="#customers">
+    <svg class="w-5 h-5 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span class="text-[10px] font-bold">Customers</span>
+    <span class="w-1.5 h-1.5 rounded-full bg-brand mt-0.5"></span>
+  </a>
+  <!-- More Item -->
+  <a class="flex flex-col items-center gap-1 py-1 text-slate-400 hover:text-slate-600 transition-colors" href="#more">
+    <svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span class="text-[10px] font-medium">More</span>
+  </a>
+</div></nav>
+<!-- END: BottomNavigation -->
+</div>
+
+
+</body></html>

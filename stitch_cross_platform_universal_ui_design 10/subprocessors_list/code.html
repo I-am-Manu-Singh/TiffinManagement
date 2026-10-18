@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Subprocessors List - Tiffin Manager</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff5f2',
+              100: '#ffe8e2',
+              200: '#ffd3c7',
+              500: '#f95721',
+              600: '#e04310',
+              700: '#be3309',
+            },
+            surface: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Typography & Layout Styles -->
+<style data-purpose="custom-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* Hide horizontal scrollbar for pills */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen antialiased selection:bg-brand-100 selection:text-brand-700">
+<!-- BEGIN: MobileContainer -->
+<div class="max-w-md mx-auto min-h-screen bg-slate-50 flex flex-col relative pb-10" data-purpose="mobile-viewport">
+<!-- BEGIN: TopBar -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 px-4 pt-3 pb-3" data-purpose="app-header">
+<div class="flex items-center justify-between">
+<!-- Back Button & Brand Badge -->
+<div class="flex items-center gap-2.5">
+<button aria-label="Go Back" class="w-9 h-9 rounded-full flex items-center justify-center bg-slate-100 hover:bg-slate-200 active:scale-95 transition-all text-slate-700" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-xl bg-brand-500 flex items-center justify-center text-white shadow-sm shadow-brand-500/30">
+<!-- Tiffin Carrier Box Icon -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 8h16M4 14h16M4 20h16M7 4h10a1 1 0 011 1v3H6V5a1 1 0 011-1z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 2v2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<h1 class="text-base font-bold text-slate-900 leading-tight">Subprocessors List</h1>
+<p class="text-[11px] font-medium text-slate-500">Legal &amp; Transparency</p>
+</div>
+</div>
+</div>
+<!-- Action Icons -->
+<div class="flex items-center gap-1.5">
+<button aria-label="Share Document" class="w-9 h-9 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 active:scale-95 transition-all" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Legal Navigation Pills -->
+<nav aria-label="Legal Center Navigation" class="mt-3 overflow-x-auto no-scrollbar flex items-center gap-2 pb-0.5">
+<a class="px-3 py-1.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-600 border border-brand-200 shrink-0" href="#">
+          Subprocessors
+        </a>
+<a class="px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 shrink-0 hover:bg-slate-50" href="#">
+          Privacy Policy
+        </a>
+<a class="px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 shrink-0 hover:bg-slate-50" href="#">
+          Terms of Service
+        </a>
+<a class="px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 shrink-0 hover:bg-slate-50" href="#">
+          Security Policy
+        </a>
+<a class="px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 shrink-0 hover:bg-slate-50" href="#">
+          DPA
+        </a>
+</nav>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 px-4 pt-4 space-y-4" data-purpose="subprocessors-main-content">
+<!-- Meta & Document Intro Banner -->
+<section class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm space-y-2.5">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-[10px] font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          LAST UPDATED: JULY 10, 2026
+        </div>
+<h2 class="text-xl font-extrabold text-slate-900 tracking-tight">Subprocessors List</h2>
+<p class="text-xs leading-relaxed text-slate-600 font-normal">
+          To deliver TiffinManager services, we partner with external infrastructure providers and API networks to process customer information. Below is the active list of third-party subprocessors.
+        </p>
+</section>
+<!-- Subprocessors List Title -->
+<div class="flex items-center justify-between px-1 pt-1">
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500">Active Partners (6)</span>
+<span class="text-[11px] font-medium text-brand-600">Enterprise Verified</span>
+</div>
+<!-- Card 1: AWS -->
+<article class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm transition-all hover:border-brand-200" data-purpose="subprocessor-item">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-brand-500 font-bold text-xs shrink-0">
+              AWS
+            </div>
+<div>
+<h3 class="text-sm font-bold text-slate-900">Amazon Web Services (AWS)</h3>
+<div class="flex items-center gap-1 text-[11px] text-slate-500 mt-0.5">
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Asia Pacific (Mumbai, India)</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+            Hosting
+          </span>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100">
+<p class="text-[11px] uppercase tracking-wider font-semibold text-slate-400">Processing Purpose</p>
+<p class="text-xs text-slate-700 mt-1 leading-relaxed">
+            Primary cloud application hosting and SQL database backups storage.
+          </p>
+</div>
+</article>
+<!-- Card 2: Razorpay -->
+<article class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm transition-all hover:border-brand-200" data-purpose="subprocessor-item">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs shrink-0">
+              RZP
+            </div>
+<div>
+<h3 class="text-sm font-bold text-slate-900">Razorpay Software Pvt Ltd</h3>
+<div class="flex items-center gap-1 text-[11px] text-slate-500 mt-0.5">
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>India</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+            Billing
+          </span>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100">
+<p class="text-[11px] uppercase tracking-wider font-semibold text-slate-400">Processing Purpose</p>
+<p class="text-xs text-slate-700 mt-1 leading-relaxed">
+            SaaS billing plans and merchant wallet top-up verification.
+          </p>
+</div>
+</article>
+<!-- Card 3: Stripe -->
+<article class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm transition-all hover:border-brand-200" data-purpose="subprocessor-item">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-violet-50 border border-violet-100 flex items-center justify-center text-violet-600 font-bold text-xs shrink-0">
+              STR
+            </div>
+<div>
+<h3 class="text-sm font-bold text-slate-900">Stripe, Inc.</h3>
+<div class="flex items-center gap-1 text-[11px] text-slate-500 mt-0.5">
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>United States</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-violet-50 text-violet-700 border border-violet-200">
+            Payments
+          </span>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100">
+<p class="text-[11px] uppercase tracking-wider font-semibold text-slate-400">Processing Purpose</p>
+<p class="text-xs text-slate-700 mt-1 leading-relaxed">
+            International billing processing and recurring subscription charges.
+          </p>
+</div>
+</article>
+<!-- Card 4: Google Maps API -->
+<article class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm transition-all hover:border-brand-200" data-purpose="subprocessor-item">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 font-bold text-xs shrink-0">
+              GCP
+            </div>
+<div>
+<h3 class="text-sm font-bold text-slate-900">Google Cloud Platform</h3>
+<div class="flex items-center gap-1 text-[11px] text-slate-500 mt-0.5">
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Global</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+            Maps API
+          </span>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100">
+<p class="text-[11px] uppercase tracking-wider font-semibold text-slate-400">Processing Purpose</p>
+<p class="text-xs text-slate-700 mt-1 leading-relaxed">
+            Resolving stop sequence coordinates and optimizing driver delivery routes.
+          </p>
+</div>
+</article>
+<!-- Card 5: Meta Platforms (WhatsApp) -->
+<article class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm transition-all hover:border-brand-200" data-purpose="subprocessor-item">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xs shrink-0">
+              WA
+            </div>
+<div>
+<h3 class="text-sm font-bold text-slate-900">Meta Platforms, Inc.</h3>
+<div class="flex items-center gap-1 text-[11px] text-slate-500 mt-0.5">
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Global</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+            WhatsApp API
+          </span>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100">
+<p class="text-[11px] uppercase tracking-wider font-semibold text-slate-400">Processing Purpose</p>
+<p class="text-xs text-slate-700 mt-1 leading-relaxed">
+            Automated delivery status drops, holds alerts, and invoice alerts.
+          </p>
+</div>
+</article>
+<!-- Card 6: SendGrid / Twilio -->
+<article class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm transition-all hover:border-brand-200" data-purpose="subprocessor-item">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-600 font-bold text-xs shrink-0">
+              SMS
+            </div>
+<div>
+<h3 class="text-sm font-bold text-slate-900">SendGrid / Twilio Inc.</h3>
+<div class="flex items-center gap-1 text-[11px] text-slate-500 mt-0.5">
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>United States / Global</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-red-50 text-red-700 border border-red-200">
+            Email &amp; SMS
+          </span>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100">
+<p class="text-[11px] uppercase tracking-wider font-semibold text-slate-400">Processing Purpose</p>
+<p class="text-xs text-slate-700 mt-1 leading-relaxed">
+            System receipt emails and fallback transactional SMS dispatches.
+          </p>
+</div>
+</article>
+<!-- BEGIN: PolicyUpdatesSection -->
+<section class="bg-gradient-to-br from-orange-50/70 to-orange-100/40 rounded-2xl p-4 border border-brand-200/80 mt-2 space-y-2.5" data-purpose="policy-notice">
+<div class="flex items-center gap-2 text-brand-700">
+<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h4 class="text-xs font-bold uppercase tracking-wider">Updates to Subprocessors</h4>
+</div>
+<p class="text-xs leading-relaxed text-slate-700">
+          As we scale TiffinManager operations and introduce additional billing integrations, we may update this list. Merchants will receive email notifications of any subprocessor updates.
+        </p>
+<div class="flex items-center gap-2 pt-1 text-[11px] font-medium text-slate-600">
+<svg class="w-3.5 h-3.5 text-brand-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Office location: <strong class="text-slate-800 font-semibold">Patna, Bihar, India</strong></span>
+</div>
+</section>
+<!-- END: PolicyUpdatesSection -->
+<!-- BEGIN: InquiriesFooterBox -->
+<section class="bg-white rounded-2xl p-4 border border-slate-200/90 text-center space-y-3" data-purpose="contact-card">
+<div>
+<p class="text-xs text-slate-500 font-medium">Questions about legal or data privacy?</p>
+<a class="text-brand-500 font-bold text-sm tracking-tight hover:underline inline-block mt-0.5" href="mailto:support@tiffinmanager.com">
+            support@tiffinmanager.com
+          </a>
+</div>
+<button class="w-full py-2.5 px-4 bg-brand-500 hover:bg-brand-600 active:scale-[0.99] text-white font-semibold text-xs rounded-xl shadow-sm shadow-brand-500/25 transition-all flex items-center justify-center gap-2" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Contact Legal Counsel
+        </button>
+</section>
+<!-- END: InquiriesFooterBox -->
+</main>
+<!-- END: MainContent -->
+</div>
+<!-- END: MobileContainer -->
+</body></html>

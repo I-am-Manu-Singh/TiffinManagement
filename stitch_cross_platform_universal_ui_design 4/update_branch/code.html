@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Update Branch - Tiffin Manager</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#F95721',
+              hover: '#e24814',
+              light: '#FFF2ED',
+              surface: '#FFF8F5'
+            },
+            neutral: {
+              appBg: '#F3F6FD',
+              cardBg: '#FFFFFF',
+              border: '#E2E8F0',
+              label: '#475569',
+              body: '#1E293B',
+              muted: '#94A3B8'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03)',
+            elevated: '0 10px 25px -4px rgba(249, 87, 33, 0.25)'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scroll-and-resets">
+    /* Remove tap highlight & smooth touch controls on mobile */
+    * {
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #EBF1FA;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    /* Hide scrollbar for neat preview */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    /* iOS Safe Area bottom spacing helper */
+    .safe-bottom {
+      padding-bottom: env(safe-area-inset-bottom, 16px);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-0 md:p-6 bg-slate-200">
+<!-- BEGIN: MobileDeviceFrame -->
+<div class="w-full max-w-[430px] min-h-screen md:min-h-[900px] md:h-[915px] bg-[#F4F7FC] text-neutral-body flex flex-col justify-between relative md:rounded-[44px] shadow-2xl md:border-[8px] md:border-slate-800 overflow-hidden" data-purpose="mobile-viewport-container">
+<!-- BEGIN: TopBarSection -->
+<header class="bg-white sticky top-0 z-30 border-b border-slate-100 shadow-sm" data-purpose="app-header">
+  <!-- Status Bar Area -->
+  <div class="flex justify-between items-center text-[13px] font-bold text-slate-800 px-4 pt-3 pb-1">
+    <span class="">9:41</span>
+    <div class="flex items-center space-x-1.5 text-xs">
+      <svg class="w-4 h-4 fill-current text-slate-700" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.59 10.59 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
+      <svg class="w-4 h-4 fill-current text-slate-700" viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"></path></svg>
+      <div class="w-5 h-2.5 border border-slate-700 rounded-sm p-[1px] flex items-center">
+        <div class="w-full h-full bg-slate-700 rounded-[1px]"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Branded Primary Topbar -->
+  <div class="px-4 py-2 flex items-center justify-between border-b border-slate-100">
+    <div class="flex items-center space-x-3">
+      <div class="w-9 h-9 rounded-xl bg-brand/10 text-brand flex items-center justify-center font-bold">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+        </svg>
+      </div>
+      <div>
+        <div class="flex items-center space-x-1 cursor-pointer">
+          <span class="text-sm font-bold text-slate-900 leading-none">Main Branch</span>
+          <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <p class="text-[11px] font-medium text-slate-400 leading-tight mt-0.5">Kitchen Operations</p>
+      </div>
+    </div>
+    <div class="flex items-center space-x-2">
+      <button aria-label="Notifications" class="w-9 h-9 rounded-xl text-slate-600 hover:bg-slate-100 flex items-center justify-center relative transition-colors" type="button">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+        </svg>
+        <span class="w-2 h-2 bg-brand rounded-full absolute top-2 right-2 border-2 border-white"></span>
+      </button>
+      <button aria-label="User Profile" class="w-9 h-9 rounded-full overflow-hidden border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand/30" type="button">
+        <img src="https://lh3.googleusercontent.com/aida/AEtjO1UzzMtRchgJGxJeoMXFA4JCNEADa6tG9Khb9hHmUEOLjVKjbF_teuUEcrI0euDunxXAqkVB-FiRaX-9pL7anpGuMw93Zv8o8jwERUTlafiJwWx38x-vcu2WGusgQASg7sA9eCztNswFVd7NXfBCuockehL46LdRQRvIo4wNDCA7TOfX86f40k_uzNZX3TKxkG7fu6Jh33PG22xGOqjsaroDgfpqqIhjFgSUDCwFL3dk8o2PMZd-MgyShAVG" alt="User Profile" class="w-full h-full object-cover">
+      </button>
+    </div>
+  </div>
+  <!-- Sub-header Banner Navigation -->
+  <div class="px-4 py-2.5 flex items-center justify-between bg-slate-50/70">
+    <div class="flex items-center space-x-2.5">
+      <button aria-label="Go Back" class="w-8 h-8 flex items-center justify-center rounded-full bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors shadow-sm" type="button">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <div>
+        <h1 class="text-sm font-bold text-slate-900 leading-tight">Update Branch</h1>
+        <p class="text-[10px] font-medium text-slate-400">Settings • Kitchen Operations</p>
+      </div>
+    </div>
+    <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">Active</span>
+  </div>
+</header>
+<!-- END: TopBarSection -->
+<!-- BEGIN: MainContentArea -->
+<main class="flex-1 overflow-y-auto px-4 py-4 space-y-4" data-purpose="scrollable-content">
+<!-- Operational Branch Badge Card -->
+<div class="bg-white rounded-2xl p-3.5 border border-slate-200/80 shadow-soft flex items-center justify-between" data-purpose="branch-context-card">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-brand-light text-brand flex items-center justify-center">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<h2 class="text-sm font-bold text-slate-900">Main Kitchen Hub</h2>
+<span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">Operational</span>
+</div>
+<p class="text-xs text-slate-400 mt-0.5">Coverage: 8.5 km radius • Daily Lunches</p>
+</div>
+</div>
+<button class="text-xs font-semibold text-brand hover:underline pr-1" type="button">Switch</button>
+</div>
+<!-- BEGIN: FormCard -->
+<form class="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-soft space-y-4" data-purpose="update-branch-form" onsubmit="event.preventDefault();">
+<!-- Branch Name Field -->
+<div class="space-y-1.5" data-purpose="input-group-name">
+<label class="block text-xs font-bold text-slate-700" for="branch-name">
+            Branch Name <span class="text-brand">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-11 px-3.5 rounded-xl border border-slate-200 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition" id="branch-name" name="branch_name" placeholder="e.g. Downtown Central" required="" type="text" value="Main Branch">
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+<svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Address Details Field -->
+<div class="space-y-1.5" data-purpose="input-group-address">
+<label class="block text-xs font-bold text-slate-700" for="branch-address">
+            Address Details
+          </label>
+<textarea class="w-full p-3 rounded-xl border border-slate-200 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand resize-none transition" id="branch-address" name="branch_address" placeholder="Branch location address..." rows="3"></textarea>
+</div>
+<!-- Lat & Long Input Row -->
+<div class="grid grid-cols-2 gap-3" data-purpose="coordinates-fields">
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="latitude">Latitude</label>
+<input class="w-full h-11 px-3.5 rounded-xl border border-slate-200 text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition" id="latitude" name="latitude" placeholder="e.g. 18.5204" type="text">
+</div>
+<div class="space-y-1.5">
+<label class="block text-xs font-bold text-slate-700" for="longitude">Longitude</label>
+<input class="w-full h-11 px-3.5 rounded-xl border border-slate-200 text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition" id="longitude" name="longitude" placeholder="e.g. 73.8567" type="text">
+</div>
+</div>
+<!-- Interactive Map Selector Button -->
+<div class="pt-1" data-purpose="map-trigger-container">
+<button class="w-full h-11 rounded-xl bg-gradient-to-r from-[#FF6B38] to-brand text-white font-semibold text-xs tracking-wide flex items-center justify-center space-x-2 shadow-sm active:scale-[0.99] hover:opacity-95 transition-all" type="button">
+<!-- Map folded icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Choose Location on Map</span>
+</button>
+</div>
+<!-- Status Radio Selection -->
+<div class="pt-2 space-y-2" data-purpose="status-selection-group">
+<span class="block text-xs font-bold text-slate-700">Status</span>
+<div class="flex items-center space-x-6">
+<!-- Active option (Selected default) -->
+<label class="flex items-center space-x-2.5 cursor-pointer">
+<input checked="" class="w-4 h-4 text-brand focus:ring-brand border-slate-300 accent-brand" name="branch_status" type="radio" value="active">
+<span class="text-xs font-bold text-slate-800 flex items-center">
+<span class="w-2 h-2 rounded-full bg-emerald-500 mr-1.5"></span>
+                Active
+              </span>
+</label>
+<!-- Inactive option -->
+<label class="flex items-center space-x-2.5 cursor-pointer">
+<input class="w-4 h-4 text-brand focus:ring-brand border-slate-300 accent-brand" name="branch_status" type="radio" value="inactive">
+<span class="text-xs font-medium text-slate-500 flex items-center">
+<span class="w-2 h-2 rounded-full bg-slate-300 mr-1.5"></span>
+                Inactive
+              </span>
+</label>
+</div>
+</div>
+<!-- Save Branch CTA Button -->
+<div class="pt-3">
+<button class="w-full h-12 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-xl shadow-elevated transition active:scale-[0.98] flex items-center justify-center space-x-1.5" type="submit">
+<span class="">Save Branch</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</div>
+</form>
+<!-- END: FormCard -->
+<!-- Mini Hint / Help text -->
+<div class="px-2 text-center">
+<p class="text-[11px] text-slate-400">
+          Need to configure delivery zones? Head to <a class="text-brand font-semibold hover:underline" href="#">Delivery Matrix</a>.
+        </p>
+</div>
+<!-- Copyright Footer as per image & specifications -->
+<footer class="pt-2 pb-4 text-center" data-purpose="copyright-footer">
+<p class="text-[11px] text-slate-400 tracking-tight">
+          © 2026 Tiffin Manager All rights reserved
+        </p>
+</footer>
+</main>
+<!-- END: MainContentArea -->
+<!-- BEGIN: BottomNavigation -->
+<nav class="bg-white border-t border-slate-100 px-3 pt-2.5 pb-3 safe-bottom z-30 shadow-[0_-4px_16px_rgba(0,0,0,0.03)]" data-purpose="mobile-bottom-tabs">
+<div class="flex items-center justify-between">
+<!-- Tab 1: Dashboard -->
+<a class="flex flex-col items-center flex-1 py-1 text-slate-400 hover:text-slate-600 transition group" href="#">
+<svg class="w-5 h-5 transition-transform group-active:scale-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium mt-1">Dashboard</span>
+</a>
+<!-- Tab 2: Kitchen -->
+<a class="flex flex-col items-center flex-1 py-1 text-slate-400 hover:text-slate-600 transition group" href="#">
+<svg class="w-5 h-5 transition-transform group-active:scale-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium mt-1">Kitchen</span>
+</a>
+<!-- Tab 3: Plans -->
+<a class="flex flex-col items-center flex-1 py-1 text-slate-400 hover:text-slate-600 transition group" href="#">
+<svg class="w-5 h-5 transition-transform group-active:scale-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium mt-1">Plans</span>
+</a>
+<!-- Tab 4: Customers -->
+<a class="flex flex-col items-center flex-1 py-1 text-slate-400 hover:text-slate-600 transition group" href="#">
+<svg class="w-5 h-5 transition-transform group-active:scale-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium mt-1">Customers</span>
+</a>
+<!-- Tab 5: More / Active -->
+<a class="flex flex-col items-center flex-1 py-1 text-brand font-bold transition group" href="#">
+<div class="relative">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="w-1.5 h-1.5 bg-brand rounded-full absolute -top-0.5 -right-1"></span>
+</div>
+<span class="text-[10px] mt-1 font-semibold text-brand">More</span>
+</a>
+</div>
+</nav>
+<!-- END: BottomNavigation -->
+</div>
+<!-- END: MobileDeviceFrame -->
+
+
+</body></html>

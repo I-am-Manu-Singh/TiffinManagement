@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Meal Plans - Tiffin Manager</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font Setup: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#F95721',
+              light: '#FFF4EF',
+              dark: '#D84110'
+            },
+            surface: {
+              DEFAULT: '#F7F9FD',
+              card: '#FFFFFF'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F7F9FD;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Corner ribbon for Featured badge */
+    .ribbon-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 85px;
+      height: 85px;
+      overflow: hidden;
+      pointer-events: none;
+      border-top-right-radius: 1rem;
+    }
+    
+    .ribbon-banner {
+      position: absolute;
+      top: 18px;
+      right: -24px;
+      width: 105px;
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      line-height: 18px;
+      letter-spacing: 0.025em;
+      transform: rotate(45deg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-surface text-slate-800 antialiased min-h-screen pb-24 select-none">
+<!-- BEGIN: TopBar -->
+<header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+  <!-- Brand Top Bar -->
+  <div class="border-b border-slate-100 px-4 py-2.5">
+    <div class="flex items-center justify-between gap-3 max-w-md mx-auto">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <img src="https://lh3.googleusercontent.com/aida/AEtjO1VzbMoL1mwXaVT3Tlg8gh43JelIjaN2FrdCRjj5cOMnk73Y23HHCv4TcITNCtQ650Rxo2El1I-D8QGz0j0VKea1ZMunWSiSo9LNxF2r_o6RrmmnVhkcqbCouIcRqtuEtXUxa_Li6SCYjYFMW8B9WJTdBcTXZ96A6ow7-6hSNcXvn6zJZ6-kIBQQHiqmthsIcC7hcpJ7Gm1n2v-5Ue29vO_3nRrh3mQDjXIYsYEt_nRd4PJsSQJRlepP62U" alt="Logo" class="w-9 h-9 rounded-xl shrink-0 shadow-sm">
+        <div class="min-w-0">
+          <div class="flex items-center gap-1 cursor-pointer">
+            <span class="font-bold text-xs text-slate-900 truncate">Main Branch</span>
+            <svg class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <p class="text-[11px] text-slate-500 font-medium truncate">Meal Plans</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button aria-label="Notifications" class="relative p-2 rounded-full text-slate-600 hover:bg-slate-100 transition-colors" type="button">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand ring-2 ring-white"></span>
+        </button>
+        <button aria-label="User Profile" class="w-8 h-8 rounded-full overflow-hidden ring-1 ring-slate-200 hover:ring-brand transition-all" type="button">
+          <img src="https://lh3.googleusercontent.com/aida/AEtjO1UzzMtRchgJGxJeoMXFA4JCNEADa6tG9Khb9hHmUEOLjVKjbF_teuUEcrI0euDunxXAqkVB-FiRaX-9pL7anpGuMw93Zv8o8jwERUTlafiJwWx38x-vcu2WGusgQASg7sA9eCztNswFVd7NXfBCuockehL46LdRQRvIo4wNDCA7TOfX86f40k_uzNZX3TKxkG7fu6Jh33PG22xGOqjsaroDgfpqqIhjFgSUDCwFL3dk8o2PMZd-MgyShAVG" alt="Owner Avatar" class="w-full h-full object-cover">
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Sub Header with Title and Create Action -->
+  <div class="px-4 py-2.5">
+    <div class="flex items-center justify-between gap-3 max-w-md mx-auto">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <button aria-label="Go Back" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 active:scale-95 transition-all shrink-0" type="button">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path></svg>
+        </button>
+        <div class="min-w-0">
+          <h1 class="text-base font-bold text-slate-900 leading-tight truncate">Meal Plans</h1>
+          <p class="text-[11px] text-slate-500 truncate">Configure subscription packages &amp; daily pricing</p>
+        </div>
+      </div>
+      <button class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand hover:bg-brand-dark active:scale-95 text-white font-semibold text-xs rounded-lg shadow-sm shadow-orange-500/20 transition-all shrink-0" type="button">
+        <svg class="w-3.5 h-3.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span class="">Create Plan</span>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: MainContent -->
+<main class="max-w-md mx-auto px-4 pt-3 space-y-4">
+<!-- BEGIN: SearchAndFilters -->
+<section aria-label="Controls and Search" class="flex items-center gap-2 bg-white p-2.5 rounded-xl border border-slate-200/90 shadow-xs">
+  <div class="relative shrink-0">
+    <select aria-label="Items per page" class="appearance-none bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 py-2 pl-3 pr-7 rounded-lg focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand">
+      <option selected="" value="15">15</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+    </select>
+    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-1.5 text-slate-500">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+    </div>
+  </div>
+  <button aria-label="Filter" class="p-2 border border-slate-200 bg-slate-50 hover:bg-slate-100 rounded-lg text-slate-600 active:bg-slate-200 transition-colors shrink-0" type="button">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+  </button>
+  <div class="relative flex-1">
+    <input class="w-full text-xs bg-slate-50 border border-slate-200 rounded-lg pl-3 pr-8 py-2 placeholder-slate-400 text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand" placeholder="Search meal plans..." type="search">
+    <button aria-label="Submit search" class="absolute inset-y-0 right-0 flex items-center pr-2.5 text-slate-400 hover:text-slate-600" type="button">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+    </button>
+  </div>
+</section>
+<!-- END: SearchAndFilters -->
+<!-- BEGIN: MealPlanCard -->
+<article class="relative bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden" data-purpose="meal-plan-card">
+<!-- Featured Ribbon -->
+<div class="ribbon-wrapper">
+<div class="ribbon-banner">★ Featured</div>
+</div>
+<div class="p-4 space-y-3.5">
+<!-- Header Info (Icon + Details + Drag Grip) -->
+<div class="flex items-start gap-3 pr-12">
+<!-- Drag / Order Handle Indicator -->
+<div class="text-slate-300 pt-1 flex flex-col gap-0.5" title="Reorder">
+<div class="flex gap-0.5">
+<span class="w-1 h-1 rounded-full bg-slate-400"></span>
+<span class="w-1 h-1 rounded-full bg-slate-400"></span>
+</div>
+<div class="flex gap-0.5">
+<span class="w-1 h-1 rounded-full bg-slate-400"></span>
+<span class="w-1 h-1 rounded-full bg-slate-400"></span>
+</div>
+<div class="flex gap-0.5">
+<span class="w-1 h-1 rounded-full bg-slate-400"></span>
+<span class="w-1 h-1 rounded-full bg-slate-400"></span>
+</div>
+</div>
+<!-- Cutlery / Dish Badge Icon -->
+<div class="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 text-slate-600 shadow-inner">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Name & Category Badges -->
+<div class="min-w-0 flex-1">
+<h2 class="font-bold text-sm text-brand truncate tracking-tight">packages sql file</h2>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="px-1.5 py-0.5 text-[10px] font-semibold bg-slate-100 text-slate-600 rounded">Lunch</span>
+<span class="px-1.5 py-0.5 text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/60 rounded">Veg</span>
+</div>
+</div>
+</div>
+<!-- Daily Rate & Description -->
+<div class="pt-0.5">
+<div class="flex items-baseline gap-1">
+<span class="text-base font-extrabold text-slate-900">₹100.00</span>
+<span class="text-xs text-slate-400 font-medium">/ day</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5 italic">ddd</p>
+</div>
+<!-- Sub-box: Weekly & Monthly Rates -->
+<div class="grid grid-cols-2 rounded-xl bg-slate-50 border border-slate-100 divide-x divide-slate-200/70 p-2.5 text-center">
+<div>
+<span class="block text-[11px] text-slate-400 font-medium">Weekly</span>
+<span class="block text-xs font-bold text-slate-800 mt-0.5">₹700.00</span>
+</div>
+<div>
+<span class="block text-[11px] text-slate-400 font-medium">Monthly</span>
+<span class="block text-xs font-bold text-slate-800 mt-0.5">₹3,000.00</span>
+</div>
+</div>
+<!-- Delivery Days -->
+<div class="space-y-1.5 pt-1">
+<span class="text-[11px] font-semibold text-slate-500">Delivery Days:</span>
+<div class="flex items-center gap-1.5">
+<!-- Day Chips: S M T W T F S all highlighted in green -->
+<span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shadow-xs">S</span>
+<span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shadow-xs">M</span>
+<span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shadow-xs">T</span>
+<span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shadow-xs">W</span>
+<span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shadow-xs">T</span>
+<span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shadow-xs">F</span>
+<span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shadow-xs">S</span>
+</div>
+</div>
+<!-- Composition items & Status Pill -->
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
+<span class="text-slate-500 text-[11px] font-medium">Composition: <strong class="text-slate-700">7 items</strong></span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-50 text-emerald-600 font-semibold text-[11px] rounded-full border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Active
+          </span>
+</div>
+<!-- Card Buttons (Edit / Delete) -->
+<div class="flex items-center justify-end gap-2.5 pt-1">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 border border-brand text-brand hover:bg-brand-light active:bg-orange-100 rounded-lg text-xs font-semibold transition-colors" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Edit
+          </button>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 border border-rose-400 text-rose-600 hover:bg-rose-50 active:bg-rose-100 rounded-lg text-xs font-semibold transition-colors" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Delete
+          </button>
+</div>
+</div>
+</article>
+<!-- END: MealPlanCard -->
+<!-- BEGIN: SecondaryHelperCard -->
+<section class="bg-white/80 border border-dashed border-slate-300 rounded-2xl p-4 text-center space-y-2">
+<div class="w-10 h-10 mx-auto rounded-full bg-orange-50 text-brand flex items-center justify-center">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-xs font-bold text-slate-700">Need another meal plan?</h3>
+<p class="text-[11px] text-slate-400 max-w-xs mx-auto">Create specialized packages for dinner, breakfast or customized corporate meals.</p>
+</section>
+<!-- END: SecondaryHelperCard -->
+<!-- Copyright footnote -->
+<footer class="text-center pt-2 pb-6">
+<p class="text-[11px] text-slate-400">© 2026 Tiffin Manager All rights reserved</p>
+</footer>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: BottomNavigation -->
+<nav aria-label="Mobile Navigation" class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200/90 z-40 px-2 py-1.5 shadow-lg max-w-md mx-auto">
+  <div class="flex items-center justify-around">
+    <!-- Dashboard -->
+    <a class="flex flex-col items-center gap-1 py-1 px-2.5 text-slate-400 hover:text-slate-600 transition-colors" href="#">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+      <span class="text-[10px] font-medium">Dashboard</span>
+    </a>
+    <!-- Kitchen -->
+    <a class="flex flex-col items-center gap-1 py-1 px-2.5 text-slate-400 hover:text-slate-600 transition-colors" href="#">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+      <span class="text-[10px] font-medium">Kitchen</span>
+    </a>
+    <!-- Plans (Active Tab) -->
+    <a class="flex flex-col items-center gap-1 py-1 px-2.5 text-brand transition-colors" href="#">
+      <div class="relative">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+        </svg>
+        <span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-brand ring-2 ring-white"></span>
+      </div>
+      <span class="text-[10px] font-bold text-brand">Plans</span>
+    </a>
+    <!-- Customers -->
+    <a class="flex flex-col items-center gap-1 py-1 px-2.5 text-slate-400 hover:text-slate-600 transition-colors" href="#">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+      <span class="text-[10px] font-medium">Customers</span>
+    </a>
+    <!-- More -->
+    <a class="flex flex-col items-center gap-1 py-1 px-2.5 text-slate-400 hover:text-slate-600 transition-colors" href="#">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+      <span class="text-[10px] font-medium">More</span>
+    </a>
+  </div>
+</nav>
+<!-- END: BottomNavigation -->
+
+
+</body></html>

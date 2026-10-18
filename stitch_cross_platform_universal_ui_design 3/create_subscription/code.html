@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Create Subscription Wizard</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#f95721',
+              50: '#fff5f1',
+              100: '#ffe8e0',
+              500: '#f95721',
+              600: '#e04612',
+              700: '#bd380c'
+            },
+            surface: '#f7f9fd',
+            cardBg: '#ffffff',
+            slateBorder: '#e2e8f0'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          boxShadow: {
+            'soft': '0 2px 10px rgba(0, 0, 0, 0.04)',
+            'sticky': '0 -4px 16px rgba(0, 0, 0, 0.06)'
+          }
+        }
+      }
+    };
+  </script>
+<!-- Custom Styles for Form Inputs and Elements -->
+<style data-purpose="custom-overrides">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+    /* Hide scrollbar for weekday scroller if needed */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-surface text-slate-800 antialiased min-h-screen pb-36 selection:bg-brand selection:text-white">
+<!-- BEGIN: MobileStatusBar & Header -->
+<header class="sticky top-0 z-40 bg-cardBg/95 backdrop-blur-md border-b border-slateBorder pt-safe">
+  <div class="border-b border-slate-100 bg-white">
+    <div class="px-4 py-2.5 flex items-center justify-between max-w-lg mx-auto">
+      <div class="flex items-center space-x-2.5">
+        <img src="https://lh3.googleusercontent.com/aida/AEtjO1VzbMoL1mwXaVT3Tlg8gh43JelIjaN2FrdCRjj5cOMnk73Y23HHCv4TcITNCtQ650Rxo2El1I-D8QGz0j0VKea1ZMunWSiSo9LNxF2r_o6RrmmnVhkcqbCouIcRqtuEtXUxa_Li6SCYjYFMW8B9WJTdBcTXZ96A6ow7-6hSNcXvn6zJZ6-kIBQQHiqmthsIcC7hcpJ7Gm1n2v-5Ue29vO_3nRrh3mQDjXIYsYEt_nRd4PJsSQJRlepP62U" alt="Logo" class="w-8 h-8 rounded-lg shadow-sm">
+        <div class="flex flex-col leading-tight">
+          <button class="inline-flex items-center text-xs font-bold text-slate-900 hover:text-brand transition gap-1">
+            <span class="">Main Branch</span>
+            <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <span class="text-[11px] font-medium text-slate-500">Subscriptions</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-3">
+        <button aria-label="Notifications" class="relative p-1.5 rounded-full hover:bg-slate-100 text-slate-600 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+          <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-brand"></span>
+        </button>
+        <img src="https://lh3.googleusercontent.com/aida/AEtjO1UzzMtRchgJGxJeoMXFA4JCNEADa6tG9Khb9hHmUEOLjVKjbF_teuUEcrI0euDunxXAqkVB-FiRaX-9pL7anpGuMw93Zv8o8jwERUTlafiJwWx38x-vcu2WGusgQASg7sA9eCztNswFVd7NXfBCuockehL46LdRQRvIo4wNDCA7TOfX86f40k_uzNZX3TKxkG7fu6Jh33PG22xGOqjsaroDgfpqqIhjFgSUDCwFL3dk8o2PMZd-MgyShAVG" alt="Owner Avatar" class="w-8 h-8 rounded-full border border-slate-200 object-cover shadow-sm">
+      </div>
+    </div>
+  </div>
+  <div class="px-4 py-2.5 flex items-center justify-between max-w-lg mx-auto bg-white/80">
+    <div class="flex items-center space-x-2.5">
+      <button aria-label="Go Back" class="w-8 h-8 flex items-center justify-center rounded-full active:bg-slate-100 border border-slate-200 text-slate-700 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+      <div>
+        <h1 class="text-sm font-bold text-slate-900 leading-none">Create Subscription</h1>
+        <p class="text-[11px] text-slate-500 mt-0.5">Configure meal plans &amp; delivery terms</p>
+      </div>
+    </div>
+    <button class="text-xs font-semibold text-brand px-2.5 py-1 rounded hover:bg-brand-50 transition active:scale-95" type="button">
+      Reset
+    </button>
+  </div>
+</header>
+<!-- END: MobileStatusBar & Header -->
+<!-- BEGIN: MainContentContainer -->
+<main class="max-w-lg mx-auto px-4 py-4 space-y-4">
+<!-- BEGIN: CustomerSelectionSection -->
+<section class="bg-cardBg rounded-2xl p-4 shadow-soft border border-slate-100" data-purpose="customer-selection">
+<!-- Section Title & Toggle -->
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<div class="flex items-center space-x-2">
+<div class="w-7 h-7 rounded-lg bg-brand-50 flex items-center justify-center text-brand">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+</svg>
+</div>
+<h2 class="text-[11px] font-bold text-brand uppercase tracking-wide">Customer Selection</h2>
+</div>
+<!-- New Customer Switch -->
+<label class="inline-flex items-center cursor-pointer gap-2">
+<span class="text-xs font-medium text-slate-600">New Customer?</span>
+<input class="sr-only peer" id="newCustomerToggle" type="checkbox">
+<div class="w-8 h-4.5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3.5 after:w-3.5 after:transition-all peer-checked:bg-brand relative"></div>
+</label>
+</div>
+<!-- Select Customer Input -->
+<div class="mt-3.5">
+<label class="block text-xs font-medium text-slate-700 mb-1" for="select-customer">
+          Select Customer <span class="text-brand">*</span>
+</label>
+<div class="relative">
+<select class="w-full text-sm rounded-xl border border-slate-200 bg-white text-slate-800 py-2.5 px-3 pr-9 focus:border-brand focus:ring-1 focus:ring-brand shadow-sm appearance-none transition" id="select-customer">
+<option disabled="" selected="" value="">Select Customer</option>
+<option value="1">Ananya Sharma (+91 98765 43210)</option>
+<option value="2">Rahul Verma (+91 98111 22334)</option>
+<option value="3">Priya Patel (+91 94567 89012)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-400">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- END: CustomerSelectionSection -->
+<!-- BEGIN: MealPlansAndPricingSection -->
+<section class="bg-cardBg rounded-2xl p-4 shadow-soft border border-slate-100" data-purpose="meal-plans-and-pricing">
+<!-- Section Header -->
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<h2 class="text-[11px] font-bold text-brand uppercase tracking-wide">Meal Plans &amp; Pricing</h2>
+<button class="inline-flex items-center px-2.5 py-1 text-xs font-semibold text-brand bg-brand-50 border border-brand/30 rounded-lg active:scale-95 transition" type="button">
+          + Add Plan
+        </button>
+</div>
+<!-- Plan Item Container -->
+<div class="mt-3.5 p-3.5 rounded-xl bg-slate-50/75 border border-slate-200/80 space-y-3 relative">
+<button aria-label="Remove meal plan" class="absolute top-2.5 right-2.5 text-slate-400 hover:text-slate-600 transition" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Meal Plan Selection -->
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">
+            Meal Plan <span class="text-brand">*</span>
+</label>
+<div class="relative">
+<select class="w-full text-sm rounded-lg border border-slate-200 bg-white text-slate-800 py-2 px-3 pr-8 focus:border-brand focus:ring-1 focus:ring-brand shadow-sm appearance-none">
+<option disabled="" selected="" value="">Select Meal Plan</option>
+<option value="deluxe-thali">Deluxe Healthy Thali (Veg)</option>
+<option value="keto-lunch">Keto High Protein Lunch</option>
+<option value="classic-combo">Classic Homestyle Combo</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-400">
+<svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Rates Grid -->
+<div class="grid grid-cols-3 gap-2">
+<div>
+<label class="block text-[11px] font-medium text-slate-600 mb-1 truncate">
+              Daily Rate (₹) <span class="text-brand">*</span>
+</label>
+<input class="w-full text-xs font-medium rounded-lg border border-slate-200 bg-white px-2 py-1.5 focus:border-brand focus:ring-1 focus:ring-brand" placeholder="0.00" step="0.01" type="number" value="0.00">
+</div>
+<div>
+<label class="block text-[11px] font-medium text-slate-600 mb-1 truncate">Weekly Rate</label>
+<input class="w-full text-xs font-medium rounded-lg border border-slate-200 bg-white px-2 py-1.5 focus:border-brand focus:ring-1 focus:ring-brand" placeholder="0.00" step="0.01" type="number">
+</div>
+<div>
+<label class="block text-[11px] font-medium text-slate-600 mb-1 truncate">Monthly Rate</label>
+<input class="w-full text-xs font-medium rounded-lg border border-slate-200 bg-white px-2 py-1.5 focus:border-brand focus:ring-1 focus:ring-brand" placeholder="0.00" step="0.01" type="number">
+</div>
+</div>
+<!-- Meals/Day Steppers -->
+<div class="pt-1">
+<label class="block text-xs font-semibold text-slate-700 mb-2">
+            Meals/Day <span class="text-brand">*</span>
+</label>
+<div class="grid grid-cols-4 sm:grid-cols-7 gap-1.5">
+<!-- Day Sun -->
+<div class="flex flex-col items-center bg-white p-1.5 rounded-lg border border-slate-200">
+<span class="text-[10px] font-bold text-slate-500 uppercase mb-1">Sun</span>
+<div class="flex items-center space-x-1">
+<button class="w-5 h-5 flex items-center justify-center rounded text-slate-500 hover:bg-slate-100 active:scale-95 text-xs font-bold leading-none" type="button">−</button>
+<span class="text-xs font-semibold text-slate-800 w-3 text-center">1</span>
+<button class="w-5 h-5 flex items-center justify-center rounded text-brand hover:bg-brand-50 active:scale-95 text-xs font-bold leading-none" type="button">+</button>
+</div>
+</div>
+<!-- Day Mon -->
+<div class="flex flex-col items-center bg-white p-1.5 rounded-lg border border-slate-200">
+<span class="text-[10px] font-bold text-slate-500 uppercase mb-1">Mon</span>
+<div class="flex items-center space-x-1">
+<button class="w-5 h-5 flex items-center justify-center rounded text-slate-500 hover:bg-slate-100 active:scale-95 text-xs font-bold leading-none" type="button">−</button>
+<span class="text-xs font-semibold text-slate-800 w-3 text-center">1</span>
+<button class="w-5 h-5 flex items-center justify-center rounded text-brand hover:bg-brand-50 active:scale-95 text-xs font-bold leading-none" type="button">+</button>
+</div>
+</div>
+<!-- Day Tue -->
+<div class="flex flex-col items-center bg-white p-1.5 rounded-lg border border-slate-200">
+<span class="text-[10px] font-bold text-slate-500 uppercase mb-1">Tue</span>
+<div class="flex items-center space-x-1">
+<button class="w-5 h-5 flex items-center justify-center rounded text-slate-500 hover:bg-slate-100 active:scale-95 text-xs font-bold leading-none" type="button">−</button>
+<span class="text-xs font-semibold text-slate-800 w-3 text-center">1</span>
+<button class="w-5 h-5 flex items-center justify-center rounded text-brand hover:bg-brand-50 active:scale-95 text-xs font-bold leading-none" type="button">+</button>
+</div>
+</div>
+<!-- Day Wed -->
+<div class="flex flex-col items-center bg-white p-1.5 rounded-lg border border-slate-200">
+<span class="text-[10px] font-bold text-slate-500 uppercase mb-1">Wed</span>
+<div class="flex items-center space-x-1">
+<button class="w-5 h-5 flex items-center justify-center rounded text-slate-500 hover:bg-slate-100 active:scale-95 text-xs font-bold leading-none" type="button">−</button>
+<span class="text-xs font-semibold text-slate-800 w-3 text-center">1</span>
+<button class="w-5 h-5 flex items-center justify-center rounded text-brand hover:bg-brand-50 active:scale-95 text-xs font-bold leading-none" type="button">+</button>
+</div>
+</div>
+<!-- Day Thu -->
+<div class="flex flex-col items-center bg-white p-1.5 rounded-lg border border-slate-200">
+<span class="text-[10px] font-bold text-slate-500 uppercase mb-1">Thu</span>
+<div class="flex items-center space-x-1">
+<button class="w-5 h-5 flex items-center justify-center rounded text-slate-500 hover:bg-slate-100 active:scale-95 text-xs font-bold leading-none" type="button">−</button>
+<span class="text-xs font-semibold text-slate-800 w-3 text-center">1</span>
+<button class="w-5 h-5 flex items-center justify-center rounded text-brand hover:bg-brand-50 active:scale-95 text-xs font-bold leading-none" type="button">+</button>
+</div>
+</div>
+<!-- Day Fri -->
+<div class="flex flex-col items-center bg-white p-1.5 rounded-lg border border-slate-200">
+<span class="text-[10px] font-bold text-slate-500 uppercase mb-1">Fri</span>
+<div class="flex items-center space-x-1">
+<button class="w-5 h-5 flex items-center justify-center rounded text-slate-500 hover:bg-slate-100 active:scale-95 text-xs font-bold leading-none" type="button">−</button>
+<span class="text-xs font-semibold text-slate-800 w-3 text-center">1</span>
+<button class="w-5 h-5 flex items-center justify-center rounded text-brand hover:bg-brand-50 active:scale-95 text-xs font-bold leading-none" type="button">+</button>
+</div>
+</div>
+<!-- Day Sat -->
+<div class="flex flex-col items-center bg-white p-1.5 rounded-lg border border-slate-200 col-span-2 sm:col-span-1">
+<span class="text-[10px] font-bold text-slate-500 uppercase mb-1">Sat</span>
+<div class="flex items-center space-x-1">
+<button class="w-5 h-5 flex items-center justify-center rounded text-slate-500 hover:bg-slate-100 active:scale-95 text-xs font-bold leading-none" type="button">−</button>
+<span class="text-xs font-semibold text-slate-800 w-3 text-center">1</span>
+<button class="w-5 h-5 flex items-center justify-center rounded text-brand hover:bg-brand-50 active:scale-95 text-xs font-bold leading-none" type="button">+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: MealPlansAndPricingSection -->
+<!-- BEGIN: SubscriptionScheduleAndSettingsSection -->
+<section class="bg-cardBg rounded-2xl p-4 shadow-soft border border-slate-100 space-y-3.5" data-purpose="subscription-schedule-settings">
+<div class="pb-2 border-b border-slate-100">
+<h2 class="text-[11px] font-bold text-brand uppercase tracking-wide">Subscription Schedule &amp; Settings</h2>
+</div>
+<!-- Billing Period & Max Skips Limit -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">
+            Billing Period <span class="text-brand">*</span>
+</label>
+<div class="relative">
+<select class="w-full text-xs font-medium rounded-xl border border-slate-200 bg-white py-2.5 px-3 pr-8 focus:border-brand focus:ring-1 focus:ring-brand shadow-sm appearance-none">
+<option selected="" value="monthly">Monthly billing</option>
+<option value="weekly">Weekly billing</option>
+<option value="custom">Custom cycle</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-400">
+<svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">
+            Max Skips Limit <span class="text-brand">*</span>
+</label>
+<input class="w-full text-xs font-medium rounded-xl border border-slate-200 bg-white py-2.5 px-3 focus:border-brand focus:ring-1 focus:ring-brand shadow-sm" type="number" value="5">
+</div>
+</div>
+<!-- Start Date & End Date -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">
+            Start Date <span class="text-brand">*</span>
+</label>
+<div class="relative">
+<input class="w-full text-xs font-medium rounded-xl border border-slate-200 bg-white py-2.5 px-3 focus:border-brand focus:ring-1 focus:ring-brand shadow-sm" type="date" value="2026-09-04">
+</div>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">End Date</label>
+<div class="relative">
+<input class="w-full text-xs font-medium rounded-xl border border-slate-200 bg-white py-2.5 px-3 focus:border-brand focus:ring-1 focus:ring-brand shadow-sm text-slate-500" placeholder="dd/mm/yyyy" type="date">
+</div>
+</div>
+</div>
+<!-- Mark as Trial Meal Toggle -->
+<div class="pt-1">
+<label class="inline-flex items-center cursor-pointer gap-2.5">
+<input class="sr-only peer" id="trialMealToggle" type="checkbox">
+<div class="w-8 h-4.5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3.5 after:w-3.5 after:transition-all peer-checked:bg-brand relative"></div>
+<span class="text-xs font-semibold text-brand">Mark as Trial Meal</span>
+</label>
+</div>
+<!-- Notes / Special Instructions -->
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">Notes / Special Instructions</label>
+<textarea class="w-full text-xs rounded-xl border border-slate-200 bg-white p-2.5 focus:border-brand focus:ring-1 focus:ring-brand shadow-sm resize-none" placeholder="e.g. deliver near door, no lunch onion..." rows="2"></textarea>
+</div>
+</section>
+<!-- END: SubscriptionScheduleAndSettingsSection -->
+<!-- BEGIN: ShippingDetailsSection -->
+<section class="bg-cardBg rounded-2xl p-4 border border-slate-100 shadow-soft space-y-3" data-purpose="shipping-details">
+<div class="pb-2 border-b border-slate-100">
+<h2 class="text-[11px] font-bold text-brand uppercase tracking-wide">Shipping Details</h2>
+</div>
+<!-- Delivery Method Radio Group -->
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-2">
+          Shipping Type <span class="text-brand">*</span>
+</label>
+<div class="flex items-center space-x-6">
+<label class="inline-flex items-center gap-2 cursor-pointer">
+<input checked="" class="text-brand focus:ring-brand h-4 w-4 border-slate-300" name="shipping_type" type="radio" value="home">
+<span class="text-xs font-medium text-slate-800">Home Delivery</span>
+</label>
+<label class="inline-flex items-center gap-2 cursor-pointer">
+<input class="text-brand focus:ring-brand h-4 w-4 border-slate-300" name="shipping_type" type="radio" value="self">
+<span class="text-xs font-medium text-slate-700">Self Pick Up</span>
+</label>
+</div>
+</div>
+<!-- Delivery Instructions -->
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">Delivery Instructions</label>
+<textarea class="w-full text-xs rounded-xl border border-slate-200 bg-white p-2.5 focus:border-brand focus:ring-1 focus:ring-brand shadow-sm resize-none" placeholder="Instructions for the delivery driver..." rows="2"></textarea>
+</div>
+</section>
+<!-- END: ShippingDetailsSection -->
+<!-- BEGIN: InvoiceBillingAndInitialPaymentSection -->
+<section class="bg-cardBg rounded-2xl p-4 border border-slate-100 shadow-soft space-y-3.5" data-purpose="invoice-billing-payment">
+<div class="pb-2 border-b border-slate-100">
+<h2 class="text-[11px] font-bold text-brand uppercase tracking-wide">Invoice Billing &amp; Initial Payment</h2>
+</div>
+<!-- Calculated Rate Card -->
+<div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex items-center justify-between">
+<div>
+<span class="text-[10px] uppercase tracking-wider font-semibold text-slate-400 block">Calculated Sumup Rate</span>
+<span class="text-xl font-black text-slate-900">₹0.00</span>
+</div>
+<span class="text-xs font-semibold text-brand bg-brand-50 px-2 py-0.5 rounded-full border border-brand/20">Monthly Cycle</span>
+</div>
+<!-- Status & Amount -->
+<div class="space-y-3">
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">
+            Initial Payment Status <span class="text-brand">*</span>
+</label>
+<div class="relative">
+<select class="w-full text-xs font-medium rounded-xl border border-slate-200 bg-white py-2.5 px-3 pr-8 focus:border-brand focus:ring-1 focus:ring-brand shadow-sm appearance-none">
+<option selected="">Unpaid (Zero Wallet Credit)</option>
+<option>Paid (Full Payment)</option>
+<option>Partial Advance</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-400">
+<svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-700 mb-1">
+            Payment Amount <span class="text-brand">*</span>
+</label>
+<div class="relative rounded-xl shadow-sm">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="text-slate-500 text-xs font-medium">₹</span>
+</div>
+<input class="w-full rounded-xl border border-slate-200 bg-slate-50 pl-7 pr-3 py-2 text-xs font-semibold text-slate-800 focus:border-brand focus:ring-1 focus:ring-brand" readonly="" type="text" value="0.00">
+</div>
+<p class="mt-1 text-[11px] text-slate-500 leading-tight">
+            Matches invoice total for 'Paid'. Auto-locked to 0.00 for 'Unpaid'.
+          </p>
+</div>
+</div>
+</section>
+<!-- END: InvoiceBillingAndInitialPaymentSection -->
+</main>
+<!-- END: MainContentContainer -->
+<!-- BEGIN: StickyBottomCTA -->
+<div class="fixed bottom-14 left-0 right-0 z-30 bg-cardBg/90 backdrop-blur-md border-t border-slate-200 px-4 py-2.5 shadow-sticky">
+<div class="max-w-lg mx-auto">
+<button class="w-full py-3 px-4 bg-brand hover:bg-brand-600 active:scale-[0.99] text-white font-bold text-sm rounded-xl shadow-md transition flex items-center justify-center space-x-2" type="button">
+<span class="">Create Subscription</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- END: StickyBottomCTA -->
+<!-- BEGIN: MobileBottomNavigationBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 py-1.5 px-3 shadow-lg">
+  <div class="max-w-lg mx-auto flex items-center justify-between">
+    <a class="flex flex-col items-center flex-1 text-slate-400 hover:text-slate-600 transition py-0.5" href="#">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+      <span class="text-[10px] font-medium mt-0.5">Dashboard</span>
+    </a>
+    <a class="flex flex-col items-center flex-1 text-slate-400 hover:text-slate-600 transition py-0.5" href="#">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+      <span class="text-[10px] font-medium mt-0.5">Kitchen</span>
+    </a>
+    <a class="flex flex-col items-center flex-1 text-brand font-semibold py-0.5 relative" href="#">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+      <span class="text-[10px] font-bold mt-0.5">Plans</span>
+      <span class="w-1 h-1 rounded-full bg-brand mt-0.5"></span>
+    </a>
+    <a class="flex flex-col items-center flex-1 text-slate-400 hover:text-slate-600 transition py-0.5" href="#">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+      <span class="text-[10px] font-medium mt-0.5">Customers</span>
+    </a>
+    <a class="flex flex-col items-center flex-1 text-slate-400 hover:text-slate-600 transition py-0.5" href="#">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <span class="text-[10px] font-medium mt-0.5">More</span>
+    </a>
+  </div>
+</nav>
+<!-- END: MobileBottomNavigationBar -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="stepper-interactivity">
+    // Simple script to handle increment/decrement for meal pills
+    document.addEventListener('DOMContentLoaded', () => {
+      const steppers = document.querySelectorAll('[data-purpose="meal-plans-and-pricing"] button');
+      steppers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const isPlus = btn.textContent.trim() === '+';
+          const isMinus = btn.textContent.trim() === '−';
+          if (!isPlus && !isMinus) return;
+
+          const span = isPlus ? btn.previousElementSibling : btn.nextElementSibling;
+          if (span && span.tagName === 'SPAN') {
+            let val = parseInt(span.textContent, 10) || 0;
+            if (isPlus) {
+              span.textContent = val + 1;
+            } else if (isMinus && val > 0) {
+              span.textContent = val - 1;
+            }
+          }
+        });
+      });
+    });
+  </script>
+<!-- END: InteractiveScripts -->
+
+
+</body></html>

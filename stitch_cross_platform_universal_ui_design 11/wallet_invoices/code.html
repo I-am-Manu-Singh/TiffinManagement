@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'on-background': '#191c1f', 'on-primary': '#ffffff', 'on-error': '#ffffff', 'on-tertiary-fixed-variant': '#005236', 'surface-dim': '#d8dade', 'tertiary-fixed-dim': '#4edea3', 'on-primary-fixed-variant': '#862300', 'on-secondary-fixed-variant': '#3c475a', 'surface': '#f7f9fd', 'secondary-fixed-dim': '#bcc7de', 'primary-fixed-dim': '#ffb59f', 'primary': '#ab2f00', 'outline-variant': '#e4beb4', 'on-secondary-container': '#586377', 'surface-container-lowest': '#ffffff', 'surface-container-low': '#f2f4f8', 'on-tertiary-fixed': '#002113', 'tertiary': '#006947', 'primary-container': '#d53e02', 'surface-container': '#eceef2', 'surface-container-high': '#e6e8ec', 'on-surface': '#191c1f', 'on-secondary': '#ffffff', 'outline': '#8f7067', 'background': '#f7f9fd', 'tertiary-fixed': '#6ffbbe', 'surface-bright': '#f7f9fd', 'primary-fixed': '#ffdbd1', 'inverse-surface': '#2d3134', 'on-tertiary-container': '#f5fff6', 'on-primary-container': '#fffbff', 'secondary-container': '#d5e0f8', 'surface-container-highest': '#e0e3e6', 'surface-tint': '#af3100', 'tertiary-container': '#00855b', 'on-primary-fixed': '#3a0a00', 'on-error-container': '#93000a', 'error-container': '#ffdad6', 'on-tertiary': '#ffffff', 'inverse-on-surface': '#eff1f5', 'secondary-fixed': '#d8e3fb', 'inverse-primary': '#ffb59f', 'on-secondary-fixed': '#111c2d', 'on-surface-variant': '#5b4139', 'error': '#ba1a1a', 'surface-variant': '#e0e3e6', 'secondary': '#545f73' }, borderRadius: { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, spacing: { 'space-xl': '1.5rem', 'space-2xs': '0.25rem', 'card-padding-mobile': '0.875rem', 'screen-margin-tablet': '1.5rem', 'space-md': '1rem', 'screen-margin-mobile': '1rem', 'space-lg': '1.25rem', 'space-xs': '0.5rem', 'touch-target-min': '2.75rem', 'space-sm': '0.75rem', 'space-2xl': '2rem' }, fontFamily: { 'body-lg': ['Inter'], 'headline-lg-mobile': ['Plus Jakarta Sans'], 'label-lg': ['Inter'], 'label-sm': ['Inter'], 'headline-md': ['Plus Jakarta Sans'], 'headline-lg': ['Plus Jakarta Sans'], 'label-md': ['Inter'], 'financial-counter': ['Plus Jakarta Sans'], 'body-md': ['Inter'], 'headline-sm': ['Plus Jakarta Sans'], 'body-sm': ['Inter'] }, fontSize: { 'body-lg': ['16px', { lineHeight: '24px', fontWeight: '400' }], 'headline-lg-mobile': ['24px', { lineHeight: '30px', fontWeight: '700' }], 'label-lg': ['14px', { lineHeight: '18px', letterSpacing: '0.1px', fontWeight: '600' }], 'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.3px', fontWeight: '500' }], 'headline-md': ['20px', { lineHeight: '26px', fontWeight: '600' }], 'headline-lg': ['28px', { lineHeight: '34px', fontWeight: '700' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }], 'financial-counter': ['22px', { lineHeight: '26px', fontWeight: '700' }], 'body-md': ['14px', { lineHeight: '20px', fontWeight: '400' }], 'headline-sm': ['18px', { lineHeight: '24px', fontWeight: '600' }], 'body-sm': ['13px', { lineHeight: '18px', fontWeight: '400' }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-screen-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Brand logo. - Primary color: #f95721
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VzbMoL1mwXaVT3Tlg8gh43JelIjaN2FrdCRjj5cOMnk73Y23HHCv4TcITNCtQ650Rxo2El1I-D8QGz0j0VKea1ZMunWSiSo9LNxF2r_o6RrmmnVhkcqbCouIcRqtuEtXUxa_Li6SCYjYFMW8B9WJTdBcTXZ96A6ow7-6hSNcXvn6zJZ6-kIBQQHiqmthsIcC7hcpJ7Gm1n2v-5Ue29vO_3nRrh3mQDjXIYsYEt_nRd4PJsSQJRlepP62U"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-2xs"><span class="font-headline-sm text-headline-sm text-on-surface truncate">Wallet</span><span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-tertiary mr-1"></span>Active</span></div><span class="font-label-sm text-label-sm text-secondary truncate">Tiffin Manager • Daily Mess</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Notifications" class="w-touch-target-min h-touch-target-min flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-screen-margin-mobile py-space-sm gap-space-md">
+<!-- Live Prepaid Balance Card -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary via-primary-container to-on-primary-fixed-variant text-on-primary p-card-padding-mobile shadow-lg">
+<!-- Culinary Ambient Pattern -->
+<div class="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
+<div class="absolute -top-10 right-4 w-28 h-28 rounded-full bg-tertiary-fixed/15 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-2xs bg-black/20 backdrop-blur-md px-2.5 py-1 rounded-full text-on-primary">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+<span class="font-label-sm text-label-sm">Live Prepaid Wallet</span>
+</div>
+<div class="flex items-center gap-1 text-primary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Escrow Protected</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary-fixed opacity-90 uppercase tracking-wider">Available Balance</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-financial-counter text-[34px] leading-tight text-on-primary tracking-tight">₹1,420.00</span>
+</div>
+</div>
+<!-- Health Bar & Forecast -->
+<div class="bg-black/20 rounded-lg p-2.5 flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-primary">
+<span class="material-symbols-outlined text-[15px] text-tertiary-fixed">eco</span>
+            ~14 Days remaining
+          </span>
+<span class="text-primary-fixed font-body-sm text-body-sm">Based on 2 meals/day</span>
+</div>
+<div class="w-full h-1.5 bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+<!-- Overdraft Buffer & CTA -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">health_and_safety</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm leading-tight text-on-primary">₹330.00 buffer allowed</span>
+<span class="font-label-sm text-[10px] text-primary-fixed/80">No food stopped on zero</span>
+</div>
+</div>
+<button class="bg-surface-container-lowest text-primary hover:bg-surface-container font-headline-sm text-[14px] px-4 py-2.5 rounded-full shadow-md transition-transform active:scale-95 flex items-center gap-1.5 font-bold" id="recharge-trigger-btn">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Top-up / Renew</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Refill Suggestions -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Quick Top-up Packs</h3>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">local_offer</span> Instant activation
+      </span>
+</div>
+<!-- Horizontal scroll cards -->
+<div class="flex gap-space-xs overflow-x-auto pb-1.5 -mx-screen-margin-mobile px-screen-margin-mobile no-scrollbar">
+<!-- ₹500 Pack -->
+<button class="pack-card shrink-0 w-44 bg-surface-container-lowest p-3 rounded-lg text-left shadow-sm flex flex-col justify-between transition-all hover:shadow-md" data-amount="500">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface">₹500</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">lunch_dining</span>
+</div>
+<p class="font-label-md text-label-md text-primary font-semibold mt-0.5">5 Meals Buffer</p>
+<p class="font-body-sm text-body-sm text-secondary mt-1 leading-snug">Emergency refill for busy workweeks</p>
+</div>
+<span class="mt-3 inline-flex items-center justify-center w-full py-1.5 bg-surface-container text-on-surface font-label-sm text-label-sm rounded-md">
+          Select Pack
+        </span>
+</button>
+<!-- ₹1,500 Pack -->
+<button class="pack-card shrink-0 w-48 bg-surface-container-lowest p-3 rounded-lg text-left shadow-sm flex flex-col justify-between transition-all hover:shadow-md" data-amount="1500">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface">₹1,500</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">calendar_today</span>
+</div>
+<p class="font-label-md text-label-md text-primary font-semibold mt-0.5">15 Days Refill</p>
+<p class="font-body-sm text-body-sm text-secondary mt-1 leading-snug">Covers lunch + dinner through mid-month</p>
+</div>
+<span class="mt-3 inline-flex items-center justify-center w-full py-1.5 bg-surface-container text-on-surface font-label-sm text-label-sm rounded-md">
+          Select Pack
+        </span>
+</button>
+<!-- ₹3,000 Pack (Popular) -->
+<button class="pack-card shrink-0 w-52 bg-primary-fixed p-3 rounded-lg text-left shadow-sm flex flex-col justify-between relative overflow-hidden transition-all hover:shadow-md" data-amount="3000">
+<div class="absolute top-0 right-0 bg-primary text-on-primary px-2 py-0.5 rounded-bl-lg font-label-sm text-[10px] uppercase font-bold">
+          Popular
+        </div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-primary-fixed">₹3,000</span>
+<span class="material-symbols-outlined text-primary text-[20px]">stars</span>
+</div>
+<p class="font-label-md text-label-md text-on-primary-fixed-variant font-bold mt-0.5">Full 1 Month Renewal</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Includes 5% cashback (+₹150 credit)</p>
+</div>
+<span class="mt-3 inline-flex items-center justify-center w-full py-1.5 bg-primary text-on-primary font-label-sm text-label-sm rounded-md shadow-sm">
+          Claim Cashback
+        </span>
+</button>
+</div>
+<!-- Payment Channels Banner -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">check_circle</span>
+<span class="font-label-sm text-label-sm">UPI Auto-Confirm: GPay • PhonePe • Paytm • NetBanking</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Zero Fee</span>
+</div>
+</div>
+<!-- Wallet Ledger Section -->
+<div class="flex flex-col gap-space-xs mt-1">
+<div class="flex items-center justify-between px-0.5">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Wallet Ledger</h3>
+<span class="material-symbols-outlined text-[16px] text-tertiary" title="Cryptographically chained daily entries">lock</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Updated 12m ago</span>
+</div>
+<!-- Filter Pills -->
+<div class="flex items-center gap-space-2xs bg-surface-container-low p-1 rounded-lg">
+<button class="filter-btn flex-1 py-1.5 rounded-md text-center font-label-sm text-label-sm bg-surface-container-lowest text-primary shadow-sm font-semibold transition-all" data-filter="all">
+        All
+      </button>
+<button class="filter-btn flex-1 py-1.5 rounded-md text-center font-label-sm text-label-sm text-secondary hover:text-on-surface transition-all" data-filter="debit">
+        Debits (Meals)
+      </button>
+<button class="filter-btn flex-1 py-1.5 rounded-md text-center font-label-sm text-label-sm text-secondary hover:text-on-surface transition-all" data-filter="credit">
+        Credits (Holds/UPI)
+      </button>
+</div>
+<!-- Transaction List -->
+<div class="flex flex-col gap-space-2xs" id="transaction-list">
+<!-- Item 1: Lunch Debit -->
+<div class="tx-item bg-surface-container-lowest p-card-padding-mobile rounded-lg shadow-sm flex items-center justify-between gap-space-sm" data-type="debit">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 bg-white border border-tertiary rounded-sm flex items-center justify-center shrink-0">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
+</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">Lunch Thali Delivered</span>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+<span>04 Sep, 12:45 PM</span>
+<span>•</span>
+<span class="text-tertiary font-medium">OTP Verified #882</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-financial-counter text-[17px] text-on-surface">-₹65.00</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded-full bg-surface-container text-secondary font-label-sm text-[10px]">
+            Delivered
+          </span>
+</div>
+</div>
+<!-- Item 2: Dinner Debit -->
+<div class="tx-item bg-surface-container-lowest p-card-padding-mobile rounded-lg shadow-sm flex items-center justify-between gap-space-sm" data-type="debit">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">dinner_dining</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 bg-white border border-tertiary rounded-sm flex items-center justify-center shrink-0">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
+</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">Dinner Thali Delivered</span>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+<span>03 Sep, 08:00 PM</span>
+<span>•</span>
+<span class="text-secondary">Hostel Gate 2 Drop</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-financial-counter text-[17px] text-on-surface">-₹65.00</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded-full bg-surface-container text-secondary font-label-sm text-[10px]">
+            Delivered
+          </span>
+</div>
+</div>
+<!-- Item 3: Vacation Hold Refund -->
+<div class="tx-item bg-surface-container-lowest p-card-padding-mobile rounded-lg shadow-sm flex items-center justify-between gap-space-sm" data-type="credit">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">pause_circle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Vacation Hold Refund (1 Day)</span>
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-secondary">
+<span>02 Sep, 08:00 AM</span>
+<span>•</span>
+<span class="text-tertiary font-semibold">Auto-Hold Credit</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-financial-counter text-[17px] text-tertiary font-bold">+₹130.00</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[10px]">
+            2 Meals Credited
+          </span>
+</div>
+</div>
+<!-- Item 4: UPI Top-up -->
+<div class="tx-item bg-surface-container-lowest p-card-padding-mobile rounded-lg shadow-sm flex items-center justify-between gap-space-sm" data-type="credit">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">UPI Recharge</span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+<span>01 Sep, 10:15 AM</span>
+<span>•</span>
+<span class="font-mono text-[11px] text-secondary">PhonePe #78912</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-financial-counter text-[17px] text-tertiary font-bold">+₹2,000.00</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[10px]">
+            Success
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Monthly Tax Invoices & Statements -->
+<div class="flex flex-col gap-space-xs mt-1">
+<div class="flex items-center justify-between px-0.5">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Tax Invoices &amp; Statements</h3>
+<p class="font-body-sm text-body-sm text-secondary">Download monthly breakdowns for employer meal reimbursement</p>
+</div>
+</div>
+<!-- Invoice List -->
+<div class="flex flex-col gap-space-2xs">
+<!-- August Statement -->
+<div class="bg-surface-container-lowest p-card-padding-mobile rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">August 2026 Statement</span>
+<span class="font-body-sm text-body-sm text-secondary">₹3,250.00 • 50 Meals consumed</span>
+</div>
+</div>
+<button class="download-btn flex items-center gap-1 bg-surface-container-low hover:bg-surface-container text-on-surface px-3 py-2 rounded-lg text-label-sm font-label-sm shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span>PDF</span>
+</button>
+</div>
+<!-- July Statement -->
+<div class="bg-surface-container-lowest p-card-padding-mobile rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">July 2026 Statement</span>
+<span class="font-body-sm text-body-sm text-secondary">₹3,120.00 • 48 Meals consumed</span>
+</div>
+</div>
+<button class="download-btn flex items-center gap-1 bg-surface-container-low hover:bg-surface-container text-on-surface px-3 py-2 rounded-lg text-label-sm font-label-sm shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span>PDF</span>
+</button>
+</div>
+</div>
+<!-- Compliance / Kitchen Details -->
+<div class="bg-surface-container-low p-3 rounded-lg flex flex-col gap-1 text-secondary mt-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified</span>
+<span>Annapurna Daily Kitchens LLP • FSSAI Lic #11521089000341</span>
+</div>
+<p class="font-body-sm text-[11px] leading-relaxed text-secondary">
+        GSTIN: 27AABCA1234F1Z5 • 5% GST inclusive on prepaid catering meal vouchers. All meal holds credited automatically based on cutoff time (4 hours prior).
+      </p>
+</div>
+</div>
+<!-- Quick Refill Modal / Bottom Drawer (Interactive Simulation) -->
+<div class="fixed inset-x-0 bottom-0 z-50 bg-black/50 backdrop-blur-sm hidden flex flex-col justify-end transition-opacity" id="recharge-sheet">
+<div class="bg-surface-container-lowest rounded-t-2xl p-card-padding-mobile flex flex-col gap-space-sm max-w-md mx-auto w-full shadow-2xl">
+<div class="w-12 h-1 bg-surface-variant rounded-full mx-auto mb-1"></div>
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Instant Wallet Top-up</h4>
+<span class="font-body-sm text-body-sm text-secondary">Select amount or enter custom</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary" id="close-sheet">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Custom Input -->
+<div class="relative flex items-center">
+<span class="absolute left-3 font-headline-md text-headline-md text-secondary">₹</span>
+<input class="w-full pl-8 pr-4 py-3 bg-surface-container-low rounded-lg font-financial-counter text-[22px] text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-bold" id="custom-amount-input" type="number" value="1500"/>
+</div>
+<!-- Instant Pay Buttons -->
+<div class="flex flex-col gap-2">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-headline-sm text-[16px] font-semibold flex items-center justify-center gap-2 shadow-md active:scale-98 transition-transform" id="pay-confirm-btn">
+<span class="material-symbols-outlined text-[20px]">payment</span>
+<span>Pay via UPI (GPay / PhonePe)</span>
+</button>
+<span class="text-center font-label-sm text-[11px] text-secondary">Instant refund guarantee on canceled mess schedules</span>
+</div>
+</div>
+</div>
+<!-- Toast for feedback -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full font-label-sm text-label-sm shadow-lg opacity-0 transition-opacity pointer-events-none z-50 flex items-center gap-1.5" id="toast">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">check_circle</span>
+<span id="toast-message">Statement downloaded</span>
+</div>
+</div>
+<script>
+  // Toast trigger utility
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const label = document.getElementById('toast-message');
+    if (!toast || !label) return;
+    label.innerText = msg;
+    toast.classList.remove('opacity-0');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0');
+    }, 2400);
+  }
+
+  // Filter Transaction Ledger
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const txItems = document.querySelectorAll('.tx-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+        b.classList.add('text-secondary');
+      });
+      btn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+      btn.classList.remove('text-secondary');
+
+      const filter = btn.getAttribute('data-filter');
+      txItems.forEach(item => {
+        const itemType = item.getAttribute('data-type');
+        if (filter === 'all' || filter === itemType) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Recharge Sheet Interactions
+  const sheet = document.getElementById('recharge-sheet');
+  const openRecharge = document.getElementById('recharge-trigger-btn');
+  const closeRecharge = document.getElementById('close-sheet');
+  const packCards = document.querySelectorAll('.pack-card');
+  const amountInput = document.getElementById('custom-amount-input');
+  const payConfirm = document.getElementById('pay-confirm-btn');
+
+  if (openRecharge && sheet) {
+    openRecharge.addEventListener('click', () => {
+      sheet.classList.remove('hidden');
+    });
+  }
+
+  if (closeRecharge && sheet) {
+    closeRecharge.addEventListener('click', () => {
+      sheet.classList.add('hidden');
+    });
+  }
+
+  packCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const amt = card.getAttribute('data-amount');
+      if (amountInput) amountInput.value = amt;
+      if (sheet) sheet.classList.remove('hidden');
+    });
+  });
+
+  if (payConfirm && sheet) {
+    payConfirm.addEventListener('click', () => {
+      const amt = amountInput ? amountInput.value : '1500';
+      sheet.classList.add('hidden');
+      showToast('Opening UPI for ₹' + amt + '...');
+    });
+  }
+
+  // Invoice Download simulation
+  document.querySelectorAll('.download-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showToast('Downloading Tax Invoice PDF...');
+    });
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_10px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="grid grid-cols-4 items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 h-full text-secondary hover:text-on-surface transition-colors" data-path="today" href="#"><span class="material-symbols-outlined text-[24px]">lunch_dining</span><span class="font-label-sm text-label-sm">Today</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-full text-secondary hover:text-on-surface transition-colors" data-path="schedule" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm">Schedule</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 h-full transition-colors text-primary font-semibold" data-path="wallet" href="#"><span class="material-symbols-outlined text-[24px]">account_balance_wallet</span><span class="font-label-sm text-label-sm">Wallet</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-full text-secondary hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[24px]">manage_accounts</span><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Meal Categories - Tiffin Manager</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#F95721',
+              50: '#FFF4EF',
+              100: '#FFE6DC',
+              500: '#F95721',
+              600: '#E04713',
+              700: '#BC380B',
+            },
+            surface: {
+              background: '#F7F9FD',
+              card: '#FFFFFF',
+              border: '#E2E8F0',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          boxShadow: {
+            subtle: '0 2px 8px -2px rgba(15, 23, 42, 0.05), 0 1px 3px -1px rgba(15, 23, 42, 0.05)',
+            card: '0 4px 14px -3px rgba(15, 23, 42, 0.07)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Typography and iOS safe areas -->
+<style data-purpose="base-styling">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+    .safe-top {
+      padding-top: env(safe-area-inset-top, 0px);
+    }
+    .safe-bottom {
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    /* Hide scrollbar for horizontally scrollable pills if needed */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-surface-background text-slate-800 font-sans min-h-screen flex flex-col justify-between antialiased selection:bg-brand selection:text-white">
+<!-- BEGIN: MainContainer -->
+<div class="w-full max-w-md mx-auto min-h-screen flex flex-col bg-surface-background pb-28 shadow-2xl relative">
+<!-- BEGIN: TopBar -->
+<header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/80 safe-top shadow-sm transition-shadow"><div class="px-4 pt-3 pb-2.5 border-b border-slate-100 flex items-center justify-between"><div class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-xl overflow-hidden shadow-sm flex items-center justify-center bg-brand"><img src="https://lh3.googleusercontent.com/aida/AEtjO1VzbMoL1mwXaVT3Tlg8gh43JelIjaN2FrdCRjj5cOMnk73Y23HHCv4TcITNCtQ650Rxo2El1I-D8QGz0j0VKea1ZMunWSiSo9LNxF2r_o6RrmmnVhkcqbCouIcRqtuEtXUxa_Li6SCYjYFMW8B9WJTdBcTXZ96A6ow7-6hSNcXvn6zJZ6-kIBQQHiqmthsIcC7hcpJ7Gm1n2v-5Ue29vO_3nRrh3mQDjXIYsYEt_nRd4PJsSQJRlepP62U" alt="Logo" class="w-full h-full object-cover"></div><div><div class="flex items-center gap-1 cursor-pointer group"><span class="text-xs font-bold text-slate-800 tracking-tight group-hover:text-brand transition-colors">Main Branch</span><svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand transition-colors stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><p class="text-[10px] font-medium text-slate-400 tracking-tight">Menu &amp; Categories</p></div></div><div class="flex items-center gap-2"><button aria-label="Notifications" class="relative p-2 text-slate-500 hover:text-brand hover:bg-orange-50 rounded-xl transition-all" type="button"><svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand ring-2 ring-white"></span></button><button aria-label="Profile" class="w-8 h-8 rounded-full ring-2 ring-brand/20 overflow-hidden hover:ring-brand active:scale-95 transition-all" type="button"><img src="https://lh3.googleusercontent.com/aida/AEtjO1UzzMtRchgJGxJeoMXFA4JCNEADa6tG9Khb9hHmUEOLjVKjbF_teuUEcrI0euDunxXAqkVB-FiRaX-9pL7anpGuMw93Zv8o8jwERUTlafiJwWx38x-vcu2WGusgQASg7sA9eCztNswFVd7NXfBCuockehL46LdRQRvIo4wNDCA7TOfX86f40k_uzNZX3TKxkG7fu6Jh33PG22xGOqjsaroDgfpqqIhjFgSUDCwFL3dk8o2PMZd-MgyShAVG" alt="Avatar" class="w-full h-full object-cover"></button></div></div><div class="px-4 py-2.5 flex items-center justify-between gap-3"><div class="flex items-center gap-2.5 min-w-0"><button aria-label="Go back" class="p-1.5 -ml-1 rounded-xl text-slate-600 hover:text-brand hover:bg-orange-50 active:scale-95 transition-all border border-slate-200/80 bg-slate-50" type="button"><svg class="w-4 h-4 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="truncate"><h1 class="text-base font-bold text-slate-900 tracking-tight leading-tight">Meal Categories</h1><p class="text-[11px] font-medium text-slate-400 truncate">Manage daily operating slots &amp; meal shifts</p></div></div><button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-brand hover:bg-brand-600 active:scale-95 transition-all shadow-sm shadow-orange-500/25 shrink-0" type="button"><svg class="w-3.5 h-3.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="">Add Category</span></button></div></header>
+<!-- END: TopBar -->
+<!-- BEGIN: ContentArea -->
+<main class="flex-1 px-4 pt-4 space-y-4">
+<!-- BEGIN: ControlsBar -->
+<section class="bg-white p-2.5 rounded-2xl border border-slate-200/90 shadow-subtle flex flex-col gap-2.5" data-purpose="table-controls">
+<div class="flex items-center gap-2">
+<!-- Page size dropdown -->
+<div class="relative">
+<select aria-label="Rows per page" class="appearance-none bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 rounded-xl py-2 pl-3 pr-7 focus:outline-none focus:ring-1.5 focus:ring-brand focus:border-brand">
+<option selected="" value="15">15</option>
+<option value="25">25</option>
+<option value="50">50</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-slate-400">
+<svg class="w-3.5 h-3.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<!-- Filter toggle button -->
+<button aria-label="Filter records" class="p-2 border border-slate-200 bg-slate-50 hover:bg-slate-100 rounded-xl text-slate-600 active:scale-95 transition-colors" type="button">
+<svg class="w-4 h-4 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 4.5h18m-15 5h12m-9 5h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Search input box with integrated icon button -->
+<div class="relative flex-1">
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl py-2 pl-3 pr-9 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1.5 focus:ring-brand focus:border-brand transition-all" placeholder="Search..." type="text">
+<button aria-label="Submit search" class="absolute inset-y-0 right-0 pr-2.5 flex items-center text-slate-400 hover:text-brand" type="button">
+<svg class="w-4 h-4 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+</section>
+<!-- END: ControlsBar -->
+<!-- BEGIN: CategoryCardsList -->
+<section class="space-y-3.5" data-purpose="categories-list">
+<!-- CARD 1: Breakfast -->
+<article class="bg-white rounded-2xl border border-slate-200/90 p-4 shadow-subtle hover:shadow-card transition-all">
+<!-- Card Header: Drag Grip, Title, and Active Badge -->
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center space-x-2">
+<!-- Drag Grip Icon -->
+<div class="cursor-grab active:cursor-grabbing text-slate-300 hover:text-slate-400 py-0.5 pr-0.5">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M8 6a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0zm8-12a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0z"></path>
+</svg>
+</div>
+<h2 class="text-base font-bold text-brand tracking-tight">Breakfast</h2>
+</div>
+<!-- Active Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/70">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              Active
+            </span>
+</div>
+<!-- Operating Window Details -->
+<div class="flex items-center text-xs font-medium text-slate-600 mb-2 pl-6">
+<svg class="w-3.5 h-3.5 mr-1.5 text-emerald-600 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">07:00 AM – 09:30 AM</span>
+</div>
+<!-- Notes / Description -->
+<p class="text-xs text-slate-400 italic mb-4 pl-6">
+            No description available
+          </p>
+<!-- Divider -->
+<hr class="border-slate-100 mb-3">
+<!-- Card Actions (Edit / Delete) -->
+<div class="flex items-center justify-end space-x-2">
+<button class="inline-flex items-center px-3.5 py-1.5 rounded-xl border border-brand/80 text-brand bg-white hover:bg-brand-50 active:bg-brand-100 text-xs font-bold transition-colors" type="button">
+<svg class="w-3.5 h-3.5 mr-1 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Edit
+            </button>
+<button class="inline-flex items-center px-3.5 py-1.5 rounded-xl border border-red-400 text-red-600 bg-white hover:bg-red-50 active:bg-red-100 text-xs font-bold transition-colors" type="button">
+<svg class="w-3.5 h-3.5 mr-1 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Delete
+            </button>
+</div>
+</article>
+<!-- CARD 2: Lunch -->
+<article class="bg-white rounded-2xl border border-slate-200/90 p-4 shadow-subtle hover:shadow-card transition-all">
+<!-- Card Header -->
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center space-x-2">
+<div class="cursor-grab active:cursor-grabbing text-slate-300 hover:text-slate-400 py-0.5 pr-0.5">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M8 6a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0zm8-12a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0z"></path>
+</svg>
+</div>
+<h2 class="text-base font-bold text-brand tracking-tight">Lunch</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/70">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              Active
+            </span>
+</div>
+<!-- Operating Window -->
+<div class="flex items-center text-xs font-medium text-slate-600 mb-2 pl-6">
+<svg class="w-3.5 h-3.5 mr-1.5 text-emerald-600 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">12:00 PM – 02:30 PM</span>
+</div>
+<!-- Notes -->
+<p class="text-xs text-slate-400 italic mb-4 pl-6">
+            No description available
+          </p>
+<hr class="border-slate-100 mb-3">
+<!-- Actions -->
+<div class="flex items-center justify-end space-x-2">
+<button class="inline-flex items-center px-3.5 py-1.5 rounded-xl border border-brand/80 text-brand bg-white hover:bg-brand-50 active:bg-brand-100 text-xs font-bold transition-colors" type="button">
+<svg class="w-3.5 h-3.5 mr-1 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Edit
+            </button>
+<button class="inline-flex items-center px-3.5 py-1.5 rounded-xl border border-red-400 text-red-600 bg-white hover:bg-red-50 active:bg-red-100 text-xs font-bold transition-colors" type="button">
+<svg class="w-3.5 h-3.5 mr-1 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Delete
+            </button>
+</div>
+</article>
+<!-- CARD 3: Dinner -->
+<article class="bg-white rounded-2xl border border-slate-200/90 p-4 shadow-subtle hover:shadow-card transition-all">
+<!-- Card Header -->
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center space-x-2">
+<div class="cursor-grab active:cursor-grabbing text-slate-300 hover:text-slate-400 py-0.5 pr-0.5">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M8 6a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0zm8-12a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0zm0 6a2 2 0 11-4 0 2 2 0 014 0z"></path>
+</svg>
+</div>
+<h2 class="text-base font-bold text-brand tracking-tight">Dinner</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/70">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              Active
+            </span>
+</div>
+<!-- Operating Window -->
+<div class="flex items-center text-xs font-medium text-slate-600 mb-2 pl-6">
+<svg class="w-3.5 h-3.5 mr-1.5 text-emerald-600 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">07:00 PM – 09:30 PM</span>
+</div>
+<!-- Notes -->
+<p class="text-xs text-slate-400 italic mb-4 pl-6">
+            No description available
+          </p>
+<hr class="border-slate-100 mb-3">
+<!-- Actions -->
+<div class="flex items-center justify-end space-x-2">
+<button class="inline-flex items-center px-3.5 py-1.5 rounded-xl border border-brand/80 text-brand bg-white hover:bg-brand-50 active:bg-brand-100 text-xs font-bold transition-colors" type="button">
+<svg class="w-3.5 h-3.5 mr-1 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Edit
+            </button>
+<button class="inline-flex items-center px-3.5 py-1.5 rounded-xl border border-red-400 text-red-600 bg-white hover:bg-red-50 active:bg-red-100 text-xs font-bold transition-colors" type="button">
+<svg class="w-3.5 h-3.5 mr-1 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Delete
+            </button>
+</div>
+</article>
+</section>
+<!-- END: CategoryCardsList -->
+<!-- BEGIN: Footer -->
+<footer class="pt-6 pb-2 text-center">
+<p class="text-[11px] font-medium text-slate-400 tracking-wide">
+          © 2026 Tiffin Manager. All rights reserved.
+        </p>
+</footer>
+<!-- END: Footer -->
+</main>
+<!-- END: ContentArea -->
+<!-- BEGIN: BottomNavigation -->
+<nav class="fixed bottom-0 inset-x-0 max-w-md mx-auto bg-white/95 backdrop-blur-lg border-t border-slate-200/90 safe-bottom z-40 shadow-lg"><div class="grid grid-cols-5 h-16 items-center px-1"><a class="flex flex-col items-center justify-center py-1 text-slate-400 hover:text-slate-600 group" href="#"><svg class="w-5 h-5 stroke-[1.8] group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="text-[10px] font-medium mt-1">Dashboard</span></a><a class="flex flex-col items-center justify-center py-1 text-slate-400 hover:text-slate-600 group" href="#"><svg class="w-5 h-5 stroke-[1.8] group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="text-[10px] font-medium mt-1">Kitchen</span></a><a class="flex flex-col items-center justify-center py-1 text-brand group relative" href="#"><div class="relative"><svg class="w-5 h-5 stroke-[2.3] group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="absolute -top-0.5 -right-1 w-2 h-2 rounded-full bg-brand ring-2 ring-white"></span></div><span class="text-[10px] font-bold mt-1">Plans</span></a><a class="flex flex-col items-center justify-center py-1 text-slate-400 hover:text-slate-600 group" href="#"><svg class="w-5 h-5 stroke-[1.8] group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="text-[10px] font-medium mt-1">Customers</span></a><a class="flex flex-col items-center justify-center py-1 text-slate-400 hover:text-slate-600 group" href="#"><svg class="w-5 h-5 stroke-[1.8] group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="text-[10px] font-medium mt-1">More</span></a></div></nav>
+<!-- END: BottomNavigation -->
+</div>
+<!-- END: MainContainer -->
+
+
+</body></html>

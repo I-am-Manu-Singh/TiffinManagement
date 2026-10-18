@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Legal Center Hub - Tiffin Manager</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Tailwind CSS v3 CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff5f0',
+              100: '#ffe8de',
+              200: '#fed2be',
+              300: '#fdb494',
+              400: '#fc8a5c',
+              500: '#f95721', // Primary TiffinManager Orange
+              600: '#eb440f',
+              700: '#c4330b',
+              800: '#9d2b0e',
+              900: '#7e260f',
+            },
+            surface: {
+              main: '#f7f9fd',
+              card: '#ffffff',
+              subtle: '#f1f4fa',
+              border: '#e4e9f2'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          boxShadow: {
+            'card-subtle': '0 2px 8px -2px rgba(15, 23, 42, 0.05), 0 1px 3px -1px rgba(15, 23, 42, 0.03)',
+            'floating-bar': '0 -4px 20px rgba(0, 0, 0, 0.06)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Style Rules -->
+<style data-purpose="custom-layout">
+    body {
+      background-color: #f7f9fd;
+      -webkit-tap-highlight-color: transparent;
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+    /* Hide scrollbars for slick mobile look */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<!-- END: Custom Style Rules -->
+</head>
+<body class="min-h-screen text-slate-800 antialiased flex flex-col justify-between selection:bg-brand-100 selection:text-brand-700">
+<!-- BEGIN: Mobile App Bar -->
+<header class="sticky top-0 z-40 bg-surface-card/90 backdrop-blur-md border-b border-surface-border px-4 py-3" data-purpose="mobile-top-bar">
+<div class="max-w-md mx-auto flex items-center justify-between">
+<!-- Back Action Button -->
+<button aria-label="Go back" class="w-10 h-10 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 active:scale-95 transition-all" type="button">
+<i class="w-6 h-6" data-lucide="chevron-left"></i>
+</button>
+<!-- Center Branding & Screen Title -->
+<div class="flex items-center space-x-2">
+<div class="w-7 h-7 rounded-lg bg-brand-500 flex items-center justify-center shadow-sm">
+<i class="w-4 h-4 text-white" data-lucide="utensils"></i>
+</div>
+<div class="text-center">
+<h1 class="text-base font-bold tracking-tight text-slate-900 leading-none">Legal Center</h1>
+<span class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">TiffinManager Hub</span>
+</div>
+</div>
+<!-- User Profile / Support Icon -->
+<button aria-label="Legal settings &amp; profile" class="w-10 h-10 rounded-full border border-slate-200/80 flex items-center justify-center text-slate-700 hover:bg-slate-100 active:scale-95 transition-all bg-white" type="button">
+<i class="w-5 h-5 text-brand-500" data-lucide="shield-check"></i>
+</button>
+</div>
+</header>
+<!-- END: Mobile App Bar -->
+<!-- BEGIN: Main Content Area -->
+<main class="flex-1 max-w-md mx-auto w-full px-4 pt-4 pb-28 space-y-4">
+<!-- BEGIN: Hero Banner -->
+<section class="bg-gradient-to-br from-white to-orange-50/40 rounded-2xl p-5 border border-brand-100/80 shadow-card-subtle relative overflow-hidden" data-purpose="hero-banner">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-brand-500/5 rounded-full pointer-events-none blur-xl"></div>
+<div class="flex items-center justify-between mb-3">
+<!-- Status Indicator Pill -->
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+          All Policies Current • v2.4
+        </span>
+<span class="text-xs text-slate-400 font-medium">Updated Sep 2026</span>
+</div>
+<h2 class="text-xl font-extrabold text-slate-900 tracking-tight leading-snug">
+        Tiffin Manager Legal Hub
+      </h2>
+<p class="text-xs text-slate-600 leading-relaxed mt-1.5 font-normal">
+        Operational transparency, merchant compliance, data protection, and terms governing cloud kitchen subscriptions.
+      </p>
+</section>
+<!-- END: Hero Banner -->
+<!-- BEGIN: Search Bar -->
+<section data-purpose="search-control">
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+<i class="w-4 h-4 text-slate-400" data-lucide="search"></i>
+</div>
+<input class="w-full pl-10 pr-10 py-2.5 bg-white border border-surface-border rounded-xl text-sm placeholder-slate-400 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-shadow shadow-sm" id="policy-search" placeholder="Search policies, terms, clauses..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+<span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">⌘K</span>
+</div>
+</div>
+</section>
+<!-- END: Search Bar -->
+<!-- BEGIN: Quick Filter Tabs -->
+<section class="flex gap-2 overflow-x-auto pb-1 text-xs font-semibold no-scrollbar" data-purpose="category-filters">
+<button class="px-3.5 py-1.5 rounded-lg bg-slate-900 text-white whitespace-nowrap shadow-sm">All (8)</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-white border border-surface-border text-slate-600 hover:text-slate-900 whitespace-nowrap">Merchant Terms</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-white border border-surface-border text-slate-600 hover:text-slate-900 whitespace-nowrap">Security &amp; Privacy</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-white border border-surface-border text-slate-600 hover:text-slate-900 whitespace-nowrap">Billing &amp; Refund</button>
+</section>
+<!-- END: Quick Filter Tabs -->
+<!-- BEGIN: Legal Documents Index -->
+<section class="space-y-3" data-purpose="legal-documents-list">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Official Policies &amp; Charters</h3>
+<span class="text-xs font-medium text-brand-600">8 Documents</span>
+</div>
+<!-- Item 1: Privacy Policy -->
+<a class="group block bg-surface-card p-3.5 rounded-xl border border-surface-border shadow-card-subtle hover:border-brand-200 active:scale-[0.99] transition-all" href="#">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 border border-blue-100 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="shield"></i>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors truncate">Privacy Policy</h4>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">Active</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Effective Jul 2026 • 6 Sections • GDPR &amp; DPDP Compliant</p>
+<div class="flex items-center gap-3 mt-2 text-[11px] text-slate-400 font-medium">
+<span class="flex items-center gap-1"><i class="w-3 h-3" data-lucide="clock"></i> 5 min read</span>
+<span class="flex items-center gap-1"><i class="w-3 h-3 text-emerald-500" data-lucide="check-circle-2"></i> Verified</span>
+</div>
+</div>
+<i class="w-5 h-5 text-slate-300 self-center group-hover:translate-x-0.5 group-hover:text-brand-500 transition-all" data-lucide="chevron-right"></i>
+</div>
+</a>
+<!-- Item 2: Terms of Service -->
+<a class="group block bg-surface-card p-3.5 rounded-xl border border-surface-border shadow-card-subtle hover:border-brand-200 active:scale-[0.99] transition-all" href="#">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 border border-indigo-100 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="file-text"></i>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors truncate">Terms of Service</h4>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700">v2.4</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5 line-clamp-1">7 Detailed Sections • Merchant Tier, SLAs &amp; Platform Rules</p>
+<div class="flex items-center gap-3 mt-2 text-[11px] text-slate-400 font-medium">
+<span class="flex items-center gap-1"><i class="w-3 h-3" data-lucide="clock"></i> 8 min read</span>
+<span class="flex items-center gap-1"><i class="w-3 h-3 text-indigo-500" data-lucide="award"></i> Binding</span>
+</div>
+</div>
+<i class="w-5 h-5 text-slate-300 self-center group-hover:translate-x-0.5 group-hover:text-brand-500 transition-all" data-lucide="chevron-right"></i>
+</div>
+</a>
+<!-- Item 3: Cookie Policy -->
+<a class="group block bg-surface-card p-3.5 rounded-xl border border-surface-border shadow-card-subtle hover:border-brand-200 active:scale-[0.99] transition-all" href="#">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-100 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="cookie"></i>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors truncate">Cookie Policy</h4>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">v3.2</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5 line-clamp-1">ISO 27001 Certified • Essential &amp; Analytics Settings</p>
+<div class="flex items-center gap-3 mt-2 text-[11px] text-slate-400 font-medium">
+<span class="flex items-center gap-1"><i class="w-3 h-3" data-lucide="clock"></i> 3 min read</span>
+<span class="flex items-center gap-1"><i class="w-3 h-3 text-amber-500" data-lucide="sliders"></i> Configurable</span>
+</div>
+</div>
+<i class="w-5 h-5 text-slate-300 self-center group-hover:translate-x-0.5 group-hover:text-brand-500 transition-all" data-lucide="chevron-right"></i>
+</div>
+</a>
+<!-- Item 4: Security Policy -->
+<a class="group block bg-surface-card p-3.5 rounded-xl border border-surface-border shadow-card-subtle hover:border-brand-200 active:scale-[0.99] transition-all" href="#">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="lock"></i>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors truncate">Security Policy</h4>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">SOC 2 Type II</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5 line-clamp-1">TLS 1.3 Encryption, AES-256 Cloud Infrastructure</p>
+<div class="flex items-center gap-3 mt-2 text-[11px] text-slate-400 font-medium">
+<span class="flex items-center gap-1"><i class="w-3 h-3" data-lucide="clock"></i> 6 min read</span>
+<span class="flex items-center gap-1"><i class="w-3 h-3 text-emerald-500" data-lucide="shield-alert"></i> Zero-Trust</span>
+</div>
+</div>
+<i class="w-5 h-5 text-slate-300 self-center group-hover:translate-x-0.5 group-hover:text-brand-500 transition-all" data-lucide="chevron-right"></i>
+</div>
+</a>
+<!-- Item 5: Subprocessors List -->
+<a class="group block bg-surface-card p-3.5 rounded-xl border border-surface-border shadow-card-subtle hover:border-brand-200 active:scale-[0.99] transition-all" href="#">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-cyan-50 text-cyan-600 flex items-center justify-center shrink-0 border border-cyan-100 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="network"></i>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors truncate">Subprocessors List</h4>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-700">6 Vendors</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5 line-clamp-1">AWS, Supabase, Cloudflare, Twilio, Razorpay, Sentry</p>
+<div class="flex items-center gap-3 mt-2 text-[11px] text-slate-400 font-medium">
+<span class="flex items-center gap-1"><i class="w-3 h-3" data-lucide="clock"></i> 4 min read</span>
+<span class="flex items-center gap-1"><i class="w-3 h-3 text-cyan-600" data-lucide="check"></i> Verified Cloud</span>
+</div>
+</div>
+<i class="w-5 h-5 text-slate-300 self-center group-hover:translate-x-0.5 group-hover:text-brand-500 transition-all" data-lucide="chevron-right"></i>
+</div>
+</a>
+<!-- Item 6: Data Processing Addendum (DPA) -->
+<a class="group block bg-surface-card p-3.5 rounded-xl border border-surface-border shadow-card-subtle hover:border-brand-200 active:scale-[0.99] transition-all" href="#">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 border border-purple-100 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="file-check-2"></i>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors truncate">Data Processing Addendum</h4>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700">DPA Annex</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Controller &amp; Processor Obligations • Merchant Security Rights</p>
+<div class="flex items-center gap-3 mt-2 text-[11px] text-slate-400 font-medium">
+<span class="flex items-center gap-1"><i class="w-3 h-3" data-lucide="clock"></i> 7 min read</span>
+<span class="flex items-center gap-1"><i class="w-3 h-3 text-purple-500" data-lucide="database"></i> Encrypted Logs</span>
+</div>
+</div>
+<i class="w-5 h-5 text-slate-300 self-center group-hover:translate-x-0.5 group-hover:text-brand-500 transition-all" data-lucide="chevron-right"></i>
+</div>
+</a>
+<!-- Item 7: Refund Policy -->
+<a class="group block bg-surface-card p-3.5 rounded-xl border border-surface-border shadow-card-subtle hover:border-brand-200 active:scale-[0.99] transition-all" href="#">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center shrink-0 border border-rose-100 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="refresh-cw"></i>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="text-sm font-bold text-slate-900 group-hover:text-brand-600 transition-colors truncate">Refund Policy</h4>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-rose-50 text-rose-700">Billing Terms</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5 line-clamp-1">Strict No-Refund Standard &amp; 30-Day Discrepancy Dispute Window</p>
+<div class="flex items-center gap-3 mt-2 text-[11px] text-slate-400 font-medium">
+<span class="flex items-center gap-1"><i class="w-3 h-3" data-lucide="clock"></i> 4 min read</span>
+<span class="flex items-center gap-1"><i class="w-3 h-3 text-rose-500" data-lucide="alert-circle"></i> Terms Apply</span>
+</div>
+</div>
+<i class="w-5 h-5 text-slate-300 self-center group-hover:translate-x-0.5 group-hover:text-brand-500 transition-all" data-lucide="chevron-right"></i>
+</div>
+</a>
+<!-- Item 8: Cancellation Policy (Highlighted as featured from source UI) -->
+<a class="group block bg-brand-50/70 p-3.5 rounded-xl border-2 border-brand-300 shadow-sm hover:border-brand-500 active:scale-[0.99] transition-all relative overflow-hidden" href="#">
+<div class="absolute top-0 right-0 bg-brand-500 text-white text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-bl-lg">
+          Featured
+        </div>
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-brand-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+<i class="w-5 h-5" data-lucide="x-circle"></i>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between pr-8">
+<h4 class="text-sm font-bold text-brand-900 truncate">Cancellation Policy</h4>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white text-brand-600 border border-brand-200">Sep 05, 2026</span>
+</div>
+<p class="text-xs text-brand-800/80 mt-0.5 line-clamp-1">Instant Self-Service Renewal Cancel &amp; 90-Day Safe Data Window</p>
+<div class="flex items-center gap-3 mt-2 text-[11px] text-brand-700 font-medium">
+<span class="flex items-center gap-1"><i class="w-3 h-3" data-lucide="clock"></i> 4 min read</span>
+<span class="flex items-center gap-1"><i class="w-3 h-3" data-lucide="user-check"></i> Self-Service</span>
+</div>
+</div>
+<i class="w-5 h-5 text-brand-500 self-center group-hover:translate-x-1 transition-all" data-lucide="arrow-right"></i>
+</div>
+</a>
+</section>
+<!-- END: Legal Documents Index -->
+<!-- BEGIN: Legal Support Box -->
+<section class="bg-white rounded-2xl p-4 border border-surface-border shadow-card-subtle" data-purpose="legal-support-desk">
+<div class="flex items-start space-x-3">
+<div class="w-9 h-9 rounded-full bg-orange-100 text-brand-600 flex items-center justify-center shrink-0 mt-0.5">
+<i class="w-5 h-5" data-lucide="help-circle"></i>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-900">Questions about legal matters?</h4>
+<p class="text-xs text-slate-500 mt-0.5">
+            Reach our compliance desk for contract addendums, vendor inquiries, or merchant data requests:
+          </p>
+<a class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-500 mt-2 hover:text-brand-600 underline decoration-brand-200 underline-offset-4" href="mailto:support@tiffinmanager.com">
+<i class="w-3.5 h-3.5" data-lucide="mail"></i>
+            support@tiffinmanager.com
+          </a>
+</div>
+</div>
+</section>
+<!-- END: Legal Support Box -->
+<!-- BEGIN: Legal Entity & Jurisdiction Footnote -->
+<footer class="text-center pt-2 pb-2" data-purpose="legal-entity-footnote">
+<p class="text-[11px] text-slate-400 leading-normal">
+        TiffinManager is operated by ClungTech, Patna, Bihar, India.<br/>
+        All rights reserved © 2026. Governing jurisdiction: Patna, India.
+      </p>
+</footer>
+<!-- END: Legal Entity & Jurisdiction Footnote -->
+</main>
+<!-- END: Main Content Area -->
+<!-- BEGIN: Sticky Floating Action Bar -->
+<aside class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-surface-border px-4 py-3 shadow-floating-bar z-50" data-purpose="sticky-bottom-action-bar">
+<div class="max-w-md mx-auto flex items-center gap-2.5">
+<!-- Secondary Download Packet Action -->
+<button class="flex-1 h-11 px-3 rounded-xl border border-slate-200 bg-surface-subtle hover:bg-slate-100 text-slate-700 font-semibold text-xs flex items-center justify-center gap-2 active:scale-95 transition-all" type="button">
+<i class="w-4 h-4 text-slate-500" data-lucide="download"></i>
+<span>Download All (PDF)</span>
+</button>
+<!-- Primary Contact / Ticket Action -->
+<a class="flex-1 h-11 px-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm shadow-brand-500/25 active:scale-95 transition-all" href="mailto:support@tiffinmanager.com?subject=Legal%20Desk%20Inquiry">
+<i class="w-4 h-4" data-lucide="message-square"></i>
+<span>Contact Legal Desk</span>
+</a>
+</div>
+</aside>
+<!-- END: Sticky Floating Action Bar -->
+<!-- BEGIN: Lucide Icon Activation Script -->
+<script data-purpose="icon-initializer">
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+<!-- END: Lucide Icon Activation Script -->
+<!-- BEGIN: Interactive Search Filter Logic -->
+<script data-purpose="search-filter-script">
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('policy-search');
+      const cards = document.querySelectorAll('[data-purpose="legal-documents-list"] > a');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          cards.forEach(card => {
+            const textContent = card.innerText.toLowerCase();
+            if (textContent.includes(query)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      }
+    });
+  </script>
+<!-- END: Interactive Search Filter Logic -->
+</body></html>

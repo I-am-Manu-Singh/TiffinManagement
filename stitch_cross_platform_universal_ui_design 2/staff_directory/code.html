@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary": "#545f73", "on-secondary-fixed": "#111c2d", "primary": "#ab2f00", "on-background": "#191c1f", "on-primary-fixed": "#3a0a00", "on-tertiary": "#ffffff", "primary-fixed-dim": "#ffb59f", "tertiary-fixed-dim": "#4edea3", "surface-bright": "#f7f9fd", "on-primary": "#ffffff", "tertiary": "#006947", "outline": "#8f7067", "inverse-primary": "#ffb59f", "surface": "#f7f9fd", "on-primary-fixed-variant": "#862300", "primary-container": "#d53e02", "on-surface-variant": "#5b4139", "secondary-fixed-dim": "#bcc7de", "surface-tint": "#af3100", "on-tertiary-fixed-variant": "#005236", "secondary-fixed": "#d8e3fb", "on-secondary": "#ffffff", "error": "#ba1a1a", "tertiary-fixed": "#6ffbbe", "secondary-container": "#d5e0f8", "surface-container-high": "#e6e8ec", "on-error": "#ffffff", "on-error-container": "#93000a", "on-secondary-container": "#586377", "inverse-surface": "#2d3134", "on-tertiary-container": "#f5fff6", "surface-variant": "#e0e3e6", "tertiary-container": "#00855b", "surface-container-low": "#f2f4f8", "primary-fixed": "#ffdbd1", "on-surface": "#191c1f", "outline-variant": "#e4beb4", "background": "#f7f9fd", "surface-container": "#eceef2", "surface-dim": "#d8dade", "inverse-on-surface": "#eff1f5", "on-tertiary-fixed": "#002113", "on-primary-container": "#fffbff", "on-secondary-fixed-variant": "#3c475a", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "surface-container-highest": "#e0e3e6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "card-padding-mobile": "0.875rem", "screen-margin-tablet": "1.5rem", "space-xl": "1.5rem", "screen-margin-mobile": "1rem", "space-2xs": "0.25rem", "space-2xl": "2rem", "space-lg": "1.25rem", "touch-target-min": "2.75rem", "space-xs": "0.5rem", "space-sm": "0.75rem" }, fontFamily: { "body-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "financial-counter": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "label-lg": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "financial-counter": ["22px", { "lineHeight": "26px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.3px", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.2px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.1px", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "30px", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary/20"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-space-md flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><img alt="Tiffin Manager Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VzbMoL1mwXaVT3Tlg8gh43JelIjaN2FrdCRjj5cOMnk73Y23HHCv4TcITNCtQ650Rxo2El1I-D8QGz0j0VKea1ZMunWSiSo9LNxF2r_o6RrmmnVhkcqbCouIcRqtuEtXUxa_Li6SCYjYFMW8B9WJTdBcTXZ96A6ow7-6hSNcXvn6zJZ6-kIBQQHiqmthsIcC7hcpJ7Gm1n2v-5Ue29vO_3nRrh3mQDjXIYsYEt_nRd4PJsSQJRlepP62U"/><div class="flex flex-col"><div class="flex items-center gap-1"><button class="flex items-center gap-0.5 text-on-surface font-headline-sm text-label-lg tracking-tight" type="button"><span class="truncate max-w-[110px]">Main Branch</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span></button></div><span class="font-label-sm text-label-sm text-on-surface-variant capitalize leading-none">Kitchen Console</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 relative flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span></button><button class="flex items-center gap-1.5 pl-1 py-1 pr-1.5 rounded-full hover:bg-surface-container transition-colors" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb3PEdZl4HV8u5LdrfDPisbMtFT-EcComJE7V673UgJBDPkhmyao6UCaOfUKT5M6AsL4UwzltuADBptqThr2LLheeE7sv35z7DXen3JYI0XsCpcLiLQVxgX8PkwDKgini6CWLeZe583BGLdprwtD2qOs-SJ4cPpXuMcT4zkAMicmbtVVzA3VDTjKhCaKOGGjEqiWRhQ-u4QBvzHa9z8YK9cZDjUiCoLQda-VqpU938oY4EosingaiV-w"/><div class="hidden sm:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight">Manpreet</span><span class="font-label-sm text-label-sm text-primary leading-none font-medium">Owner</span></div></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full">
+<div class="px-space-md pt-space-sm pb-space-xs flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Go back" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high active:scale-95 transition-all text-on-surface" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface leading-tight">Staff</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Team directory &amp; access</p>
+</div>
+</div>
+<button class="flex items-center gap-1 px-3 py-2 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-sm active:scale-95 transition-all" id="openAddModalBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Create Staff</span>
+</button>
+</div>
+<div class="px-space-md py-space-xs flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 shadow-sm focus:outline-none focus:bg-surface-container-low transition-all" id="staffSearch" placeholder="Search with name, phone..." type="text"/>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest pl-3 pr-7 py-2.5 rounded-xl font-label-md text-label-md text-on-surface shadow-sm focus:outline-none cursor-pointer" id="pageSize">
+<option value="15">15</option>
+<option value="25">25</option>
+<option value="50">50</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[16px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<button aria-label="Filters" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container-lowest text-on-surface-variant shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Staff Members</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" id="staffCountBadge">0</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 0 of 0</span>
+</div>
+</div>
+<div class="px-space-md py-space-xs flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-2xl p-space-xl flex flex-col items-center text-center shadow-sm" id="emptyState">
+<div class="w-20 h-20 rounded-full bg-surface-container-low flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[44px] text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">sentiment_dissatisfied</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">Records Not Available!</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-lg leading-relaxed">
+        No staff profiles created yet. Add kitchen cooks, packing operators, and delivery drivers to assign granular permissions.
+      </p>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 px-space-lg py-3 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-95 active:scale-98 transition-all" id="addFirstStaffBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>Add First Staff Member</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-headline-sm text-label-lg text-on-surface">Sample Staff Profiles</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Quick Preview</span>
+</div>
+<div class="flex flex-col gap-space-xs pt-1">
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-sm text-label-lg flex-shrink-0">
+              RS
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Ramesh Sharma</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm">Active</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">+91 98231 44520</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-highest text-on-surface text-label-sm font-label-sm">Head Cook</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Main Branch</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline-sm text-label-lg flex-shrink-0">
+              AK
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Amit Kumar</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm">Active</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">+91 94120 77819</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm">Delivery Lead</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">North Sector</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-xs mb-3">
+<span class="material-symbols-outlined text-primary text-[22px]">admin_panel_settings</span>
+<div>
+<h3 class="font-headline-sm text-label-lg text-on-surface">Granular Operational Roles</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Available presets for your team members</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="p-2.5 rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+<span class="font-label-md text-label-md font-semibold">Kitchen Cook</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">View daily counts, mark dispatches</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span class="font-label-md text-label-md font-semibold">Packing Staff</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Print labels &amp; dietary packing</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">two_wheeler</span>
+<span class="font-label-md text-label-md font-semibold">Delivery Driver</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Route navigation &amp; drop proof</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[18px]">shield_person</span>
+<span class="font-label-md text-label-md font-semibold">Branch Manager</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Billing, plans, customer edits</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex-col justify-end" id="staffModalBackdrop">
+<div class="w-full max-h-[795px] overflow-y-auto bg-surface-container-lowest rounded-t-3xl shadow-xl p-space-md flex flex-col gap-space-md transform transition-transform duration-300 translate-y-full" id="staffModalSheet">
+<div class="w-12 h-1 rounded-full bg-surface-container-highest mx-auto"></div>
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Add Staff Member</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Create login credentials and operational roles</p>
+</div>
+<button aria-label="Close" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" id="closeModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-3" id="newStaffForm">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Full Name *</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">badge</span>
+<input class="w-full pl-10 pr-3 py-2.5 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container" placeholder="e.g. Jaswinder Singh" required="" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Phone Number *</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">call</span>
+<input class="w-full pl-10 pr-3 py-2.5 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container" placeholder="10-digit mobile" required="" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">mail</span>
+<input class="w-full pl-10 pr-3 py-2.5 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container" placeholder="staff@kitchen.com" type="email"/>
+</div>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Assigned Operational Role</label>
+<div class="grid grid-cols-2 gap-2">
+<label class="p-2.5 rounded-xl bg-surface-container-low flex items-center gap-2 cursor-pointer has-[:checked]:bg-primary-fixed has-[:checked]:text-on-primary-fixed">
+<input checked="" class="text-primary focus:ring-0" name="role" type="radio" value="Cook"/>
+<span class="font-label-md text-label-md">Kitchen Cook</span>
+</label>
+<label class="p-2.5 rounded-xl bg-surface-container-low flex items-center gap-2 cursor-pointer has-[:checked]:bg-primary-fixed has-[:checked]:text-on-primary-fixed">
+<input class="text-primary focus:ring-0" name="role" type="radio" value="Packing"/>
+<span class="font-label-md text-label-md">Packing Staff</span>
+</label>
+<label class="p-2.5 rounded-xl bg-surface-container-low flex items-center gap-2 cursor-pointer has-[:checked]:bg-primary-fixed has-[:checked]:text-on-primary-fixed">
+<input class="text-primary focus:ring-0" name="role" type="radio" value="Driver"/>
+<span class="font-label-md text-label-md">Delivery Driver</span>
+</label>
+<label class="p-2.5 rounded-xl bg-surface-container-low flex items-center gap-2 cursor-pointer has-[:checked]:bg-primary-fixed has-[:checked]:text-on-primary-fixed">
+<input class="text-primary focus:ring-0" name="role" type="radio" value="Manager"/>
+<span class="font-label-md text-label-md">Branch Manager</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Branch Assignment</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">store</span>
+<select class="w-full appearance-none pl-10 pr-8 py-2.5 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none">
+<option value="main">Main Branch (Downtown Cloud Kitchen)</option>
+<option value="north">North Sector Delivery Hub</option>
+<option value="west">Westside Prep Center</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Account Status</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Enable staff app sign-in immediately</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+<div class="pt-2 flex items-center gap-2">
+<button class="flex-1 py-3 rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg active:scale-98 transition-all" id="cancelModalBtn" type="button">Cancel</button>
+<button class="flex-1 py-3 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg active:scale-98 shadow-sm transition-all" type="submit">Save Staff</button>
+</div>
+</form>
+</div>
+</div>
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full font-label-md text-label-md shadow-lg flex items-center gap-2 transition-all duration-300 opacity-0 pointer-events-none transform translate-y-4" id="toast">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">check_circle</span>
+<span id="toastMsg">Staff member added successfully!</span>
+</div>
+</div>
+<script>
+  (function() {
+    const modalBackdrop = document.getElementById('staffModalBackdrop');
+    const modalSheet = document.getElementById('staffModalSheet');
+    const openBtn = document.getElementById('openAddModalBtn');
+    const addFirstBtn = document.getElementById('addFirstStaffBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const cancelBtn = document.getElementById('cancelModalBtn');
+    const newStaffForm = document.getElementById('newStaffForm');
+    const toast = document.getElementById('toast');
+
+    function openModal() {
+      modalBackdrop.classList.remove('hidden');
+      modalBackdrop.classList.add('flex');
+      setTimeout(() => {
+        modalSheet.classList.remove('translate-y-full');
+      }, 10);
+    }
+
+    function closeModal() {
+      modalSheet.classList.add('translate-y-full');
+      setTimeout(() => {
+        modalBackdrop.classList.add('hidden');
+        modalBackdrop.classList.remove('flex');
+      }, 250);
+    }
+
+    function showToast(msg) {
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2800);
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (addFirstBtn) addFirstBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+    modalBackdrop.addEventListener('click', (e) => {
+      if (e.target === modalBackdrop) closeModal();
+    });
+
+    if (newStaffForm) {
+      newStaffForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        closeModal();
+        showToast('Staff member invited successfully!');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary [&amp;&gt;span.active-dot]:scale-100"><div class="flex items-center justify-around h-16 px-space-xs max-w-lg mx-auto"><a class="flex flex-col items-center justify-center w-touch-target-min h-touch-target-min rounded-xl text-on-surface-variant hover:text-on-surface transition-all group relative" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">dashboard</span><span class="font-label-sm text-label-sm mt-0.5">Dashboard</span><span class="active-dot absolute -top-1 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-200"></span></a><a aria-current="page" class="flex flex-col items-center justify-center w-touch-target-min h-touch-target-min rounded-xl transition-all group relative text-primary [&amp;&gt;span.active-dot]:scale-100" data-path="kitchen-console" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">soup_kitchen</span><span class="font-label-sm text-label-sm mt-0.5">Kitchen</span><span class="active-dot absolute -top-1 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-200"></span></a><a class="flex flex-col items-center justify-center w-touch-target-min h-touch-target-min rounded-xl text-on-surface-variant hover:text-on-surface transition-all group relative" data-path="subscriptions" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">event_repeat</span><span class="font-label-sm text-label-sm mt-0.5">Plans</span><span class="active-dot absolute -top-1 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-200"></span></a><a class="flex flex-col items-center justify-center w-touch-target-min h-touch-target-min rounded-xl text-on-surface-variant hover:text-on-surface transition-all group relative" data-path="customers" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">group</span><span class="font-label-sm text-label-sm mt-0.5">Customers</span><span class="active-dot absolute -top-1 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-200"></span></a><a class="flex flex-col items-center justify-center w-touch-target-min h-touch-target-min rounded-xl text-on-surface-variant hover:text-on-surface transition-all group relative" data-path="more-hub" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">menu</span><span class="font-label-sm text-label-sm mt-0.5">More</span><span class="active-dot absolute -top-1 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-200"></span></a></div></nav></body></html>

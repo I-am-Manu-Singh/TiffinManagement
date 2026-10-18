@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Create an Account | Tiffin Manager Mobile</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              DEFAULT: '#f95721',
+              hover: '#e04714',
+              surface: '#f7f9fd',
+              'container-lowest': '#ffffff',
+              'container-low': '#f2f4f8',
+              'border': '#e2e8f0',
+              'muted': '#64748b',
+              'dark': '#1e293b'
+            }
+          },
+          borderRadius: {
+            'custom': '0.625rem',
+          }
+        }
+      }
+    };
+  </script>
+<!-- BEGIN: Custom Micro-Styles -->
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f7f9fd;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<style data-purpose="spinner-animation">
+    @keyframes spin-dots {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .cf-spinner {
+      animation: spin-dots 2s linear infinite;
+    }
+  </style>
+<!-- END: Custom Micro-Styles -->
+</head>
+<body class="bg-[#f7f9fd] text-[#1e293b] min-h-screen flex justify-center selection:bg-[#f95721]/20 selection:text-[#f95721]">
+<!-- BEGIN: Mobile Device Frame Container -->
+<main class="w-full max-w-md bg-white min-h-screen flex flex-col shadow-xl sm:my-4 sm:rounded-3xl overflow-hidden border border-slate-100">
+<!-- BEGIN: iOS Native Top Bar Simulation -->
+<header class="w-full pt-3 pb-2 px-6 flex justify-between items-center bg-[#f95721] text-white select-none">
+<span class="text-xs font-semibold tracking-tight">9:41</span>
+<div class="flex items-center space-x-1.5 text-xs">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.32 19.64 10.6 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"></path></svg>
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M17 5v14c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V5c0-.55.45-1 1-1h12c.55 0 1 .45 1 1zm2 3.5v7l3-2.5v-2l-3-2.5z"></path></svg>
+</div>
+</header>
+<!-- END: iOS Native Top Bar Simulation -->
+<!-- BEGIN: Visual Hero & Brand Header -->
+<section class="relative bg-[#f95721] text-white pt-4 pb-8 px-6 rounded-b-[2.5rem] shadow-md overflow-hidden">
+<!-- Decorative background glow and tiffin graphic silhouette -->
+<div class="absolute -right-6 -bottom-10 opacity-15 pointer-events-none">
+<svg fill="currentColor" height="220" viewbox="0 0 24 24" width="220">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path>
+</svg>
+</div>
+<!-- Brand Logo Header -->
+<div class="flex items-center justify-between mb-4 relative z-10">
+<div class="flex items-center gap-2.5">
+<!-- Tiffin Box Silhouette Icon -->
+<div class="w-9 h-9 rounded-xl bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center p-1.5 shadow-inner">
+<svg class="w-full h-full text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M4 10h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10Z"></path>
+<path d="M8 10V6a4 4 0 0 1 8 0v4"></path>
+<line x1="4" x2="20" y1="15" y2="15"></line>
+</svg>
+</div>
+<div>
+<span class="font-extrabold tracking-wider text-base uppercase leading-tight block">TIFFIN</span>
+<span class="text-[9px] font-bold tracking-[0.25em] text-white/80 uppercase block">MANAGER</span>
+</div>
+</div>
+<a class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md transition-colors text-white" href="#login">
+          Sign In
+        </a>
+</div>
+<!-- Compact Visual Banner Card referencing IMAGE_3 -->
+<div class="relative mt-2 rounded-2xl overflow-hidden border border-white/20 shadow-lg bg-orange-600/30">
+<img alt="Stainless steel Indian meal tiffin carrier filled with dal, rice, curry and roti" class="w-full h-36 object-cover object-left filter brightness-95 contrast-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcYGsOQsEmdMPcl1Kz_hes4djPPyhK4FXDaSoJHeIwYUql0TM1v_bPj4eM_LD76zJAtTn2v8HNA9SWMOWUb3zpUX5x0ifwk91jml6ob1qp_4RIoRx68hBFLEV6j8w-s4dbGD58pNKI7BtB1YUDLMFwzViBRP4PTZkAuqXiP3YKhHO7SwW1jfdtMbvGn8EzqW2yHDWvQlEXJXqDonaCu7Ij_zVen422AoR_ZJ02M-dOytaJGtJxLenwRUoy_kbVsT-uEYw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-3.5">
+<p class="text-white text-xs font-medium drop-shadow-sm leading-snug">
+            Streamline your tiffin &amp; cloud kitchen orders effortlessly.
+          </p>
+</div>
+</div>
+</section>
+<!-- END: Visual Hero & Brand Header -->
+<!-- BEGIN: Registration Form Section -->
+<section class="flex-1 px-6 pt-5 pb-8 flex flex-col justify-between -mt-3 bg-white rounded-t-3xl relative z-20 shadow-[-2px_-10px_20px_rgba(0,0,0,0.03)]">
+<div>
+<!-- Heading & Subtitle -->
+<div class="mb-5">
+<h1 class="text-2xl font-bold text-gray-900 tracking-tight">Create an account</h1>
+<p class="text-xs text-slate-500 mt-1">Fill in the details below to register your kitchen profile</p>
+</div>
+<!-- Registration Form -->
+<form action="#" class="space-y-3.5" id="register-form" method="POST" onsubmit="event.preventDefault();">
+<!-- Field 1: Full Name -->
+<div>
+<label class="sr-only" for="fullName">Full Name</label>
+<div class="relative flex items-stretch rounded-lg border border-slate-300 focus-within:border-[#f95721] focus-within:ring-1 focus-within:ring-[#f95721] transition-all overflow-hidden bg-white shadow-sm">
+<div class="w-12 flex items-center justify-center border-r border-slate-200 bg-slate-50/60 text-slate-400">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="w-full border-0 px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:ring-0 focus:outline-none" id="fullName" name="fullName" placeholder="Full Name" required="" type="text"/>
+</div>
+</div>
+<!-- Field 2: Business Name -->
+<div>
+<label class="sr-only" for="businessName">Business Name</label>
+<div class="relative flex items-stretch rounded-lg border border-slate-300 focus-within:border-[#f95721] focus-within:ring-1 focus-within:ring-[#f95721] transition-all overflow-hidden bg-white shadow-sm">
+<div class="w-12 flex items-center justify-center border-r border-slate-200 bg-slate-50/60 text-slate-400">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="w-full border-0 px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:ring-0 focus:outline-none" id="businessName" name="businessName" placeholder="Business Name" type="text"/>
+</div>
+</div>
+<!-- Field 3: Email Address -->
+<div>
+<label class="sr-only" for="email">Email Address</label>
+<div class="relative flex items-stretch rounded-lg border border-slate-300 focus-within:border-[#f95721] focus-within:ring-1 focus-within:ring-[#f95721] transition-all overflow-hidden bg-white shadow-sm">
+<div class="w-12 flex items-center justify-center border-r border-slate-200 bg-slate-50/60 text-slate-400">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="w-full border-0 px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:ring-0 focus:outline-none" id="email" name="email" placeholder="example@example.com" required="" type="email"/>
+</div>
+</div>
+<!-- Field 4: Mobile Phone Number with Country Flag -->
+<div>
+<label class="sr-only" for="phone">Phone Number</label>
+<div class="relative flex items-stretch rounded-lg border border-slate-300 focus-within:border-[#f95721] focus-within:ring-1 focus-within:ring-[#f95721] transition-all overflow-hidden bg-white shadow-sm">
+<!-- Country selector with India Flag (Ref IMAGE_3) -->
+<div class="flex items-center gap-1.5 px-3 border-r border-slate-200 bg-slate-50/60 text-slate-700 select-none cursor-pointer">
+<!-- Indian Flag Icon -->
+<svg class="w-5 h-3.5 rounded-sm shadow-xs" viewbox="0 0 640 480">
+<path d="M0 0h640v160H0z" fill="#f93"></path>
+<path d="M0 160h640v160H0z" fill="#fff"></path>
+<path d="M0 320h640v160H0z" fill="#128807"></path>
+<circle cx="320" cy="240" fill="#008" r="48"></circle>
+<circle cx="320" cy="240" fill="#fff" r="40"></circle>
+<circle cx="320" cy="240" fill="#008" r="8"></circle>
+</svg>
+<svg class="w-3 h-3 text-slate-500" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<input class="w-full border-0 px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:ring-0 focus:outline-none" id="phone" name="phone" placeholder="081234 56789" type="tel"/>
+</div>
+</div>
+<!-- Field 5: Password -->
+<div>
+<label class="sr-only" for="password">Password</label>
+<div class="relative flex items-stretch rounded-lg border border-slate-300 focus-within:border-[#f95721] focus-within:ring-1 focus-within:ring-[#f95721] transition-all overflow-hidden bg-white shadow-sm">
+<div class="w-12 flex items-center justify-center border-r border-slate-200 bg-slate-50/60 text-slate-400 font-mono text-sm tracking-tighter">
+                ***
+              </div>
+<input class="w-full border-0 px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:ring-0 focus:outline-none" id="password" name="password" placeholder="Password" required="" type="password"/>
+</div>
+</div>
+<!-- Field 6: Confirm Password -->
+<div>
+<label class="sr-only" for="confirmPassword">Confirm Password</label>
+<div class="relative flex items-stretch rounded-lg border border-slate-300 focus-within:border-[#f95721] focus-within:ring-1 focus-within:ring-[#f95721] transition-all overflow-hidden bg-white shadow-sm">
+<div class="w-12 flex items-center justify-center border-r border-slate-200 bg-slate-50/60 text-slate-400 font-mono text-sm tracking-tighter">
+                ***
+              </div>
+<input class="w-full border-0 px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:ring-0 focus:outline-none" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required="" type="password"/>
+</div>
+</div>
+<!-- Terms and Policy Checkbox -->
+<div class="pt-1 flex items-start space-x-2.5">
+<input class="h-4 w-4 mt-0.5 rounded border-gray-300 text-[#f95721] focus:ring-[#f95721] cursor-pointer" id="terms" name="terms" required="" type="checkbox"/>
+<label class="text-xs text-slate-600 leading-relaxed select-none" for="terms">
+              I have read and agree to the 
+              <a class="text-indigo-600 hover:text-indigo-800 hover:underline font-medium" href="#terms-modal">Terms of Service</a> 
+              and 
+              <a class="text-indigo-600 hover:text-indigo-800 hover:underline font-medium" href="#privacy-modal">Privacy Policy</a>.
+            </label>
+</div>
+<!-- Cloudflare Verification Widget (Matches IMAGE_3) -->
+<div class="border border-slate-200 rounded-lg p-3 bg-slate-50/80 flex items-center justify-between shadow-xs">
+<div class="flex items-center space-x-3">
+<!-- Turnstile Dot Spinner -->
+<div class="w-7 h-7 relative flex items-center justify-center">
+<div class="cf-spinner w-6 h-6 rounded-full border-2 border-dashed border-emerald-500 border-t-transparent"></div>
+</div>
+<span class="text-xs font-medium text-slate-700">Verifying...</span>
+</div>
+<!-- Cloudflare Branding -->
+<div class="flex flex-col items-end">
+<div class="flex items-center space-x-1">
+<svg class="h-4 w-auto text-[#f6821f]" fill="currentColor" viewbox="0 0 100 42">
+<path d="M72.2 17.5c-1.3-6.2-6.7-10.8-13.3-10.8-5.3 0-9.9 3-12.2 7.5-1.5-1.1-3.3-1.8-5.3-1.8-4.7 0-8.6 3.7-8.8 8.4-3.5.5-6.2 3.5-6.2 7.2 0 4 3.3 7.3 7.3 7.3h37.7c4.4 0 8-3.6 8-8 0-4.1-3-7.4-7.4-7.8z"></path>
+<path d="M72.2 17.5c-.3 0-.6 0-.8.1 3.9.7 6.8 4.1 6.8 8.1 0 4.6-3.7 8.3-8.3 8.3H32.2c-.7 0-1.4-.1-2.1-.3 1 .6 2.2 1 3.5 1h38.6c4.4 0 8-3.6 8-8 0-4.1-3-7.4-7.4-7.8z" fill="#f38020"></path>
+</svg>
+<span class="text-[10px] font-extrabold tracking-wider text-slate-800 uppercase">CLOUDFLARE</span>
+</div>
+<div class="text-[9px] text-slate-400 space-x-1 mt-0.5">
+<a class="hover:underline" href="#privacy">Privacy</a>
+<span>•</span>
+<a class="hover:underline" href="#help">Help</a>
+</div>
+</div>
+</div>
+<!-- Primary Submit Button -->
+<div class="pt-1">
+<button class="w-full bg-[#f95721] hover:bg-[#e04714] active:scale-[0.99] text-white font-bold py-3.5 px-4 rounded-xl shadow-md transition-all text-sm uppercase tracking-wider flex items-center justify-center space-x-2" type="submit">
+<span>REGISTER</span>
+</button>
+</div>
+</form>
+</div>
+<!-- BEGIN: Footer Navigation Prompt -->
+<footer class="mt-6 text-center text-xs text-slate-600">
+        Already have an account? 
+        <a class="font-bold text-[#f95721] hover:underline ml-1" href="#login">
+          Login
+        </a>
+</footer>
+<!-- END: Footer Navigation Prompt -->
+</section>
+<!-- END: Registration Form Section -->
+<!-- iOS Home Indicator -->
+<div class="w-full pb-2 pt-1 flex justify-center bg-white">
+<div class="w-32 h-1 bg-slate-300 rounded-full"></div>
+</div>
+</main>
+<!-- END: Mobile Device Frame Container -->
+</body></html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Add Customer</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with forms plugin -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#f95721',
+              dark: '#e04612',
+              light: '#ffede7',
+            },
+            surface: '#f7f9fd',
+            darktext: '#191f2d',
+            mutedtext: '#64748b',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 4px 24px -2px rgba(0, 0, 0, 0.05)',
+            'float': '0 8px 30px rgba(249, 87, 33, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom styles for mobile view handling and input tweaks -->
+<style data-purpose="mobile-layout">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    input, textarea, select {
+      user-select: text;
+    }
+    /* Safe Area insets for modern mobile devices */
+    .pt-safe {
+      padding-top: env(safe-area-inset-top, 20px);
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+    /* Custom radio styling */
+    .custom-radio:checked {
+      border-color: #22c55e;
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%2322c55e' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='4'/%3e%3c/svg%3e");
+    }
+  </style>
+</head>
+<body class="bg-[#f0f4f9] font-sans antialiased text-darktext min-h-screen flex flex-col justify-between">
+<!-- Mobile Shell Wrapper -->
+<div class="max-w-md mx-auto w-full min-h-screen flex flex-col bg-surface relative shadow-2xl">
+<!-- BEGIN: TopAppBar -->
+<header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-100 pt-safe px-4 pb-3 space-y-3" data-purpose="top-navigation">
+  <!-- Tier 1: Brand & User Bar -->
+  <div class="flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center shadow-xs flex-shrink-0">
+        <img src="https://lh3.googleusercontent.com/aida/AEtjO1VzbMoL1mwXaVT3Tlg8gh43JelIjaN2FrdCRjj5cOMnk73Y23HHCv4TcITNCtQ650Rxo2El1I-D8QGz0j0VKea1ZMunWSiSo9LNxF2r_o6RrmmnVhkcqbCouIcRqtuEtXUxa_Li6SCYjYFMW8B9WJTdBcTXZ96A6ow7-6hSNcXvn6zJZ6-kIBQQHiqmthsIcC7hcpJ7Gm1n2v-5Ue29vO_3nRrh3mQDjXIYsYEt_nRd4PJsSQJRlepP62U" alt="Homely Tiffins Logo" class="w-full h-full object-cover">
+      </div>
+      <div>
+        <div class="flex items-center space-x-1 cursor-pointer">
+          <span class="text-sm font-bold text-slate-800 tracking-tight">Main Branch</span>
+          <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+          </svg>
+        </div>
+        <p class="text-[11px] font-medium text-slate-400 leading-tight">Customer Directory</p>
+      </div>
+    </div>
+    <div class="flex items-center space-x-2">
+      <button aria-label="Notifications" class="relative w-9 h-9 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 transition" type="button">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full ring-2 ring-white"></span>
+      </button>
+      <button aria-label="Owner Profile" class="w-9 h-9 rounded-full overflow-hidden border border-slate-200 focus:ring-2 focus:ring-primary/20" type="button">
+        <img src="https://lh3.googleusercontent.com/aida/AEtjO1UzzMtRchgJGxJeoMXFA4JCNEADa6tG9Khb9hHmUEOLjVKjbF_teuUEcrI0euDunxXAqkVB-FiRaX-9pL7anpGuMw93Zv8o8jwERUTlafiJwWx38x-vcu2WGusgQASg7sA9eCztNswFVd7NXfBCuockehL46LdRQRvIo4wNDCA7TOfX86f40k_uzNZX3TKxkG7fu6Jh33PG22xGOqjsaroDgfpqqIhjFgSUDCwFL3dk8o2PMZd-MgyShAVG" alt="Owner Avatar" class="w-full h-full object-cover">
+      </button>
+    </div>
+  </div>
+
+  <!-- Tier 2: Sub-header with Title, Subtitle, and Actions -->
+  <div class="flex items-center justify-between pt-1 border-t border-slate-100/80">
+    <div class="flex items-center space-x-2.5">
+      <button aria-label="Go Back" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 active:scale-95 transition bg-slate-50 border border-slate-200/60" type="button">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+        </svg>
+      </button>
+      <div>
+        <h1 class="text-base font-bold text-slate-800 leading-tight tracking-tight">Add Customer</h1>
+        <p class="text-[11px] text-slate-400 font-medium leading-none mt-0.5">Create customer profile &amp; ledger account</p>
+      </div>
+    </div>
+    <button aria-label="Close" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-100 active:scale-95 transition" type="button">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+<!-- END: TopAppBar -->
+<!-- BEGIN: MainContentForm -->
+<main class="flex-1 px-4 py-4 pb-32 space-y-4 overflow-y-auto" data-purpose="customer-form-body">
+<!-- Card Container for Form -->
+<div class="bg-white rounded-2xl p-5 shadow-soft border border-slate-100 space-y-5">
+<!-- Section Header -->
+<div class="flex items-center justify-between pb-2 border-b border-slate-100">
+<span class="text-xs font-semibold tracking-wider text-slate-400 uppercase">Customer Profile</span>
+<span class="text-xs text-rose-500 font-medium">* Required fields</span>
+</div>
+<!-- Full Name -->
+<div class="space-y-1.5" data-purpose="form-group-name">
+<label class="block text-sm font-semibold text-slate-700" for="fullName">
+            Name <span class="text-rose-500">*</span>
+</label>
+<input class="w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 transition duration-150" id="fullName" name="fullName" placeholder="Full Name" required="" type="text">
+</div>
+<!-- Phone Number with Country Code Selector -->
+<div class="space-y-1.5" data-purpose="form-group-phone">
+<label class="block text-sm font-semibold text-slate-700" for="phoneNumber">
+            Phone Number <span class="text-rose-500">*</span>
+</label>
+<div class="flex rounded-xl border border-slate-200 bg-white focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition overflow-hidden">
+<!-- Country Selector Dropdown -->
+<div class="flex items-center pl-3 pr-2 bg-slate-50 border-r border-slate-200 cursor-pointer space-x-1">
+<!-- Flag (India SVG) -->
+<span class="inline-flex items-center justify-center w-5 h-3.5 rounded-sm overflow-hidden shadow-xs">
+<svg class="w-full h-full object-cover" viewBox="0 0 640 480">
+<path d="M0 0h640v160H0z" fill="#f93"></path>
+<path d="M0 160h640v160H0z" fill="#fff"></path>
+<path d="M0 320h640v160H0z" fill="#128807"></path>
+<circle cx="320" cy="240" fill="#008" r="28"></circle>
+<circle cx="320" cy="240" fill="#fff" r="24"></circle>
+<circle cx="320" cy="240" fill="#008" r="8"></circle>
+</svg>
+</span>
+<svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<input class="w-full border-none py-2.5 px-3 text-sm text-slate-900 placeholder:text-slate-400 focus:ring-0" id="phoneNumber" name="phoneNumber" placeholder="081234 56789" required="" type="tel">
+</div>
+</div>
+<!-- Email Address -->
+<div class="space-y-1.5" data-purpose="form-group-email">
+<label class="block text-sm font-semibold text-slate-700" for="email">
+            Email Address
+          </label>
+<input class="w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 transition duration-150" id="email" name="email" placeholder="Email Address" type="email">
+</div>
+<!-- Password and Confirm Password Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-purpose="form-group-passwords">
+<!-- Password -->
+<div class="space-y-1.5">
+<label class="block text-sm font-semibold text-slate-700" for="password">
+              Password <span class="text-rose-500">*</span>
+</label>
+<div class="relative">
+<input class="w-full rounded-xl border-slate-200 bg-white pl-3.5 pr-10 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 transition duration-150" id="password" name="password" placeholder="Portal Login Password" required="" type="password">
+<button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Confirm Password -->
+<div class="space-y-1.5">
+<label class="block text-sm font-semibold text-slate-700" for="confirmPassword">
+              Confirm Password <span class="text-rose-500">*</span>
+</label>
+<input class="w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 transition duration-150" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required="" type="password">
+</div>
+</div>
+<!-- Branch Selector -->
+<div class="space-y-1.5" data-purpose="form-group-branch">
+<label class="block text-sm font-semibold text-slate-700" for="branch">Branch</label>
+<div class="relative">
+<select class="w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800 appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition duration-150 pr-10" id="branch" name="branch">
+<option selected="" value="main">Main Branch</option>
+<option value="downtown">Downtown Branch</option>
+<option value="westside">Westside Express</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Delivery Route Selector -->
+<div class="space-y-1.5" data-purpose="form-group-route">
+<label class="block text-sm font-semibold text-slate-700" for="deliveryRoute">Delivery Route</label>
+<div class="relative">
+<select class="w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800 appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition duration-150 pr-10" id="deliveryRoute" name="deliveryRoute">
+<option selected="" value="main_route">Main Route</option>
+<option value="north_sector">North Sector Route</option>
+<option value="south_hub">South Hub Route</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Delivery Address Textarea -->
+<div class="space-y-1.5" data-purpose="form-group-address">
+<label class="block text-sm font-semibold text-slate-700" for="deliveryAddress">Delivery Address</label>
+<textarea class="w-full rounded-xl border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 transition duration-150 resize-none" id="deliveryAddress" name="deliveryAddress" placeholder="House No, Building, Street, Landmark..." rows="3"></textarea>
+</div>
+<!-- Map & Coordinates Section -->
+<div class="space-y-2 pt-1" data-purpose="form-group-location">
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-medium text-slate-600 mb-1" for="latitude">Latitude</label>
+<input class="w-full rounded-xl border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 transition" id="latitude" name="latitude" placeholder="e.g. 18.5204" type="text">
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-600 mb-1" for="longitude">Longitude</label>
+<input class="w-full rounded-xl border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 transition" id="longitude" name="longitude" placeholder="e.g. 73.8567" type="text">
+</div>
+</div>
+<!-- Choose Location Button matching screenshot style -->
+<button class="w-full py-2.5 px-4 mt-2 rounded-xl border border-primary text-primary font-semibold text-sm flex items-center justify-center space-x-2 bg-white hover:bg-primary-light/40 active:bg-primary-light transition-all shadow-xs" type="button">
+<svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 20l-5.447-2.724A2 2 0 013 15.382V5.618a2 2 0 011.447-1.894L9 1m0 19l6-3m-6 3V1m6 16l5.447 2.724A2 2 0 0021 17.618V7.82a2 2 0 00-1.447-1.894L15 4m0 13V4m0 0L9 1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Choose Location on Map</span>
+</button>
+</div>
+<!-- Max Allowed Due (Trust Limit) -->
+<div class="space-y-1.5 pt-1" data-purpose="form-group-trust-limit">
+<label class="block text-sm font-semibold text-slate-700" for="trustLimit">
+            Max Allowed Due (Trust Limit) <span class="text-rose-500">*</span>
+</label>
+<div class="relative flex rounded-xl border border-slate-200 bg-white focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition overflow-hidden">
+<span class="inline-flex items-center px-4 bg-slate-50 text-slate-500 border-r border-slate-200 font-semibold text-sm">
+              ₹
+            </span>
+<input class="w-full border-none py-2.5 px-3 text-sm font-medium text-slate-900 focus:ring-0" id="trustLimit" name="trustLimit" required="" type="number" value="0">
+</div>
+<p class="text-[11px] leading-relaxed text-slate-500 pt-0.5">
+            Allowed overdue/debt limit for postpaid transactions. Enter 0 for prepaid only.
+          </p>
+</div>
+<!-- Status Radio Selection -->
+<div class="space-y-2 pt-1" data-purpose="form-group-status">
+<label class="block text-sm font-semibold text-slate-700">Status</label>
+<div class="flex items-center space-x-6">
+<!-- Active option (green checked radio) -->
+<label class="inline-flex items-center cursor-pointer space-x-2">
+<input checked="" class="w-4 h-4 text-emerald-600 border-slate-300 focus:ring-emerald-500" name="customer_status" type="radio" value="active">
+<span class="text-sm font-medium text-slate-800">Active</span>
+</label>
+<!-- Inactive option -->
+<label class="inline-flex items-center cursor-pointer space-x-2">
+<input class="w-4 h-4 text-emerald-600 border-slate-300 focus:ring-emerald-500" name="customer_status" type="radio" value="inactive">
+<span class="text-sm font-medium text-slate-600">Inactive</span>
+</label>
+</div>
+</div>
+</div>
+</main>
+<!-- END: MainContentForm -->
+<!-- BEGIN: FloatingSaveCtaBar -->
+<!-- Positioned right above bottom navigation bar -->
+<div class="fixed sm:absolute bottom-[60px] left-0 right-0 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200/80 z-20" data-purpose="action-bar">
+<button class="w-full bg-primary hover:bg-primary-dark active:scale-[0.99] transition shadow-md shadow-primary/25 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center space-x-2 text-base" type="submit">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+</svg>
+<span class="">Save Customer</span>
+</button>
+</div>
+<!-- END: FloatingSaveCtaBar -->
+<!-- BEGIN: MobileNavigationBar -->
+<nav class="sticky bottom-0 z-30 bg-white border-t border-slate-100 pb-safe shadow-lg" data-purpose="bottom-tab-navigation">
+<div class="grid grid-cols-5 h-14 items-center px-1 text-[10px] font-medium text-slate-400">
+<!-- Dashboard -->
+<a class="flex flex-col items-center justify-center py-1 text-slate-500 hover:text-primary transition" href="#dashboard">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Dashboard</span>
+</a>
+<!-- Kitchen -->
+<a class="flex flex-col items-center justify-center py-1 text-slate-500 hover:text-primary transition" href="#kitchen">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Kitchen</span>
+</a>
+<!-- Plans -->
+<a class="flex flex-col items-center justify-center py-1 text-slate-500 hover:text-primary transition" href="#plans">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Plans</span>
+</a>
+<!-- Customers (Active) -->
+<a class="flex flex-col items-center justify-center py-1 text-primary font-bold transition" href="#customers">
+<div class="relative">
+<svg class="w-5 h-5 mb-0.5" fill="currentColor" viewBox="0 0 20 20">
+<path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+</svg>
+<span class="w-1.5 h-1.5 bg-primary rounded-full absolute -top-0.5 -right-1"></span>
+</div>
+<span class="">Customers</span>
+</a>
+<!-- More -->
+<a class="flex flex-col items-center justify-center py-1 text-slate-500 hover:text-primary transition" href="#more">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">More</span>
+</a>
+</div>
+</nav>
+<!-- END: MobileNavigationBar -->
+</div>
+
+
+</body></html>
